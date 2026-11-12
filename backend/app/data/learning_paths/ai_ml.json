@@ -1,0 +1,389 @@
+{
+  "field": "AI / ML Engineer",
+  "core_skills": [
+    {
+      "id": "python",
+      "name": "Python",
+      "step": 1,
+      "keywords": [
+        "python",
+        "python3",
+        "python 3",
+        "jupyter",
+        "jupyter notebook",
+        "jupyterlab",
+        "google colab",
+        "colab"
+      ]
+    },
+    {
+      "id": "data_analysis",
+      "name": "NumPy, Pandas & Data Analysis",
+      "step": 2,
+      "keywords": [
+        "numpy",
+        "pandas",
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "scipy",
+        "data analysis",
+        "data analytics",
+        "exploratory data analysis",
+        "data cleaning",
+        "data preprocessing",
+        "data wrangling",
+        "data visualization",
+        "data visualisation",
+        "statistical analysis"
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL & Databases",
+      "step": 2,
+      "keywords": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "postgres",
+        "sqlite",
+        "sql server",
+        "ms sql",
+        "oracle database",
+        "pl/sql",
+        "t-sql",
+        "bigquery",
+        "snowflake",
+        "sqlalchemy"
+      ]
+    },
+    {
+      "id": "machine_learning",
+      "name": "Machine Learning (scikit-learn)",
+      "step": 3,
+      "keywords": [
+        "machine learning",
+        "scikit-learn",
+        "scikit learn",
+        "sklearn",
+        "xgboost",
+        "lightgbm",
+        "catboost",
+        "random forest",
+        "decision tree",
+        "decision trees",
+        "logistic regression",
+        "linear regression",
+        "support vector machine",
+        "svm",
+        "k-means",
+        "kmeans",
+        "supervised learning",
+        "unsupervised learning",
+        "feature engineering",
+        "predictive modeling",
+        "predictive modelling"
+      ]
+    },
+    {
+      "id": "deep_learning",
+      "name": "Deep Learning (PyTorch / TensorFlow)",
+      "step": 4,
+      "keywords": [
+        "deep learning",
+        "pytorch",
+        "tensorflow",
+        "keras",
+        "neural network",
+        "neural networks",
+        "cnn",
+        "cnns",
+        "convolutional neural network",
+        "convolutional neural networks",
+        "rnn",
+        "lstm",
+        "computer vision",
+        "image classification",
+        "object detection",
+        "yolo",
+        "transfer learning",
+        "jax"
+      ]
+    },
+    {
+      "id": "nlp_llms",
+      "name": "NLP & LLMs",
+      "step": 5,
+      "keywords": [
+        "nlp",
+        "natural language processing",
+        "hugging face",
+        "huggingface",
+        "transformer models",
+        "transformer architecture",
+        "bert",
+        "gpt",
+        "llm",
+        "llms",
+        "large language model",
+        "large language models",
+        "generative ai",
+        "genai",
+        "langchain",
+        "llamaindex",
+        "retrieval augmented generation",
+        "retrieval-augmented generation",
+        "prompt engineering",
+        "spacy",
+        "nltk",
+        "word2vec",
+        "sentence transformers",
+        "vector database",
+        "faiss",
+        "chromadb",
+        "pinecone",
+        "rag pipeline",
+        "rag pipelines",
+        "rag-based",
+        "rag application",
+        "openai api",
+        "langgraph",
+        "vector databases",
+        "sentiment analysis",
+        "text classification",
+        "named entity recognition",
+        "gen ai"
+      ]
+    },
+    {
+      "id": "mlops_deployment",
+      "name": "Model Deployment & MLOps",
+      "step": 5,
+      "keywords": [
+        "mlops",
+        "mlflow",
+        "docker",
+        "kubernetes",
+        "fastapi",
+        "flask",
+        "streamlit",
+        "gradio",
+        "model deployment",
+        "model serving",
+        "sagemaker",
+        "aws sagemaker",
+        "vertex ai",
+        "azure machine learning",
+        "azure ml",
+        "kubeflow",
+        "dvc",
+        "bentoml",
+        "onnx",
+        "ci/cd",
+        "wandb",
+        "weights & biases",
+        "torchserve",
+        "model monitoring",
+        "triton inference server",
+        "k8s"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Python for ML",
+      "subtitle": "Write clean, data-ready Python",
+      "description": "Get fluent in the Python you will use every day as an ML engineer: core syntax, built-in data structures, OOP and fast NumPy arrays. You also set up a reproducible workflow with virtual environments, Jupyter and Git that every later step builds on.",
+      "topics": [
+        {
+          "id": "ml1-python-core",
+          "name": "Python fundamentals: variables, control flow, functions and list/dict comprehensions"
+        },
+        {
+          "id": "ml1-data-structures",
+          "name": "Built-in data structures: list, tuple, dict and set, and when to use each"
+        },
+        {
+          "id": "ml1-oop",
+          "name": "Object-oriented Python: classes, __init__, inheritance, class vs instance attributes"
+        },
+        {
+          "id": "ml1-files-generators",
+          "name": "Files, exceptions, modules and memory-friendly iteration with generators"
+        },
+        {
+          "id": "ml1-numpy",
+          "name": "NumPy arrays: shapes, indexing/slicing (views vs copies), broadcasting and vectorization"
+        },
+        {
+          "id": "ml1-env-git",
+          "name": "Reproducible setup: virtual environments, pip + requirements.txt, Git commits and GitHub"
+        },
+        {
+          "id": "ml1-jupyter",
+          "name": "Jupyter / Google Colab workflow, including Restart & Run All to avoid hidden state"
+        }
+      ],
+      "coding_topics": [
+        "Arrays",
+        "Strings",
+        "Hashing"
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Data Handling, Math & Statistics",
+      "subtitle": "Clean, query and understand your data",
+      "description": "Real ML work is mostly data work. Learn to load, clean and reshape data with Pandas, query it with SQL and explore it visually, and build the probability, statistics and linear-algebra intuition that every model relies on.",
+      "topics": [
+        {
+          "id": "ml2-pandas",
+          "name": "Pandas DataFrames: read_csv, selecting, filtering, groupby and merge"
+        },
+        {
+          "id": "ml2-data-cleaning",
+          "name": "Data cleaning: missing values, duplicates, outliers and wrong data types"
+        },
+        {
+          "id": "ml2-preprocessing",
+          "name": "Preprocessing: categorical encoding (one-hot/label) and feature scaling (standardization, min-max)"
+        },
+        {
+          "id": "ml2-sql",
+          "name": "SQL for data: SELECT, WHERE, JOIN, GROUP BY/HAVING and window functions"
+        },
+        {
+          "id": "ml2-statistics",
+          "name": "Probability & statistics: distributions, mean/median/variance, skew, Bayes' theorem, hypothesis tests"
+        },
+        {
+          "id": "ml2-linear-algebra",
+          "name": "Linear algebra & calculus basics: vectors, dot products, matrix multiplication, derivatives and gradients"
+        },
+        {
+          "id": "ml2-eda-visualization",
+          "name": "Exploratory data analysis with Matplotlib/Seaborn: histograms, scatter plots, box plots, correlations"
+        }
+      ],
+      "coding_topics": [
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Classical Machine Learning",
+      "subtitle": "Train, evaluate and tune models with scikit-learn",
+      "description": "Learn the core algorithms asked in every ML interview and, just as important, how to evaluate them honestly. You will build scikit-learn pipelines, pick the right metric, validate with cross-validation and diagnose overfitting versus underfitting.",
+      "topics": [
+        {
+          "id": "ml3-supervised",
+          "name": "Supervised learning: linear & logistic regression, k-NN, decision trees, random forests, gradient boosting"
+        },
+        {
+          "id": "ml3-unsupervised",
+          "name": "Unsupervised learning: k-means clustering and PCA for dimensionality reduction"
+        },
+        {
+          "id": "ml3-pipelines",
+          "name": "Feature engineering with scikit-learn Pipeline / ColumnTransformer (fit on training data only)"
+        },
+        {
+          "id": "ml3-metrics",
+          "name": "Evaluation metrics: confusion matrix, precision, recall, F1, ROC-AUC, MAE/RMSE, calibration"
+        },
+        {
+          "id": "ml3-validation",
+          "name": "Train/validation/test splits, k-fold, stratified and grouped cross-validation, data leakage"
+        },
+        {
+          "id": "ml3-bias-variance",
+          "name": "Bias-variance trade-off, overfitting vs underfitting and L1/L2 regularization"
+        },
+        {
+          "id": "ml3-tuning-imbalance",
+          "name": "Hyperparameter tuning (GridSearchCV/RandomizedSearchCV) and handling imbalanced classes"
+        }
+      ],
+      "coding_topics": [
+        "Dynamic Programming"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Deep Learning",
+      "subtitle": "Build and train neural networks in PyTorch",
+      "description": "Understand how neural networks learn, from activation functions and backpropagation to optimizers, and train them yourself in PyTorch (or TensorFlow/Keras). You will build CNNs for images and LSTMs for sequences, and learn the techniques that stop deep models from overfitting.",
+      "topics": [
+        {
+          "id": "ml4-nn-basics",
+          "name": "Neural network basics: neurons, layers, activations (ReLU, sigmoid, softmax) and loss functions"
+        },
+        {
+          "id": "ml4-backprop",
+          "name": "Backpropagation and gradient descent: chain rule, learning rate, mini-batches and epochs"
+        },
+        {
+          "id": "ml4-pytorch",
+          "name": "PyTorch essentials: tensors, autograd, Dataset/DataLoader, the training loop, model.train()/model.eval()"
+        },
+        {
+          "id": "ml4-optimization",
+          "name": "Optimization: SGD with momentum, Adam, learning-rate schedules and batch normalization"
+        },
+        {
+          "id": "ml4-overfitting",
+          "name": "Overfitting control: dropout, weight decay, early stopping and data augmentation"
+        },
+        {
+          "id": "ml4-cnn",
+          "name": "CNNs for images: convolution, pooling, output shapes and transfer learning"
+        },
+        {
+          "id": "ml4-sequence-models",
+          "name": "Sequence models: RNN, LSTM/GRU and the vanishing-gradient problem"
+        }
+      ],
+      "coding_topics": [
+        "Graphs"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "NLP, LLMs & MLOps",
+      "subtitle": "Ship language models and ML services to production",
+      "description": "Move from notebooks to products: work with text using Transformers and embeddings, build a simple retrieval-augmented generation (RAG) app, then serve models behind a FastAPI service in Docker, track experiments with MLflow and monitor deployed models for drift.",
+      "topics": [
+        {
+          "id": "ml5-text-basics",
+          "name": "Text preprocessing and representation: tokenization (subword/BPE), TF-IDF and word embeddings"
+        },
+        {
+          "id": "ml5-transformers",
+          "name": "Transformers: self-attention, BERT vs GPT and fine-tuning with Hugging Face"
+        },
+        {
+          "id": "ml5-llm-rag",
+          "name": "LLM apps: prompting, sentence embeddings, vector search and RAG basics"
+        },
+        {
+          "id": "ml5-serving",
+          "name": "Model serving: a REST API with FastAPI, containerized with Docker"
+        },
+        {
+          "id": "ml5-mlflow",
+          "name": "Experiment tracking and model registry with MLflow"
+        },
+        {
+          "id": "ml5-monitoring",
+          "name": "Production monitoring: latency, data drift, concept drift and retraining triggers"
+        }
+      ],
+      "coding_topics": [
+        "Sliding Window"
+      ]
+    }
+  ]
+}

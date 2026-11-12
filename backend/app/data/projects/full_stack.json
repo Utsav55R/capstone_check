@@ -1,0 +1,104 @@
+{
+  "field": "Full Stack Developer",
+  "verified_on": "2026-10-06",
+  "projects": [
+    {
+      "id": "fs-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "Typing Speed Test Web App",
+      "summary": "Build a responsive typing-speed test in plain HTML, CSS and JavaScript. The app shows a passage, tracks every keystroke live, and gives a results screen with words-per-minute, accuracy and a personal-best history, with no framework and no backend.",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "DOM Events",
+        "Fetch API",
+        "localStorage"
+      ],
+      "requirements": [
+        "Offer 15, 30 and 60 second modes; the timer starts on the first keystroke and the test ends automatically when it reaches zero.",
+        "Highlight each typed character as correct or incorrect in real time, support Backspace, and keep a visible caret on the current character.",
+        "Show a results screen with WPM ((correct characters / 5) / minutes), raw WPM and accuracy %, and save the last 10 results plus the personal best per mode in localStorage.",
+        "Load word lists or quotes from a local JSON file with fetch() and async/await, and show a friendly error message if loading fails.",
+        "Split the code into ES modules (for example words, timer, stats, ui), use event delegation instead of inline onclick handlers, and add a Restart button bound to the Tab key.",
+        "Make the layout responsive with Flexbox or Grid from 360px to desktop, use semantic HTML with labelled controls, and add a light/dark theme toggle driven by CSS variables."
+      ],
+      "reference_repo": {
+        "full_name": "monkeytypegame/monkeytype",
+        "url": "https://github.com/monkeytypegame/monkeytype",
+        "description": "The most customizable typing website with a minimalistic design and a ton of features. Test yourself in various modes, track your progress and improve your speed.",
+        "stars": 20800,
+        "last_commit": "2026-10-06",
+        "why_reference": "Study how frontend/src/ts/test keeps the typing-test engine (test-logic.ts, test-timer.ts, words-generator.ts, caret.ts) in small framework-free modules, separate from the UI, and how themes are built from CSS variables. The project is TypeScript with some Solid.js and a backend, so only read the logic and write your own vanilla JavaScript version. Use it as a reference, do not copy it."
+      }
+    },
+    {
+      "id": "fs-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "Team Kanban Board (Trello-style) with REST API",
+      "summary": "Build a full-stack Kanban board where users sign up, create boards, invite teammates and move cards between lists. A React frontend talks to a Node.js/Express REST API backed by a relational database (PostgreSQL or MySQL), secured with hashed passwords and JWT-based auth.",
+      "skills": [
+        "React",
+        "React Router",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "REST APIs",
+        "JWT",
+        "bcrypt"
+      ],
+      "requirements": [
+        "Register/login with passwords hashed using bcrypt; issue a JWT (or session cookie) and protect every board, list and card route with auth middleware that returns 401 when the token is missing or invalid.",
+        "Expose a documented REST API (README table of method, path, body and status codes) with full CRUD for boards, lists and cards, using correct verbs and status codes (201, 204, 400, 403, 404).",
+        "Design a normalized schema (users, boards, board_members, lists, cards) with foreign keys, store a position column for ordering, and add an index on cards(list_id, position); include the migration/SQL file and an ER diagram.",
+        "Enforce authorization: only board members can read or change a board, and a non-member gets 403. Validate request bodies with middleware and return errors as consistent JSON.",
+        "Build the React client with React Router, protected routes, controlled forms and drag-and-drop of cards between lists that saves the new position through the API; show loading and error states.",
+        "Keep secrets in a .env file (committed .env.example only) and include at least 5 automated API tests (Jest + Supertest or similar) covering auth and permission checks."
+      ],
+      "reference_repo": {
+        "full_name": "plankanban/planka",
+        "url": "https://github.com/plankanban/planka",
+        "description": "Elegant open source project tracking. Self-hosted Kanban for teams — free Community edition, with PLANKA Pro for organisations.",
+        "stars": 12600,
+        "last_commit": "2026-09-17",
+        "why_reference": "Compare client/ (React 18, Redux, redux-saga, React Router, react-beautiful-dnd, socket.io-client) with server/ (Sails.js on Node.js, Knex + PostgreSQL, jsonwebtoken, bcrypt). Look at how boards, lists and cards are modelled, how card positions are stored, how board-membership permissions are checked, and how real-time updates reach the board. Use it as a reference only: build your own smaller Express version, do not copy code."
+      }
+    },
+    {
+      "id": "fs-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Production-Ready Uptime Monitor & Public Status Page",
+      "summary": "Build and deploy a service that checks websites and APIs on a schedule, stores response times, alerts the owner when a site goes down, and shows a live React dashboard and a public status page. Containerize it with Docker, ship it through a CI/CD pipeline, and run it on a real host over HTTPS.",
+      "skills": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "WebSockets",
+        "Docker",
+        "GitHub Actions",
+        "Deployment",
+        "Web Security"
+      ],
+      "requirements": [
+        "Let authenticated users add HTTP(S) monitors (URL, interval 30 s to 10 min, expected status). A background scheduler runs the checks, stores status code and response time in PostgreSQL (indexed by monitor and time), and computes 24-hour and 7-day uptime %.",
+        "Push status changes to a React dashboard over WebSockets (Socket.IO or ws), with a response-time chart per monitor and a public, read-only status page at /status/:slug.",
+        "Send an email or webhook (for example Discord or Slack) alert only when a monitor changes between up and down. Do not alert on every failed check: require 2 failures in a row before marking it down.",
+        "Ship a multi-stage Dockerfile and a docker-compose.yml (app + PostgreSQL) that starts the whole stack with one command, with all config and secrets read from environment variables and a /health endpoint.",
+        "Add a GitHub Actions workflow that runs lint, tests and a Docker build on every pull request, and deploys main to a cloud host (Render, Railway, Fly.io, AWS or similar). Put the live HTTPS URL in the README.",
+        "Harden for production: security headers (for example helmet), CORS limited to your frontend origin, rate limiting on auth and monitor-creation routes, parameterized queries, and structured request logs."
+      ],
+      "reference_repo": {
+        "full_name": "louislam/uptime-kuma",
+        "url": "https://github.com/louislam/uptime-kuma",
+        "description": "A fancy self-hosted monitoring tool",
+        "stars": 92200,
+        "last_commit": "2026-10-05",
+        "why_reference": "Read server/ to see how an Express + Socket.IO backend schedules monitor checks (croner), saves heartbeats through Knex (SQLite/MariaDB), sends notifications only when status changes, and pushes live updates to clients. Also study its docker/ folder and .github/workflows for container builds and CI. Its frontend is Vue 3, so carry the ideas over to React. Use it as a reference, do not copy it."
+      }
+    }
+  ]
+}

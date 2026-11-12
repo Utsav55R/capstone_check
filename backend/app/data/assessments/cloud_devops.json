@@ -1,0 +1,1079 @@
+{
+  "track": "Cloud / DevOps Engineer",
+  "title": "Cloud & DevOps Engineer",
+  "source_document": "cloud_and_devops_engineer_placement_assessment_expanded.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Cloud Computing",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is cloud computing?",
+      "options": [
+        "Renting dedicated servers on fixed multi-year hosting contracts",
+        "On-demand computing resources over the internet, paid per use",
+        "Running all workloads in a company's own data center",
+        "Sharing spare storage between users' laptops peer-to-peer"
+      ],
+      "correct": 1,
+      "explanation": "Cloud computing delivers compute, storage, databases and more on demand over the internet with pay-as-you-go pricing and elastic scaling; running everything in your own data center is on-premises hosting."
+    },
+    {
+      "id": 2,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Cloud Service Models",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which cloud service model gives you virtual machines, storage and networking while you manage the operating system and everything above it?",
+      "options": [
+        "SaaS",
+        "PaaS",
+        "IaaS",
+        "FaaS"
+      ],
+      "correct": 2,
+      "explanation": "IaaS (e.g. Amazon EC2, Azure Virtual Machines, Google Compute Engine) provides raw compute, storage and networking; PaaS also manages the OS and runtime for you, and SaaS is a finished application."
+    },
+    {
+      "id": 3,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "Linux Shell",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Linux command lists the files and directories in the current directory?",
+      "options": [
+        "cd",
+        "ls",
+        "rm",
+        "pwd"
+      ],
+      "correct": 1,
+      "explanation": "ls lists directory contents (ls -la adds hidden files and details); pwd prints the current directory's path and cd changes directory."
+    },
+    {
+      "id": 4,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "IP Addressing",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What does an IP address identify?",
+      "options": [
+        "A device's network interface on an IP network",
+        "A specific application process running on a host",
+        "The hardware address burned into a network card",
+        "A human-readable name registered in DNS"
+      ],
+      "correct": 0,
+      "explanation": "An IP address identifies a network interface so packets can be routed to it; a port identifies the application on that host, and the burned-in hardware address is the MAC address."
+    },
+    {
+      "id": 5,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Git Basics",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which command creates a local copy of an existing remote Git repository, including its full history?",
+      "options": [
+        "git fetch <url>",
+        "git init <url>",
+        "git clone <url>",
+        "git pull <url>"
+      ],
+      "correct": 2,
+      "explanation": "git clone downloads the repository with all its history and sets up the origin remote; git fetch and git pull only work inside a repository that already exists, and git init creates a new empty one."
+    },
+    {
+      "id": 6,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Cloud Compute Services",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which AWS service provides resizable virtual machines (compute capacity)?",
+      "options": [
+        "Amazon S3",
+        "AWS IAM",
+        "Amazon Route 53",
+        "Amazon EC2"
+      ],
+      "correct": 3,
+      "explanation": "Amazon EC2 provides virtual machine instances; S3 is object storage, IAM manages identities and permissions, and Route 53 is DNS. The Azure and GCP equivalents are Virtual Machines and Compute Engine."
+    },
+    {
+      "id": 7,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is Docker primarily used for?",
+      "options": [
+        "Running full virtual machines, each with its own guest OS kernel",
+        "Packaging and running applications in isolated containers",
+        "Tracking changes to source code across a team",
+        "Collecting metrics and alerting on application health"
+      ],
+      "correct": 1,
+      "explanation": "Docker packages an application with its dependencies into an image and runs it as an isolated container that shares the host kernel; full virtual machines with their own kernels come from hypervisors."
+    },
+    {
+      "id": 8,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker Image vs Container",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is a Docker container?",
+      "options": [
+        "A read-only template containing an app and its dependencies",
+        "A compressed archive of the application's source code",
+        "A service that stores and distributes images",
+        "A running instance of an image"
+      ],
+      "correct": 3,
+      "explanation": "A container is a runnable instance of an image with its own writable layer and isolated processes; the read-only template is the image itself, and a registry is the service that stores and distributes images."
+    },
+    {
+      "id": 9,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "CI/CD",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main purpose of a CI/CD pipeline?",
+      "options": [
+        "Track every change made to source code over time",
+        "Add servers automatically when traffic increases",
+        "Collect and search application logs in production",
+        "Automatically build, test and deploy code changes"
+      ],
+      "correct": 3,
+      "explanation": "A CI/CD pipeline runs on every change to build, test and (after checks pass) deploy the code; tracking changes is version control's job and adding servers on demand is autoscaling."
+    },
+    {
+      "id": 10,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Kubernetes",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is Kubernetes primarily used for?",
+      "options": [
+        "Building container images from Dockerfiles on a CI server",
+        "Orchestrating containers across a cluster of machines",
+        "Provisioning cloud networks and accounts from code",
+        "Storing and versioning container images"
+      ],
+      "correct": 1,
+      "explanation": "Kubernetes schedules containers onto nodes, restarts failed ones, scales them and provides service discovery; building images is Docker's job and storing them is a registry's."
+    },
+    {
+      "id": 11,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Infrastructure as Code",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which tool is designed to provision cloud infrastructure from declarative configuration files?",
+      "options": [
+        "Terraform",
+        "Prometheus",
+        "Jenkins",
+        "Grafana"
+      ],
+      "correct": 0,
+      "explanation": "Terraform (and its open-source fork OpenTofu) describes infrastructure in declarative HCL and creates it through provider APIs; Jenkins runs CI/CD pipelines, while Prometheus and Grafana collect and chart metrics."
+    },
+    {
+      "id": 12,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Load Balancing",
+      "difficulty": "Easy",
+      "dimension": "System Design",
+      "question": "What is the primary purpose of a load balancer?",
+      "options": [
+        "Translate domain names into server IP addresses",
+        "Cache static files at edge locations near users",
+        "Distribute incoming traffic across multiple healthy servers",
+        "Automatically add or remove servers based on average CPU load"
+      ],
+      "correct": 2,
+      "explanation": "A load balancer spreads requests across a pool of targets and health-checks them so traffic only reaches healthy servers; DNS resolves names, a CDN caches at the edge and an auto scaling group adds servers."
+    },
+    {
+      "id": 13,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Monitoring",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Why is monitoring important in DevOps?",
+      "options": [
+        "It spots failures and slowdowns early so teams can act",
+        "It replaces automated testing in the CI pipeline",
+        "It guarantees that the application never goes down",
+        "It shuts down idle servers to reduce the cloud bill"
+      ],
+      "correct": 0,
+      "explanation": "Monitoring gives continuous visibility into health, errors and performance so teams can detect and fix problems quickly; it complements testing rather than replacing it, and it cannot prevent every outage."
+    },
+    {
+      "id": 14,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Least Privilege (IAM)",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A CI job only needs to upload build artifacts to the S3 bucket named build-artifacts. Which IAM permission follows the principle of least privilege?",
+      "options": [
+        "The AdministratorAccess managed policy",
+        "s3:* on every bucket in the account",
+        "s3:PutObject on arn:aws:s3:::build-artifacts/*",
+        "s3:PutObject and s3:DeleteObject on all buckets"
+      ],
+      "correct": 2,
+      "explanation": "Least privilege grants only the actions and resources a principal needs: s3:PutObject on objects in that one bucket. The other choices allow extra actions or every bucket, widening the damage if the CI credentials leak."
+    },
+    {
+      "id": 15,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker Networking",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In a Docker Compose project, the api container connects to PostgreSQL at localhost:5432 and fails, even though the db service is up and healthy. Which address should api use instead?",
+      "options": [
+        "0.0.0.0:5432, which reaches services in every container",
+        "localhost:5432, after adding EXPOSE 5432 to the api image",
+        "localhost:5432, after publishing port 5432 on the api service",
+        "db:5432, using the service name on the Compose network"
+      ],
+      "correct": 3,
+      "explanation": "Each container has its own network namespace, so localhost is the api container itself; Compose attaches services to a shared network where Docker's DNS resolves the service name db to its container. EXPOSE only documents a port, and publishing a port maps the host to a container, not one container to another."
+    },
+    {
+      "id": 16,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "DNS Record Types",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which DNS record type makes www.example.com an alias for another hostname, such as a load balancer's DNS name?",
+      "options": [
+        "A",
+        "MX",
+        "CNAME",
+        "TXT"
+      ],
+      "correct": 2,
+      "explanation": "A CNAME maps one name to another canonical name, which is then resolved to addresses; an A record maps a name directly to an IPv4 address, MX names a domain's mail servers and TXT holds free text such as verification tokens."
+    },
+    {
+      "id": 17,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Cloud Availability Zones",
+      "difficulty": "Easy",
+      "dimension": "System Design",
+      "question": "What is an Availability Zone in a cloud region?",
+      "options": [
+        "One or more isolated data centers within a region",
+        "A geographic area that contains several cloud regions",
+        "An edge location that caches content near users",
+        "A private virtual network for a customer's resources"
+      ],
+      "correct": 0,
+      "explanation": "A region contains several Availability Zones, each one or more data centers with independent power, cooling and networking, so spreading resources across AZs survives a single-site failure. Edge locations serve CDN caches and a VPC is a virtual network."
+    },
+    {
+      "id": 18,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "TCP vs UDP",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which transport protocol sets up a connection with a handshake and retransmits lost segments so that data arrives reliably and in order?",
+      "options": [
+        "UDP",
+        "ICMP",
+        "ARP",
+        "TCP"
+      ],
+      "correct": 3,
+      "explanation": "TCP opens a connection with a three-way handshake and uses sequence numbers, acknowledgements and retransmission for reliable, ordered delivery; UDP is connectionless best-effort delivery, ICMP carries control messages such as ping, and ARP maps IP addresses to MAC addresses."
+    },
+    {
+      "id": 19,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Git Branching",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Git command creates a new branch named feature and switches to it?",
+      "options": [
+        "git switch -c feature",
+        "git branch feature",
+        "git fetch origin feature",
+        "git branch -d feature"
+      ],
+      "correct": 0,
+      "explanation": "git switch -c (or the older git checkout -b) creates the branch and switches to it in one step; git branch feature only creates it and leaves you on the current branch, and -d deletes a branch."
+    },
+    {
+      "id": 20,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Dockerfile",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What is the main purpose of a Dockerfile?",
+      "options": [
+        "Define the instructions used to build a Docker image",
+        "Define how several containers run together as one app",
+        "Store built images so other hosts can pull them",
+        "Show the logs and resource usage of running containers"
+      ],
+      "correct": 0,
+      "explanation": "A Dockerfile lists build instructions (FROM, RUN, COPY, CMD...) that docker build turns into image layers; running several containers together is Docker Compose's job and storing images is a registry's."
+    },
+    {
+      "id": 21,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Kubernetes Service",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "Why is a Kubernetes Service commonly placed in front of a set of Pods?",
+      "options": [
+        "To restart Pods automatically whenever their containers crash",
+        "To give changing Pods a stable, load-balanced IP and DNS name",
+        "To keep the desired number of Pod replicas running at all times",
+        "To route external HTTP traffic to apps by hostname and URL path"
+      ],
+      "correct": 1,
+      "explanation": "Pods are replaced often and get new IPs, so a Service selects Pods by label and exposes one stable virtual IP and DNS name that load-balances across them. Restarts and replica counts are handled by the kubelet and Deployments, and host/path routing is Ingress."
+    },
+    {
+      "id": 22,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Terraform State",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "What is the main role of Terraform state?",
+      "options": [
+        "Cache the provider plugins that terraform init downloads",
+        "Store the variable values passed in on each plan and apply",
+        "Keep a full log of the output of every past plan and apply",
+        "Map each configured resource to the real object it manages"
+      ],
+      "correct": 3,
+      "explanation": "The state file records which real resource IDs and attributes belong to each resource address, so terraform plan can compute the difference between configuration and reality; provider plugins live in the .terraform directory."
+    },
+    {
+      "id": 23,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Horizontal Scaling",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "An API runs on a single cloud virtual machine that hits 90% CPU during peak hours. Which change is an example of horizontal scaling?",
+      "options": [
+        "Change the instance type from t3.medium to the larger t3.2xlarge",
+        "Add instances behind a load balancer using an auto scaling group",
+        "Attach a larger disk volume with higher provisioned IOPS",
+        "Restart the virtual machine every night to free up leaked memory"
+      ],
+      "correct": 1,
+      "explanation": "Horizontal scaling adds more instances that share the load, usually through an auto scaling group behind a load balancer; moving to a bigger instance type is vertical scaling and is capped by the largest machine."
+    },
+    {
+      "id": 24,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Rolling Updates",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A Kubernetes Deployment runs 4 replicas with strategy RollingUpdate, maxSurge: 1 and maxUnavailable: 0. How does it roll out a new image?",
+      "options": [
+        "It deletes all four old Pods first, then starts four new ones",
+        "It stops one old Pod first, then starts its replacement, and repeats",
+        "It adds one new Pod, waits until it is ready, removes one old Pod, and repeats",
+        "It starts four new Pods at once, then deletes all four old ones together"
+      ],
+      "correct": 2,
+      "explanation": "maxUnavailable: 0 forbids dropping below 4 available Pods and maxSurge: 1 allows only one extra Pod, so the controller adds one new Pod, waits for it to become ready, then scales the old ReplicaSet down by one. Stopping an old Pod first is what maxSurge: 0 with maxUnavailable: 1 does, and deleting everything first is the Recreate strategy."
+    },
+    {
+      "id": 25,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Observability",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which combination best represents the three common pillars of observability?",
+      "options": [
+        "Dashboards, alerts and on-call rotations",
+        "CPU, memory and disk usage",
+        "Metrics, logs and traces",
+        "Uptime, latency and throughput"
+      ],
+      "correct": 2,
+      "explanation": "Metrics (numeric time series), logs (timestamped event records) and traces (the path of a request across services) are the three pillars; CPU, uptime and latency are examples of metrics, not separate pillars."
+    },
+    {
+      "id": 26,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Kubernetes Probes",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A Kubernetes Pod is running, but its readiness probe starts failing. What should normally happen?",
+      "options": [
+        "It stops receiving Service traffic until the probe passes",
+        "The kubelet kills the container and restarts it immediately",
+        "The Pod is evicted and rescheduled onto a different node",
+        "The Deployment rolls back to its previous ReplicaSet"
+      ],
+      "correct": 0,
+      "explanation": "A failing readiness probe only marks the Pod not ready, so Services stop sending it traffic until it recovers; restarting the container is what a failing liveness probe triggers."
+    },
+    {
+      "id": 27,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Disaster Recovery (RPO/RTO)",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A PostgreSQL database must meet an RPO of 15 minutes and an RTO of 1 hour. Its only protection is a nightly snapshot, and a full restore including checks takes 30 minutes. Which statement is correct?",
+      "options": [
+        "The RTO can be met, but up to a day of data could be lost, so the RPO is not",
+        "The RPO is met, but the RTO is not, because a restore takes over 15 minutes",
+        "Both are met, because the restore finishes well within one hour",
+        "Neither is met, because snapshots are only taken once a day"
+      ],
+      "correct": 0,
+      "explanation": "RPO limits data loss: with one snapshot a night, a failure just before the next snapshot loses almost 24 hours of writes, so it needs continuous WAL archiving or replication. RTO limits time to restore, and 30 minutes fits within 1 hour; claiming the RTO is missed wrongly compares restore time with the 15-minute RPO."
+    },
+    {
+      "id": 28,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Immutable Infrastructure",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "New web servers configure themselves at boot with a long startup script that runs apt-get upgrade and pulls the latest app code. Each launch takes 12 minutes, and servers launched on different days behave differently. Which change applies immutable infrastructure to fix both problems?",
+      "options": [
+        "Run a configuration-management tool every 30 minutes to keep servers in sync",
+        "Move apt-get upgrade to a nightly cron job on every running server",
+        "Switch to a larger instance type so the startup script finishes sooner",
+        "Bake a versioned machine image in CI and replace servers with each new image"
+      ],
+      "correct": 3,
+      "explanation": "A pre-baked image (for example built with Packer) holds the patched OS and a fixed app version, so every server launched from it is identical and boots fast; any change means building a new image and replacing the servers. Periodic configuration runs or cron patching still modify servers in place and drift, and a bigger instance only shortens the boot."
+    },
+    {
+      "id": 29,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Secrets Management",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Which is the most appropriate way to provide database passwords and API keys to a production application?",
+      "options": [
+        "Commit them in a .env file to a private Git repository",
+        "Bake them into the Docker image with ENV instructions",
+        "Base64-encode them in the application's config file",
+        "Load them at runtime from a secrets manager with scoped access"
+      ],
+      "correct": 3,
+      "explanation": "A secrets manager (AWS Secrets Manager, Azure Key Vault, HashiCorp Vault) encrypts secrets, controls which service can read them and supports rotation and auditing. Repos and image layers expose secrets to anyone who can read them, and Base64 is an encoding, not encryption."
+    },
+    {
+      "id": 30,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Blue-Green Deployment",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "What is the core idea of a blue-green deployment?",
+      "options": [
+        "Route a small percentage of users to the new version and grow it gradually",
+        "Replace instances one batch at a time until all run the new version",
+        "Keep two identical environments and switch all traffic to the new one",
+        "Enable new features for selected users with runtime feature flags"
+      ],
+      "correct": 2,
+      "explanation": "Blue-green keeps the current (blue) and new (green) environments side by side and flips all traffic to green after verification, so rollback is just switching back; a gradually growing slice of users is a canary release."
+    },
+    {
+      "id": 31,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "Linux Permissions",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "What permissions does chmod 754 deploy.sh give the file?",
+      "options": [
+        "rwxr-x---",
+        "rwxr-xr--",
+        "rwxrw-r--",
+        "rw-r-xr--"
+      ],
+      "correct": 1,
+      "explanation": "Each octal digit is read (4) + write (2) + execute (1) for owner, group and others: 7 = rwx, 5 = r-x and 4 = r--, giving rwxr-xr--."
+    },
+    {
+      "id": 32,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "systemd Services",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "After a reboot, the nginx service on an Ubuntu server is not serving traffic. Which command shows whether the unit is active or failed, together with its most recent log lines?",
+      "options": [
+        "ps aux | grep nginx",
+        "systemctl enable nginx",
+        "systemctl status nginx",
+        "ss -tlnp | grep nginx"
+      ],
+      "correct": 2,
+      "explanation": "systemctl status shows the unit's state (active or failed), its main PID and the latest journal lines, and journalctl -u nginx gives the full log; ps and ss only show processes or listening sockets, and systemctl enable only configures the unit to start at boot."
+    },
+    {
+      "id": 33,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "Subnets & CIDR",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "How many IPv4 addresses does the subnet 10.0.1.0/24 contain in total?",
+      "options": [
+        "24",
+        "254",
+        "256",
+        "512"
+      ],
+      "correct": 2,
+      "explanation": "A /24 leaves 32 - 24 = 8 host bits, so it contains 2^8 = 256 addresses; traditionally 254 of them are usable for hosts (network and broadcast addresses excluded), and AWS reserves 5 per subnet."
+    },
+    {
+      "id": 34,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "HTTP Status Codes",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Users get 502 Bad Gateway from the Nginx reverse proxy in front of your app. What does this status usually indicate?",
+      "options": [
+        "The upstream app failed to give the proxy a valid response",
+        "The client sent a malformed request body or invalid headers",
+        "The requested path does not exist on the backend application",
+        "The client's credentials are missing or have already expired"
+      ],
+      "correct": 0,
+      "explanation": "502 means a gateway or proxy could not get a valid response from the backend, for example because the app crashed or is not listening on the expected port; 400 is a malformed request, 404 a missing path and 401 missing authentication."
+    },
+    {
+      "id": 35,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "DNS TTL & Caching",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "api.example.com had an A record with a TTL of 86400 seconds. In one change you pointed it at a new server's IP and lowered the TTL to 60. An hour later some users still reach the old server. Why?",
+      "options": [
+        "DNS updates reach resolvers only after the old server is shut down",
+        "Resolvers may keep the old record for the 86400 s TTL it was cached with",
+        "Browsers ignore TTLs below 3600 seconds, so they keep the old IP for an hour",
+        "A lowered TTL takes effect only once the registrar re-delegates the domain"
+      ],
+      "correct": 1,
+      "explanation": "A resolver that cached the record before the change keeps it for the TTL it was cached with, up to 24 hours here, so lowering the TTL in the same change does not help; lower it at least one old-TTL period before a migration. Browsers impose no hour-long minimum, and registrars play no part in record updates."
+    },
+    {
+      "id": 36,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "Network Troubleshooting",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "On a server, curl http://localhost:8080 works, but from your laptop curl http://<server-ip>:8080 cannot connect. ss -tlnp shows the app listening on 127.0.0.1:8080. What should you change?",
+      "options": [
+        "Run the app with sudo so it can bind to the port",
+        "Change to port 80 because 8080 is a reserved port",
+        "Make the app listen on 0.0.0.0 instead of 127.0.0.1",
+        "Add the server's public IP to its own /etc/hosts file"
+      ],
+      "correct": 2,
+      "explanation": "127.0.0.1 is the loopback interface, reachable only from the same machine; binding to 0.0.0.0 (all interfaces) lets remote clients connect, provided the firewall or security group allows the port. sudo is only needed to bind ports below 1024."
+    },
+    {
+      "id": 37,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "Linux Processes & Disk",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "df -h shows the root filesystem 100% full, but du finds far less data. Earlier you deleted a 20 GB log file that a running service still writes to. What explains the gap?",
+      "options": [
+        "du skips files that are owned by the root user",
+        "The filesystem must be checked with fsck before space is reported",
+        "Deleted files are moved to a hidden trash folder that df counts",
+        "The service still holds the deleted file open"
+      ],
+      "correct": 3,
+      "explanation": "Deleting a file only removes its directory entry; its blocks are released when the last open file descriptor closes, so du (which walks directories) no longer sees it while df still counts it. lsof +L1 finds such files, and restarting the service or truncating the file frees the space."
+    },
+    {
+      "id": 38,
+      "field": "Cloud / DevOps Engineer",
+      "step": 1,
+      "topic": "HTTPS & TLS",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "During a TLS handshake, how does the browser verify that it is really talking to api.example.com?",
+      "options": [
+        "It checks that the server's IP matches the domain's DNS A record",
+        "It validates the certificate's chain to a trusted CA and its hostname",
+        "It checks that the server answers on port 443 with a valid response",
+        "It decrypts a token sent by the server using the browser's private key"
+      ],
+      "correct": 1,
+      "explanation": "The client validates the certificate chain up to a root CA in its trust store, checks the validity dates and that the hostname is listed in the certificate, and the server proves it holds the matching private key. IP or port checks prove nothing because DNS and routing can be spoofed."
+    },
+    {
+      "id": 39,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Bash Exit Codes",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In Bash, what does echo $? print immediately after a command that completed successfully?",
+      "options": [
+        "1",
+        "true",
+        "0",
+        "The PID of the last command"
+      ],
+      "correct": 2,
+      "explanation": "$? holds the exit status of the last command: 0 means success and any non-zero value (1-255) means failure, which is what if, && and CI steps check. The PID of the last background job is in $!."
+    },
+    {
+      "id": 40,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Git Rebase",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "You are on a feature branch and run git rebase main. What happens?",
+      "options": [
+        "Git creates a merge commit that joins main into the feature branch",
+        "Git resets the feature branch so it exactly matches main",
+        "Git deletes the feature branch after copying its commits into main",
+        "Git replays the feature branch's commits on top of the latest main"
+      ],
+      "correct": 3,
+      "explanation": "Rebase rewrites the feature commits as new commits on top of main, giving a linear history; git merge main would add a merge commit instead. Because it rewrites history, avoid rebasing commits others have already pulled."
+    },
+    {
+      "id": 41,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "GitHub Actions",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A GitHub Actions workflow has two jobs, test and deploy. deploy must run only after test succeeds. What should you add to the deploy job?",
+      "options": [
+        "depends_on: test",
+        "needs: test",
+        "if: always()",
+        "runs-on: test"
+      ],
+      "correct": 1,
+      "explanation": "Jobs run in parallel by default; needs: test makes deploy wait for test and skips it if test fails. depends_on is Docker Compose syntax, runs-on selects the runner, and if: always() only decides whether a job runs after its dependencies fail."
+    },
+    {
+      "id": 42,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Continuous Delivery vs Deployment",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What distinguishes continuous delivery from continuous deployment?",
+      "options": [
+        "Delivery skips automated tests; deployment runs the full test suite",
+        "Delivery applies to web apps only; deployment applies to mobile apps",
+        "Delivery builds artifacts nightly; deployment builds on every commit",
+        "Delivery needs a manual release approval; deployment is fully automatic"
+      ],
+      "correct": 3,
+      "explanation": "Both keep every change tested and releasable; with continuous delivery a person approves the production release, while continuous deployment ships every change that passes the pipeline automatically."
+    },
+    {
+      "id": 43,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Python Automation",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A Python deploy script calls subprocess.run([\"kubectl\", \"apply\", \"-f\", \"app.yaml\"]) and must raise an exception if the kubectl command fails. Which argument should you add?",
+      "options": [
+        "check=True",
+        "shell=True",
+        "capture_output=True",
+        "text=True"
+      ],
+      "correct": 0,
+      "explanation": "check=True raises subprocess.CalledProcessError on a non-zero return code; without it, subprocess.run just returns a CompletedProcess and the script carries on. capture_output and text only control output handling."
+    },
+    {
+      "id": 44,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Bash Error Handling",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "missing.log does not exist. What does this script print to standard output?\n\n#!/bin/bash\nset -e\ngrep \"ERROR\" missing.log | wc -l\necho \"done\"",
+      "options": [
+        "Nothing; the script exits as soon as grep fails",
+        "0 and then done",
+        "Only done; wc is skipped because grep failed",
+        "Nothing; set -e stops the script before the pipeline runs"
+      ],
+      "correct": 1,
+      "explanation": "Without set -o pipefail a pipeline's exit status is that of its last command; wc -l succeeds and prints 0, so set -e does not fire and done is printed (grep's error goes to stderr). With pipefail the script would stop on grep's status 2."
+    },
+    {
+      "id": 45,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Pipeline Secrets",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "A GitHub Actions workflow deploys to AWS. Which approach avoids storing any long-lived AWS access keys in GitHub?",
+      "options": [
+        "Save the access key pair as an encrypted repository secret",
+        "Base64-encode the access keys inside the workflow YAML",
+        "Use OIDC to assume an IAM role with temporary credentials",
+        "Keep the keys in ~/.aws/credentials on a self-hosted runner"
+      ],
+      "correct": 2,
+      "explanation": "With OIDC, GitHub issues a signed token per job that AWS STS exchanges for temporary credentials of a role whose trust policy names your repository, so there are no static keys to leak. An encrypted secret still holds long-lived keys, and Base64 is not encryption."
+    },
+    {
+      "id": 46,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "Git Debugging",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A bug appeared somewhere in the last 200 commits on main, and you have a test that detects it. Which Git command finds the first bad commit in about 8 test runs?",
+      "options": [
+        "git blame",
+        "git bisect",
+        "git log --grep",
+        "git reflog"
+      ],
+      "correct": 1,
+      "explanation": "git bisect binary-searches between a known good and a known bad commit (log2 200 is about 8 steps), and git bisect run <script> automates it; git blame only shows who last changed each line and git reflog lists where HEAD has been."
+    },
+    {
+      "id": 47,
+      "field": "Cloud / DevOps Engineer",
+      "step": 2,
+      "topic": "CI Caching",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A CI pipeline spends 6 minutes reinstalling the same npm dependencies on every run. Which change speeds it up without risking stale dependencies?",
+      "options": [
+        "Cache dependencies with a key based on the lock file's hash",
+        "Commit the node_modules folder to the Git repository",
+        "Cache node_modules under one fixed key that never changes between runs",
+        "Skip the dependency install step on feature branches"
+      ],
+      "correct": 0,
+      "explanation": "A cache key derived from the lock-file hash (e.g. hashFiles('**/package-lock.json') in GitHub Actions) restores the cache while dependencies are unchanged and misses automatically when they change; a fixed key keeps serving outdated packages."
+    },
+    {
+      "id": 48,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker CLI",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which command lists the containers that are currently running on a Docker host?",
+      "options": [
+        "docker images",
+        "docker logs",
+        "docker ps",
+        "docker inspect"
+      ],
+      "correct": 2,
+      "explanation": "docker ps lists running containers (add -a to include stopped ones); docker images lists local images, docker logs shows a container's output and docker inspect prints its low-level details."
+    },
+    {
+      "id": 49,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Port Publishing",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A containerised web app listens on port 3000 inside the container. Which command makes it reachable at http://localhost:8080 on the host?",
+      "options": [
+        "docker run -p 8080:3000 myapp",
+        "docker run -p 3000:8080 myapp",
+        "docker run --expose 8080 myapp",
+        "docker run -p 8080 myapp"
+      ],
+      "correct": 0,
+      "explanation": "-p takes host_port:container_port, so -p 8080:3000 forwards host port 8080 to the app's port 3000. --expose only documents a port without publishing it, and -p 8080 publishes container port 8080 on a random host port."
+    },
+    {
+      "id": 50,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker Volumes",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A PostgreSQL container loses all its data whenever it is removed and recreated. What is the proper fix?",
+      "options": [
+        "Start the container with --restart always",
+        "Mount a named volume at the database's data directory",
+        "Run docker commit after every write to save the data in an image",
+        "Raise the container's memory limit"
+      ],
+      "correct": 1,
+      "explanation": "A container's writable layer is deleted with the container, while a named volume lives independently and is reattached to the new container. --restart only restarts the same container, and committing data into images is not a persistence or backup strategy."
+    },
+    {
+      "id": 51,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Layer Caching",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Every source-code change makes this image re-run npm ci from scratch:\n\nFROM node:24-slim\nWORKDIR /app\nCOPY . .\nRUN npm ci\nCMD [\"node\", \"server.js\"]\n\nWhich change fixes this?",
+      "options": [
+        "Build with docker build --no-cache every time",
+        "Move RUN npm ci above the FROM instruction",
+        "Copy package*.json, run npm ci, then COPY . .",
+        "Add node_modules to .dockerignore and change nothing else"
+      ],
+      "correct": 2,
+      "explanation": "Docker reuses a cached layer only while the instruction and the files it copies are unchanged. Copying just package.json and package-lock.json before npm ci means that layer is rebuilt only when dependencies change; COPY . . afterwards picks up code edits."
+    },
+    {
+      "id": 52,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "CMD vs ENTRYPOINT",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "An image's Dockerfile ends with:\n\nENTRYPOINT [\"python\", \"app.py\"]\nCMD [\"--port\", \"8000\"]\n\nWhich command runs inside the container for docker run myimg --port 9000?",
+      "options": [
+        "python app.py --port 8000 --port 9000",
+        "--port 9000 (the entrypoint is replaced)",
+        "python app.py --port 8000",
+        "python app.py --port 9000"
+      ],
+      "correct": 3,
+      "explanation": "Arguments after the image name replace CMD, and CMD (or its replacement) is appended to an exec-form ENTRYPOINT, so the container runs python app.py --port 9000. Replacing the entrypoint itself requires --entrypoint."
+    },
+    {
+      "id": 53,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Docker Compose",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "In Docker Compose, the api service has depends_on: [db], yet it often crashes at startup with 'connection refused' because PostgreSQL is still initialising. What is the most reliable fix within Compose?",
+      "options": [
+        "Give db a healthcheck and use condition: service_healthy",
+        "List the db service above api so Compose starts it first",
+        "Increase the memory and CPU limits of the api container",
+        "Pin the db image to an exact version tag instead of latest"
+      ],
+      "correct": 0,
+      "explanation": "Plain depends_on only waits for the db container to start, not for PostgreSQL to accept connections; a healthcheck such as pg_isready plus condition: service_healthy makes Compose start api only once db is healthy. The order of services in the file does not control startup."
+    },
+    {
+      "id": 54,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Image Promotion",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Your pipeline builds the Docker image twice from the same commit: once for staging and again for production. Why is it better to build once and promote the same image by its digest?",
+      "options": [
+        "Production can pick up newer base-image patches automatically",
+        "Separate builds would need two different container registries",
+        "Production runs exactly the image that passed staging",
+        "Image digests change every time an image is pulled"
+      ],
+      "correct": 2,
+      "explanation": "A rebuild can pull a different base image or dependency versions, so the production image would be untested; promoting one immutable image by its sha256 digest guarantees the tested bits ship. A digest identifies content and does not change when pulled, unlike a mutable tag such as latest."
+    },
+    {
+      "id": 55,
+      "field": "Cloud / DevOps Engineer",
+      "step": 3,
+      "topic": "Image Security",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "A Go service's image is 1.1 GB because it contains the compiler and build tools, and it runs as root. Which change best reduces both its size and its attack surface?",
+      "options": [
+        "Combine all RUN instructions into a single layer on the same base",
+        "Use a multi-stage build into a minimal image with a non-root USER",
+        "Run docker image prune on the build server after every build",
+        "Compress the image with gzip before pushing it to the registry"
+      ],
+      "correct": 1,
+      "explanation": "A multi-stage build compiles in a full builder image and copies only the binary into a slim or distroless runtime image, dropping compilers and shells an attacker could use, and USER avoids running as root. Merging RUN lines saves little, and registries already compress layers."
+    },
+    {
+      "id": 56,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "VPC Networking",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Instances in a private subnet must download OS updates from the internet but must not be reachable from it. What should you add?",
+      "options": [
+        "A NAT gateway in a public subnet as the private subnet's default route",
+        "A route from the private subnet directly to the internet gateway",
+        "Public IP addresses assigned to each instance in the private subnet",
+        "A VPC peering connection to a VPC that has internet access"
+      ],
+      "correct": 0,
+      "explanation": "A NAT gateway in a public subnet translates outbound connections from private instances and lets the replies back, but never accepts connections started from the internet. Routing to the internet gateway with public IPs would make the instances directly reachable, and peering does not forward internet traffic."
+    },
+    {
+      "id": 57,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "Terraform Remote State",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Two engineers keep the Terraform state file in Git and sometimes run terraform apply at the same time, corrupting the state. What is the recommended fix?",
+      "options": [
+        "Commit terraform.tfstate immediately after every apply",
+        "Move the state to a remote backend that supports locking",
+        "Run terraform fmt and terraform validate before each apply",
+        "Give each engineer a separate .tfvars file for their changes"
+      ],
+      "correct": 1,
+      "explanation": "A remote backend (S3 with use_lockfile, Azure Blob, GCS or HCP Terraform) stores one shared state and locks it during operations, so a second apply waits or fails instead of overwriting. Git cannot lock state, and state files can contain secrets that should not be committed."
+    },
+    {
+      "id": 58,
+      "field": "Cloud / DevOps Engineer",
+      "step": 4,
+      "topic": "High Availability",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A web application must keep serving traffic if an entire Availability Zone fails. Which design meets this requirement?",
+      "options": [
+        "One large instance with an Elastic IP and daily disk snapshots",
+        "Two instances in the same AZ behind an Application Load Balancer",
+        "Instances in two or more AZs behind a load balancer, plus Multi-AZ RDS",
+        "A single instance in a public subnet with automatic instance recovery"
+      ],
+      "correct": 2,
+      "explanation": "Spreading instances across AZs behind a load balancer, which health-checks targets and stops routing to the failed zone, plus a Multi-AZ database with automatic failover removes every single-zone dependency; the other designs keep all compute in one AZ."
+    },
+    {
+      "id": 59,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Pods",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the smallest deployable unit that Kubernetes creates and manages?",
+      "options": [
+        "Container",
+        "Node",
+        "Deployment",
+        "Pod"
+      ],
+      "correct": 3,
+      "explanation": "A Pod wraps one or more tightly coupled containers that share a network namespace (one IP) and volumes; Kubernetes schedules Pods rather than individual containers, and Deployments manage sets of Pods."
+    },
+    {
+      "id": 60,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Incident Postmortems",
+      "difficulty": "Easy",
+      "dimension": "Technical Communication",
+      "question": "After a production incident, what is the main goal of a blameless postmortem?",
+      "options": [
+        "To identify the engineer at fault so they can be retrained",
+        "To understand root causes and agree on preventive actions",
+        "To prove to customers that the SLA was technically met",
+        "To decide whether the latest release should be rolled back"
+      ],
+      "correct": 1,
+      "explanation": "A blameless postmortem documents the timeline, impact and contributing causes and assigns concrete action items, focusing on systems and processes rather than individuals so people report problems honestly. Rollback decisions belong to the incident itself."
+    },
+    {
+      "id": 61,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Resource Limits",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A container keeps restarting, and kubectl describe pod shows 'Last State: Terminated, Reason: OOMKilled, Exit Code: 137'. What is the right fix?",
+      "options": [
+        "Increase the Pod's CPU request and limit",
+        "Add a readiness probe to the container",
+        "Raise the memory limit or fix the leak",
+        "Scale the Deployment to more replicas"
+      ],
+      "correct": 2,
+      "explanation": "OOMKilled with exit code 137 (SIGKILL) means the container exceeded its memory limit and the kernel killed it; set a realistic memory request and limit or fix the leak. More replicas or CPU will not stop each container exceeding its memory, and readiness probes do not prevent kills."
+    },
+    {
+      "id": 62,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "SLOs & Error Budgets",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A service has a 99.9% availability SLO measured over 30 days. About how much total downtime does its error budget allow in that window?",
+      "options": [
+        "About 7.2 hours",
+        "About 43 minutes",
+        "About 4.3 minutes",
+        "About 43 seconds"
+      ],
+      "correct": 1,
+      "explanation": "30 days is 43,200 minutes, and 0.1% of that is about 43 minutes of allowed unavailability; 7.2 hours would correspond to a 99% SLO. Once the budget is spent, teams usually slow risky releases."
+    },
+    {
+      "id": 63,
+      "field": "Cloud / DevOps Engineer",
+      "step": 5,
+      "topic": "Alerting",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Which alerting rule is most useful for paging an on-call engineer at night?",
+      "options": [
+        "Page whenever any node's CPU usage goes above 70% for a minute",
+        "Page on every ERROR line written to the application logs",
+        "Page each time any Pod in the cluster restarts once",
+        "Page when the error rate burns the SLO error budget too fast"
+      ],
+      "correct": 3,
+      "explanation": "Paging alerts should be symptom-based and actionable: an error-budget burn-rate alert fires only when users are affected enough to threaten the SLO. CPU spikes, single log lines and single restarts are noisy causes better suited to dashboards or tickets."
+    }
+  ]
+}

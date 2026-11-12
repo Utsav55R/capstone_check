@@ -1,0 +1,102 @@
+{
+  "field": "Cloud / DevOps Engineer",
+  "verified_on": "2026-10-07",
+  "projects": [
+    {
+      "id": "cd-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "Linux Server Health Monitor & Alerting CLI with CI",
+      "summary": "Build a command-line tool in Bash and Python that checks the health of a Linux server (CPU, memory, disk, key services, open ports, DNS and TLS certificate expiry), writes structured logs and sends an alert when something crosses a threshold. It runs on a schedule with a systemd timer, and every push is linted and tested by a GitHub Actions pipeline.",
+      "skills": [
+        "Linux",
+        "Bash",
+        "Python",
+        "systemd",
+        "Networking (DNS, TLS, ports)",
+        "Git",
+        "GitHub Actions"
+      ],
+      "requirements": [
+        "Collect CPU load, memory and swap use, disk use per mount and the top 5 processes by memory from /proc or standard tools (ps, df, free), and print a human-readable table or JSON with --json.",
+        "Check that a configurable list of systemd services is active, that given TCP ports are listening (ss), that given hostnames resolve (dig or getent), and how many days are left on each HTTPS site's TLS certificate (openssl).",
+        "Read thresholds (warning/critical per metric) from a YAML or INI config file, exit with 0/1/2 for OK/WARNING/CRITICAL, and send a webhook alert (Slack, Discord or email) only when a check changes state.",
+        "Run every 5 minutes through a systemd service + timer unit (both included in the repo, with an install.sh), log to journald or a rotated log file, and run as a dedicated non-root user with the minimum permissions it needs.",
+        "Add a GitHub Actions workflow that runs ShellCheck on all .sh files, a Python linter (ruff or flake8) and unit tests (pytest or bats) on every push and pull request, and attaches a versioned .tar.gz artifact when you push a Git tag.",
+        "Use a feature-branch + pull-request workflow with clear commit messages, and write a README with install steps, a sample config, example output and a troubleshooting section."
+      ],
+      "reference_repo": {
+        "full_name": "nicolargo/glances",
+        "url": "https://github.com/nicolargo/glances",
+        "description": "Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, macOS and Windows operating systems.",
+        "stars": 33700,
+        "last_commit": "2026-10-03",
+        "why_reference": "Study how glances/plugins splits monitoring into one small module per resource (cpu, mem, fs, network, sensors, processes), how conf/glances.conf defines careful/warning/critical thresholds that the code reads instead of hard-coding them, how glances/exports pushes the same stats to other systems, and how tests/ and .github/workflows run the checks in CI. It is a large Python application, so borrow the structure and threshold ideas for your own much smaller Bash/Python tool. Use it as a reference, do not copy it."
+      }
+    },
+    {
+      "id": "cd-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "Highly Available Containerized Web App on AWS with Terraform",
+      "summary": "Provision a production-style AWS environment entirely with Terraform: a multi-AZ VPC, an Application Load Balancer and an Auto Scaling Group that runs your Dockerized API from a container registry. State is stored remotely with locking, and a GitHub Actions pipeline checks and plans every change before it is applied.",
+      "skills": [
+        "Terraform",
+        "AWS (VPC, EC2, ALB, Auto Scaling, IAM, S3)",
+        "Docker",
+        "Amazon ECR",
+        "GitHub Actions",
+        "Cloud security"
+      ],
+      "requirements": [
+        "Write your own reusable Terraform modules (at least network and compute) with typed, described variables and outputs. The network module creates a VPC across 2 availability zones with public and private subnets, route tables, an internet gateway and a NAT gateway; nothing is hard-coded, and dev/prod differ only by .tfvars.",
+        "Store Terraform state in a versioned, encrypted S3 bucket with state locking (S3 native lockfile or a DynamoDB table), and document how the backend is bootstrapped.",
+        "Containerize a small API with a multi-stage Dockerfile (non-root user, /health endpoint), push it to Amazon ECR, and run it on EC2 instances in private subnets through a launch template + user data in an Auto Scaling Group (minimum 2 instances across 2 AZs) behind an ALB that health-checks /health, with a target-tracking scaling policy on CPU.",
+        "Lock down access: only the ALB security group is open to the internet, instances accept traffic only from the ALB, there is no SSH (use SSM Session Manager), and the instance IAM role allows only ECR pull, CloudWatch Logs and reading its own SSM parameters or secrets.",
+        "Add a GitHub Actions pipeline that runs terraform fmt -check, validate, tflint and a security scan (Checkov or Trivy) and posts terraform plan on every pull request, and applies main only after manual approval, authenticating to AWS with OIDC instead of long-lived access keys.",
+        "Prove it works: the README has an architecture diagram and the ALB URL, shows an instance being terminated and replaced by the ASG while the site stays up, and includes a cost estimate, a budget alert and terraform destroy steps."
+      ],
+      "reference_repo": {
+        "full_name": "terraform-aws-modules/terraform-aws-vpc",
+        "url": "https://github.com/terraform-aws-modules/terraform-aws-vpc",
+        "description": "Terraform module to create AWS VPC resources.",
+        "stars": 3300,
+        "last_commit": "2026-09-18",
+        "why_reference": "Read main.tf to see how public, private and database subnets, route tables and NAT gateways are created per availability zone with count/for_each, and how the module is laid out in variables.tf, outputs.tf and versions.tf. Then browse examples/ (simple, complete) to see how a module is called, and .pre-commit-config.yaml (terraform_fmt, terraform_validate, terraform_tflint, terraform_docs) for the checks your CI should run. Reference only: write your own smaller network module instead of calling or copying this one."
+      }
+    },
+    {
+      "id": "cd-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Kubernetes Microservices Platform with GitOps, Observability & SLO Alerting",
+      "summary": "Run a small multi-service application on Kubernetes the way a platform team would: packaged with Helm, delivered by a CI pipeline plus GitOps, autoscaled, and monitored with Prometheus, Grafana and centralized logs. Define SLOs with burn-rate alerts, then run an incident drill and publish a blameless postmortem.",
+      "skills": [
+        "Kubernetes",
+        "Helm",
+        "Argo CD / Flux (GitOps)",
+        "Prometheus",
+        "Grafana",
+        "Loki / centralized logging",
+        "Terraform",
+        "SRE (SLOs, incident response)"
+      ],
+      "requirements": [
+        "Deploy an app of at least 3 services (for example frontend, API and worker, plus PostgreSQL or Redis) to a cluster created with code (EKS/GKE/AKS via Terraform, or k3s on a cloud VM), packaged as a Helm chart with Deployments, Services, an Ingress with TLS (cert-manager), ConfigMaps and Secrets that are never stored as plain text in Git.",
+        "Give every workload readiness and liveness probes, CPU/memory requests and limits and a non-root security context; add an HPA to the API and show it scaling out under a load test (k6, Locust or hey) with before/after pod counts in the README.",
+        "Build a pipeline in GitHub Actions that tests the code, builds images, scans them with Trivy (fail on critical findings), pushes them tagged with the Git SHA and updates the image tag in Git; Argo CD or Flux syncs the cluster. Use a rolling update with zero unavailable pods (or a canary) and document a rollback.",
+        "Install kube-prometheus-stack with Helm, expose /metrics from each service (request count, errors, latency histogram) scraped through ServiceMonitors, commit a Grafana dashboard JSON with per-service rate/errors/duration panels, and ship container logs to Loki (or EFK) so they can be searched by namespace and pod.",
+        "Define at least 2 SLOs (for example 99.5% of requests succeed over 30 days, p95 latency under 300 ms) and add PrometheusRule alerts, including a multi-window error-budget burn-rate alert, routed through Alertmanager to Slack, Discord or email.",
+        "Run an incident drill (bad image tag, deleted database pod or CPU hog), capture the alert and the recovery, and write a blameless postmortem (timeline, impact on the error budget, root cause, action items) plus a runbook in docs/."
+      ],
+      "reference_repo": {
+        "full_name": "GoogleCloudPlatform/microservices-demo",
+        "url": "https://github.com/GoogleCloudPlatform/microservices-demo",
+        "description": "Sample cloud-first application with 10 microservices showcasing Kubernetes, Istio, and gRPC.",
+        "stars": 21000,
+        "last_commit": "2026-09-18",
+        "why_reference": "Study kubernetes-manifests/ for one Deployment + Service per microservice with readiness and liveness probes, resource requests/limits and a hardened securityContext (runAsNonRoot, readOnlyRootFilesystem, dropped capabilities); helm-chart/ and kustomize/components (network-policies, service-mesh-istio, google-cloud-operations) for switching features on per environment; terraform/ for creating the cluster; and skaffold.yaml, .github/workflows and the Locust load generator (src/loadgenerator/locustfile.py) for build, deploy and traffic. It uses Google Cloud Operations rather than Prometheus, so design your own monitoring and alerting. Use it as a reference, do not copy it."
+      }
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "field": "Cloud / DevOps Engineer",
+  "core_skills": [
+    {
+      "id": "linux",
+      "name": "Linux & Shell",
+      "step": 1,
+      "keywords": [
+        "linux",
+        "ubuntu",
+        "debian",
+        "centos",
+        "rhel",
+        "red hat",
+        "redhat",
+        "fedora",
+        "unix",
+        "shell scripting",
+        "shell script",
+        "shell scripts",
+        "zsh",
+        "systemd",
+        "rhcsa",
+        "lfcs",
+        "bash scripting",
+        "bash script",
+        "bash scripts",
+        "bash shell"
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Networking Fundamentals",
+      "step": 1,
+      "keywords": [
+        "computer networks",
+        "computer network",
+        "computer networking",
+        "networking fundamentals",
+        "network protocols",
+        "tcp/ip",
+        "tcp",
+        "udp",
+        "dns",
+        "dhcp",
+        "subnetting",
+        "cidr",
+        "osi model",
+        "http/https",
+        "ssl/tls",
+        "ssh",
+        "nginx",
+        "reverse proxy",
+        "iptables",
+        "vpn",
+        "wireshark",
+        "ccna",
+        "packet tracer",
+        "tls/ssl",
+        "tls certificates",
+        "ssl certificates"
+      ]
+    },
+    {
+      "id": "git_ci_cd",
+      "name": "Git & CI/CD",
+      "step": 2,
+      "keywords": [
+        "git",
+        "version control",
+        "ci/cd",
+        "ci cd",
+        "cicd",
+        "continuous integration",
+        "continuous delivery",
+        "continuous deployment",
+        "github actions",
+        "gitlab ci",
+        "gitlab ci/cd",
+        "jenkins",
+        "circleci",
+        "travis ci",
+        "azure pipelines",
+        "argo cd",
+        "argocd",
+        "gitops",
+        "tekton",
+        "bitbucket pipelines",
+        "azure devops",
+        "aws codepipeline",
+        "teamcity",
+        "spinnaker"
+      ]
+    },
+    {
+      "id": "docker",
+      "name": "Docker & Containers",
+      "step": 3,
+      "keywords": [
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dockerfile",
+        "dockerfiles",
+        "dockerize",
+        "dockerise",
+        "dockerized",
+        "dockerised",
+        "containerization",
+        "containerisation",
+        "containerized",
+        "containerised",
+        "podman",
+        "containerd"
+      ]
+    },
+    {
+      "id": "cloud_platforms",
+      "name": "Cloud Platforms (AWS / Azure / GCP)",
+      "step": 4,
+      "keywords": [
+        "aws",
+        "amazon web services",
+        "ec2",
+        "amazon s3",
+        "s3 bucket",
+        "s3 buckets",
+        "amazon rds",
+        "cloudwatch",
+        "route 53",
+        "elastic beanstalk",
+        "vpc",
+        "azure",
+        "microsoft azure",
+        "gcp",
+        "google cloud",
+        "google cloud platform",
+        "compute engine",
+        "cloud run",
+        "oracle cloud",
+        "digitalocean",
+        "linode",
+        "openstack",
+        "az-900",
+        "az-104",
+        "ibm cloud",
+        "alibaba cloud"
+      ]
+    },
+    {
+      "id": "terraform_iac",
+      "name": "Infrastructure as Code (Terraform)",
+      "step": 4,
+      "keywords": [
+        "terraform",
+        "opentofu",
+        "terragrunt",
+        "pulumi",
+        "cloudformation",
+        "aws cdk",
+        "azure bicep",
+        "arm templates",
+        "ansible",
+        "puppet",
+        "saltstack",
+        "crossplane",
+        "infrastructure as code",
+        "infrastructure-as-code",
+        "hashicorp packer"
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes & Observability",
+      "step": 5,
+      "keywords": [
+        "kubernetes",
+        "k8s",
+        "kubectl",
+        "helm chart",
+        "helm charts",
+        "helm3",
+        "minikube",
+        "k3s",
+        "openshift",
+        "amazon eks",
+        "eks",
+        "aks",
+        "gke",
+        "istio",
+        "prometheus",
+        "grafana",
+        "opentelemetry",
+        "elk stack",
+        "kibana",
+        "logstash",
+        "datadog",
+        "new relic",
+        "jaeger",
+        "site reliability engineering",
+        "kustomize",
+        "argo rollouts",
+        "azure kubernetes service",
+        "google kubernetes engine",
+        "elastic kubernetes service",
+        "fluentd",
+        "fluent bit",
+        "splunk",
+        "nagios",
+        "zabbix"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Linux & Networking Fundamentals",
+      "subtitle": "Command the server and the network",
+      "description": "Get comfortable on the Linux command line, manage permissions, processes and systemd services, and learn how TCP/IP, DNS, HTTP and TLS move traffic between machines. Every server, container and pipeline you will run sits on this foundation, and interviewers probe it first.",
+      "topics": [
+        {
+          "id": "cd1-shell-filesystem",
+          "name": "Linux shell and filesystem: navigation, find, grep, pipes and redirection"
+        },
+        {
+          "id": "cd1-permissions-users",
+          "name": "Users, groups and file permissions (chmod, chown, sudo, octal notation)"
+        },
+        {
+          "id": "cd1-processes-systemd",
+          "name": "Processes, signals and services (ps, top, kill, systemctl, journalctl)"
+        },
+        {
+          "id": "cd1-tcp-ip",
+          "name": "TCP/IP model, IP addressing, subnets and CIDR, ports, TCP vs UDP"
+        },
+        {
+          "id": "cd1-dns",
+          "name": "DNS resolution, record types (A, AAAA, CNAME, MX, TXT) and TTL, using dig"
+        },
+        {
+          "id": "cd1-http-tls",
+          "name": "HTTP methods and status codes, HTTPS and TLS certificates"
+        },
+        {
+          "id": "cd1-ssh-troubleshooting",
+          "name": "SSH keys and network troubleshooting (ping, curl, ss, traceroute)"
+        }
+      ],
+      "coding_topics": [
+        "Strings"
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Git, Scripting & CI/CD",
+      "subtitle": "Automate everything from commit to build",
+      "description": "Collaborate with Git, automate repetitive work with Bash and Python, and build CI/CD pipelines in GitHub Actions or Jenkins that test, package and ship every change. Automation is the heart of a DevOps role.",
+      "topics": [
+        {
+          "id": "cd2-git-basics",
+          "name": "Git fundamentals: commit, branch, merge, rebase, revert and resolving conflicts"
+        },
+        {
+          "id": "cd2-branching-prs",
+          "name": "Branching strategies and the pull-request workflow (feature branches, trunk-based, code review)"
+        },
+        {
+          "id": "cd2-bash-scripting",
+          "name": "Bash scripting: variables, conditionals, loops, exit codes, set -euo pipefail and cron"
+        },
+        {
+          "id": "cd2-python-automation",
+          "name": "Python for automation: files, subprocess, REST APIs, JSON and YAML"
+        },
+        {
+          "id": "cd2-ci-concepts",
+          "name": "CI/CD concepts: continuous integration, delivery vs deployment, pipeline stages"
+        },
+        {
+          "id": "cd2-github-actions-jenkins",
+          "name": "Pipelines with GitHub Actions or Jenkins: triggers, jobs, runners and dependencies"
+        },
+        {
+          "id": "cd2-artifacts-secrets",
+          "name": "Test and artifact stages, dependency caching and handling pipeline secrets"
+        }
+      ],
+      "coding_topics": [
+        "Hashing",
+        "Arrays",
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Containers with Docker",
+      "subtitle": "Package apps to run the same everywhere",
+      "description": "Write efficient Dockerfiles, understand image layers and build caching, persist data with volumes, connect services with Docker Compose and publish small, secure images to a registry. Containers are the unit of deployment on every modern cloud platform.",
+      "topics": [
+        {
+          "id": "cd3-containers-vs-vms",
+          "name": "Containers vs virtual machines, images vs containers, and the container lifecycle"
+        },
+        {
+          "id": "cd3-dockerfile",
+          "name": "Writing Dockerfiles: FROM, RUN, COPY, CMD vs ENTRYPOINT and .dockerignore"
+        },
+        {
+          "id": "cd3-layers-caching",
+          "name": "Image layers, build cache ordering and multi-stage builds"
+        },
+        {
+          "id": "cd3-volumes-networks",
+          "name": "Volumes, bind mounts, port publishing and Docker networks"
+        },
+        {
+          "id": "cd3-compose",
+          "name": "Multi-container apps with Docker Compose (services, depends_on, healthchecks)"
+        },
+        {
+          "id": "cd3-registries-security",
+          "name": "Registries, tags vs digests, and image security (minimal bases, non-root users, scanning)"
+        }
+      ],
+      "coding_topics": []
+    },
+    {
+      "step": 4,
+      "title": "Cloud & Infrastructure as Code",
+      "subtitle": "Provision scalable, secure infrastructure",
+      "description": "Learn the core services of AWS (with their Azure and GCP equivalents): compute, storage, IAM and VPC networking, and design for high availability with load balancers and autoscaling. Then define it all in Terraform so environments are repeatable, reviewable and easy to rebuild.",
+      "topics": [
+        {
+          "id": "cd4-cloud-models-regions",
+          "name": "Cloud service models (IaaS, PaaS, SaaS), regions and availability zones"
+        },
+        {
+          "id": "cd4-compute-storage",
+          "name": "Core services: virtual machines (EC2), object storage (S3), block storage and managed databases"
+        },
+        {
+          "id": "cd4-iam-secrets",
+          "name": "IAM users, roles and policies, least privilege and secrets managers"
+        },
+        {
+          "id": "cd4-vpc-networking",
+          "name": "VPC networking: public and private subnets, route tables, internet and NAT gateways, security groups"
+        },
+        {
+          "id": "cd4-ha-scaling",
+          "name": "High availability: load balancers, auto scaling groups and multi-AZ design"
+        },
+        {
+          "id": "cd4-terraform-basics",
+          "name": "Terraform basics: providers, resources, variables, plan and apply"
+        },
+        {
+          "id": "cd4-terraform-state-modules",
+          "name": "Terraform state, remote backends with locking, modules and immutable infrastructure"
+        }
+      ],
+      "coding_topics": [
+        "Graphs"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Kubernetes, Observability & Reliability",
+      "subtitle": "Run, monitor and recover production systems",
+      "description": "Deploy and scale containers on Kubernetes with Deployments, Services, Ingress, probes and Helm, then keep them healthy with Prometheus and Grafana, centralised logging, SLO-based alerting, safe rollout strategies and calm incident response.",
+      "topics": [
+        {
+          "id": "cd5-k8s-architecture",
+          "name": "Kubernetes architecture: control plane, nodes, kubelet and kubectl basics"
+        },
+        {
+          "id": "cd5-workloads",
+          "name": "Pods, ReplicaSets, Deployments, ConfigMaps and Secrets"
+        },
+        {
+          "id": "cd5-services-ingress",
+          "name": "Services (ClusterIP, NodePort, LoadBalancer) and Ingress"
+        },
+        {
+          "id": "cd5-probes-resources-helm",
+          "name": "Liveness and readiness probes, resource requests and limits, HPA and Helm charts"
+        },
+        {
+          "id": "cd5-monitoring-logging",
+          "name": "Metrics, logs and traces: Prometheus, Grafana dashboards, centralised logging and alerting"
+        },
+        {
+          "id": "cd5-deploy-strategies",
+          "name": "Deployment strategies: rolling, blue-green, canary and rollbacks"
+        },
+        {
+          "id": "cd5-slo-incidents",
+          "name": "SLIs, SLOs and error budgets, incident response, postmortems and disaster recovery (RPO/RTO)"
+        }
+      ],
+      "coding_topics": [
+        "Sliding Window"
+      ]
+    }
+  ]
+}

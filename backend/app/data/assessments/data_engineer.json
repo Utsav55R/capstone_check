@@ -1,0 +1,1096 @@
+{
+  "track": "Data Engineer",
+  "title": "Data Engineer",
+  "source_document": "data_engineer.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "ETL",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What does ETL stand for in data engineering?",
+      "options": [
+        "Extract, Transfer, Load",
+        "Export, Transform, Log",
+        "Extract, Transform, Load",
+        "Extract, Test, Launch"
+      ],
+      "correct": 2,
+      "explanation": "ETL means Extract data from sources, Transform it (clean, join, aggregate) and Load it into a target such as a warehouse; 'Transfer' is a common mix-up, but the T is the transformation step."
+    },
+    {
+      "id": 2,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Data Warehousing",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is a data warehouse primarily designed for?",
+      "options": [
+        "Archiving database backups that are rarely read, for disaster recovery",
+        "Analytical querying and reporting across integrated historical data",
+        "Streaming events from producers to consumers in real time",
+        "Caching session data so that web pages load faster"
+      ],
+      "correct": 1,
+      "explanation": "A warehouse integrates cleaned, historical data from many sources and is optimized for analytical (OLAP) queries and reporting; backups are kept for recovery rather than for querying, and real-time event delivery is the job of a broker such as Kafka."
+    },
+    {
+      "id": 3,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Primary Keys",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main purpose of a primary key in a relational table?",
+      "options": [
+        "Reference a matching row in another table",
+        "Keep rows physically stored in insertion order",
+        "Allow NULL values to mark incomplete rows",
+        "Uniquely identify each row in the table"
+      ],
+      "correct": 3,
+      "explanation": "A primary key is a unique, non-NULL column (or set of columns) that identifies each row; referencing a row in another table is what a foreign key does."
+    },
+    {
+      "id": 4,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Batch vs Streaming",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What best describes stream processing?",
+      "options": [
+        "Processing a full day's accumulated files in one scheduled nightly run",
+        "Processing data continuously, in near real time, as events arrive",
+        "Copying a database to a standby server for failover",
+        "Running ad-hoc SQL queries over historical warehouse data"
+      ],
+      "correct": 1,
+      "explanation": "Stream processing handles each event (or small micro-batch) shortly after it arrives, e.g. Kafka with Flink or Spark Structured Streaming; collecting a day's data and processing it on a schedule is batch processing."
+    },
+    {
+      "id": 5,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Data Formats",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "JSON is commonly described as what type of data format?",
+      "options": [
+        "Semi-structured",
+        "Structured, with a fixed tabular schema",
+        "Unstructured",
+        "Columnar binary"
+      ],
+      "correct": 0,
+      "explanation": "JSON records carry their own keys and may nest objects or arrays and vary in fields, so JSON is semi-structured rather than a fixed-schema table; 'columnar binary' describes formats such as Parquet."
+    },
+    {
+      "id": 6,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Star Schema",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "In a star schema, what typically distinguishes a fact table from dimension tables?",
+      "options": [
+        "Fact tables hold descriptive text attributes, while dimensions hold numeric measures",
+        "Fact tables are normalized to 3NF, while dimension tables are never joined",
+        "The fact table records measurable events with foreign keys to descriptive dimensions",
+        "Dimension tables record each business event, while the fact table stores lookup codes"
+      ],
+      "correct": 2,
+      "explanation": "A fact table stores measurements of business events (e.g. quantity, amount) at a defined grain plus foreign keys to dimensions such as date, customer and product, which hold the descriptive attributes; the first option has the roles reversed."
+    },
+    {
+      "id": 7,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Partitioning",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "How can partitioning a large table by date improve many analytical queries?",
+      "options": [
+        "Queries filtered on date scan only the matching partitions (partition pruning)",
+        "It compresses every column so that no index is ever needed",
+        "It sorts all rows so that joins on any column avoid shuffles",
+        "It keeps recent partitions cached in memory so that every query runs in constant time"
+      ],
+      "correct": 0,
+      "explanation": "With date partitions, a filter such as WHERE event_date = '2026-09-30' lets the engine skip every other partition and read far less data; partitioning does not make queries constant-time or remove the need for good filters."
+    },
+    {
+      "id": 8,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Columnar File Formats",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Why is a columnar format such as Parquet often efficient for analytics?",
+      "options": [
+        "Each row is stored contiguously, so whole records are fetched in one read",
+        "Files are plain text, so any tool can parse them without a schema",
+        "Every write updates rows in place, avoiding rewrites of whole files",
+        "Queries read only needed columns, and similar values compress well"
+      ],
+      "correct": 3,
+      "explanation": "Parquet stores each column's values together, so a query touching 3 of 50 columns reads only those columns, and same-typed values compress well; storing whole rows contiguously is the row-oriented layout of CSV files and OLTP tables."
+    },
+    {
+      "id": 9,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Kafka Offset Commits",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A Kafka consumer calls commitSync() as soon as poll() returns a batch, and only then processes the records. It crashes halfway through a batch, and the group restarts it. What happens to the records it had not processed yet?",
+      "options": [
+        "They are re-delivered, because Kafka tracks an acknowledgement for each record",
+        "They are read again from the start of the topic when the consumer restarts",
+        "They are deleted from the partition, because their offsets were committed",
+        "They are skipped, because the group resumes after the committed offset"
+      ],
+      "correct": 3,
+      "explanation": "The committed offset is where the group resumes, so committing before processing means a crash skips the unprocessed records (at-most-once); committing after processing gives at-least-once instead. Kafka tracks one offset per partition rather than per-record acks, and reading a record never deletes it."
+    },
+    {
+      "id": 10,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Airflow DAGs",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In Apache Airflow, what does a DAG represent?",
+      "options": [
+        "A workflow of tasks and the dependencies between them",
+        "A single operator that runs one SQL statement",
+        "A stored connection to an external system such as a database",
+        "A queue of messages waiting to be consumed by workers"
+      ],
+      "correct": 0,
+      "explanation": "A DAG (directed acyclic graph) defines a pipeline: its tasks plus the dependency edges and schedule that decide the run order, with no cycles allowed; operators are the individual tasks and connections store credentials."
+    },
+    {
+      "id": 11,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Change Data Capture",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "What is Change Data Capture (CDC) used for?",
+      "options": [
+        "Taking a full snapshot of the database every night for backups",
+        "Detecting schema changes in source tables and automatically blocking the whole pipeline",
+        "Capturing each row-level change in a source so downstream copies stay in sync",
+        "Auditing which users edited a dashboard's configuration"
+      ],
+      "correct": 2,
+      "explanation": "CDC captures row-level changes (inserts, updates and deletes), often by reading the database's transaction log (e.g. with Debezium), so warehouses, caches or search indexes can apply just the changes instead of reloading full snapshots."
+    },
+    {
+      "id": 12,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Idempotent Pipelines",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "What does it mean for a data pipeline operation to be idempotent?",
+      "options": [
+        "It can run only once, so the scheduler must never retry it",
+        "Re-running it with the same input gives the same end state, with no duplicates",
+        "It always appends its output, so the results of every run are preserved",
+        "It processes every row in its own separate transaction so partial loads never happen"
+      ],
+      "correct": 1,
+      "explanation": "An idempotent step (e.g. overwriting a date partition or a MERGE on a key) can be retried or backfilled safely because a second run with the same input produces the same final state; blind appends create duplicates on every retry."
+    },
+    {
+      "id": 13,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Slowly Changing Dimensions",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "What is the purpose of a Type 2 Slowly Changing Dimension?",
+      "options": [
+        "Preserve history by adding a new row version when tracked attributes change",
+        "Overwrite the old attribute value in place, so only the latest value is kept",
+        "Store the current and the previous value side by side in two separate columns",
+        "Move changed rows into a separate archive table and delete them from the dimension"
+      ],
+      "correct": 0,
+      "explanation": "SCD Type 2 inserts a new row (new surrogate key, effective dates or a current flag) each time a tracked attribute changes, so facts keep pointing at the version valid at the time; overwriting is Type 1 and a 'previous value' column is Type 3."
+    },
+    {
+      "id": 14,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Spark Shuffles",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Why can a shuffle be expensive in Apache Spark?",
+      "options": [
+        "It collects all of the rows onto the driver, which then processes them on a single machine",
+        "It re-reads the original input files from storage for every downstream stage",
+        "It moves data between executors over the network, with serialization and disk writes",
+        "It turns off Catalyst optimization for the remaining stages of the job"
+      ],
+      "correct": 2,
+      "explanation": "Wide transformations such as groupBy, join or repartition write partitioned shuffle files to disk, and the next stage fetches them over the network, adding serialization, I/O and a stage boundary; the data is not pulled onto the driver."
+    },
+    {
+      "id": 15,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Watermarks",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "What is a watermark commonly used for in event-time stream processing?",
+      "options": [
+        "Reordering all events by processing time instead of by event time",
+        "Committing the consumer's offsets back to Kafka after each micro-batch",
+        "Tagging each event with a checksum so consumers can detect tampering",
+        "Deciding how long to wait for late events before a window is finalized"
+      ],
+      "correct": 3,
+      "explanation": "A watermark (e.g. latest event time seen minus 10 minutes) sets how much lateness to tolerate: once it passes a window's end, the window is finalized and its state dropped, and later events are treated as too late."
+    },
+    {
+      "id": 16,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "GROUP BY & HAVING",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "After `GROUP BY customer_id`, which clause keeps only the customers with more than 5 orders?",
+      "options": [
+        "WHERE COUNT(*) > 5",
+        "HAVING COUNT(*) > 5",
+        "GROUP BY COUNT(*) > 5",
+        "ORDER BY COUNT(*) > 5"
+      ],
+      "correct": 1,
+      "explanation": "HAVING filters groups after aggregation, so it can test COUNT(*); WHERE filters individual rows before grouping and cannot contain aggregate functions, and ORDER BY only sorts."
+    },
+    {
+      "id": 17,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Python Sets & Deduplication",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What does this Python code print?\n\nemails = ['a@x.com', 'b@x.com', 'a@x.com', 'c@x.com']\nprint(len(set(emails)))",
+      "options": [
+        "4",
+        "2",
+        "3",
+        "It raises a TypeError"
+      ],
+      "correct": 2,
+      "explanation": "A set keeps only unique values, so the duplicate 'a@x.com' is stored once and len() returns 3; strings are hashable, so no TypeError is raised."
+    },
+    {
+      "id": 18,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Transactions & ACID",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "A transfer debits account A and then credits account B inside one database transaction. The server crashes after the debit but before the commit. Which ACID property guarantees that the debit is undone?",
+      "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+      ],
+      "correct": 0,
+      "explanation": "Atomicity makes a transaction all-or-nothing, so an uncommitted transaction is rolled back during recovery and the half-done debit disappears; durability only protects changes that were already committed."
+    },
+    {
+      "id": 19,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Window Functions",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "The table events(user_id, event_time, payload) contains repeated rows. Which approach keeps only the latest row for each user_id?",
+      "options": [
+        "SELECT DISTINCT * FROM events ORDER BY event_time DESC",
+        "GROUP BY user_id, payload and keep MAX(event_time) for each group",
+        "Filter RANK() OVER (ORDER BY event_time DESC) = 1 computed over the whole table",
+        "Filter ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY event_time DESC) = 1"
+      ],
+      "correct": 3,
+      "explanation": "ROW_NUMBER() partitioned by user_id and ordered by event_time DESC numbers each user's rows from the newest, so keeping 1 leaves exactly one latest row per user; a RANK over the whole table finds only the globally latest rows, and DISTINCT removes only fully identical rows."
+    },
+    {
+      "id": 20,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Indexing & Query Plans",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In PostgreSQL, `SELECT * FROM orders WHERE customer_id = 42` is slow on a 50-million-row table, and EXPLAIN shows a sequential scan. What is the most direct fix?",
+      "options": [
+        "Add ORDER BY customer_id to the query",
+        "Create a B-tree index on orders(customer_id)",
+        "Change SELECT * to SELECT DISTINCT *",
+        "Run the query inside an explicit transaction"
+      ],
+      "correct": 1,
+      "explanation": "Without an index on customer_id the planner must read every row; a B-tree index lets it jump straight to the few matching rows with an index scan. Sorting, DISTINCT or a transaction do not reduce the rows scanned."
+    },
+    {
+      "id": 21,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Python File Handling & Generators",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A Python script must process a 50 GB log file on a machine with 8 GB of RAM. Which approach is most appropriate?",
+      "options": [
+        "Call f.read() once and split the text on newlines",
+        "Loop with `for line in f:` and process one line at a time",
+        "Load all lines with f.readlines() and loop over the list",
+        "Read the file into a pandas DataFrame with one pd.read_csv() call"
+      ],
+      "correct": 1,
+      "explanation": "A file object is a lazy iterator, so `for line in f:` keeps only a small buffer in memory at a time; read(), readlines() and a single read_csv() call all try to load the whole 50 GB into 8 GB of RAM (pandas would need chunksize= to stream)."
+    },
+    {
+      "id": 22,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Isolation Levels",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "In PostgreSQL's default READ COMMITTED isolation level, transaction T1 runs the same SELECT twice. Between the two, transaction T2 updates one of those rows and commits. What can T1 observe?",
+      "options": [
+        "Both SELECTs return identical rows, because T1 uses one snapshot for the whole transaction",
+        "T2's UPDATE waits until T1 commits, because T1 has read the row",
+        "The second SELECT sees T2's committed change (a non-repeatable read)",
+        "T1 could have seen T2's change even before T2 committed (a dirty read)"
+      ],
+      "correct": 2,
+      "explanation": "Under READ COMMITTED each statement takes a fresh snapshot, so the second SELECT sees data committed in between (a non-repeatable read); one snapshot per transaction is REPEATABLE READ behaviour, plain SELECTs do not block writers, and PostgreSQL never allows dirty reads."
+    },
+    {
+      "id": 23,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "NULL Semantics",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Table customers has ids 1, 2 and 3. Table blocked has customer_id values 2 and NULL. How many rows does this query return?\n\nSELECT id FROM customers\nWHERE id NOT IN (SELECT customer_id FROM blocked);",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct": 0,
+      "explanation": "`id NOT IN (2, NULL)` means id <> 2 AND id <> NULL, and any comparison with NULL is UNKNOWN, so no row passes the filter. NOT EXISTS (or excluding NULLs in the subquery) returns the expected ids 1 and 3."
+    },
+    {
+      "id": 24,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Composite Indexes",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A PostgreSQL table has one B-tree index on (country, city). Which WHERE clause benefits least from this index?",
+      "options": [
+        "WHERE country = 'IN' AND city = 'Pune'",
+        "WHERE city = 'Pune'",
+        "WHERE country = 'IN'",
+        "WHERE country = 'IN' AND city LIKE 'Pu%'"
+      ],
+      "correct": 1,
+      "explanation": "A composite B-tree is sorted by country first and by city within each country, so it can seek on any leftmost prefix; a filter on city alone cannot seek directly and at best skip-scans every country (PostgreSQL 18+) or falls back to a sequential scan."
+    },
+    {
+      "id": 25,
+      "field": "Data Engineer",
+      "step": 1,
+      "topic": "Python Default Arguments",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "What does this code print?\n\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n\nadd_tag('raw')\nprint(add_tag('clean'))",
+      "options": [
+        "['clean']",
+        "['clean', 'raw']",
+        "It raises a TypeError",
+        "['raw', 'clean']"
+      ],
+      "correct": 3,
+      "explanation": "A default value is evaluated once, when the function is defined, so both calls append to the same list and the second call returns ['raw', 'clean']; use tags=None and create a new list inside the function instead."
+    },
+    {
+      "id": 26,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "OLTP vs OLAP",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which workload is typical of an OLTP system rather than an OLAP system?",
+      "options": [
+        "A monthly revenue report that scans two years of sales",
+        "A dashboard that aggregates KPIs by region and quarter",
+        "Many small order inserts and updates per second from a checkout app",
+        "Ad-hoc analysis of customer churn trends across five years of history"
+      ],
+      "correct": 2,
+      "explanation": "OLTP systems (e.g. PostgreSQL behind an app) handle many short read/write transactions on individual rows; large scans and aggregations over history for reports and dashboards are OLAP workloads that belong in a warehouse."
+    },
+    {
+      "id": 27,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Normalization",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main goal of normalizing a relational schema to third normal form (3NF)?",
+      "options": [
+        "Reduce redundancy and update anomalies by storing each fact in one place",
+        "Speed up analytical queries by pre-joining all tables into one wide table",
+        "Store every table in a compressed columnar format",
+        "Keep the full history of every row by versioning each change"
+      ],
+      "correct": 0,
+      "explanation": "Normalization splits data into related tables so each fact (e.g. a customer's address) is stored once, avoiding insert, update and delete anomalies; pre-joining into wide tables is denormalization, which warehouses use to speed up reads."
+    },
+    {
+      "id": 28,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Star vs Snowflake Schema",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "How does a snowflake schema differ from a star schema?",
+      "options": [
+        "It has several fact tables but no dimension tables",
+        "It stores every dimension as a JSON column inside the fact table",
+        "It can be queried only in the Snowflake data warehouse",
+        "Its dimension tables are normalized into further related tables"
+      ],
+      "correct": 3,
+      "explanation": "In a snowflake schema a dimension is split into sub-tables (e.g. product, category, department), which saves space but adds joins; in a star schema each dimension is one denormalized table. The name has nothing to do with the Snowflake product."
+    },
+    {
+      "id": 29,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Fact Table Grain",
+      "difficulty": "Intermediate",
+      "dimension": "Technical Communication",
+      "question": "While documenting a fact_sales table for analysts, you must state its grain. Which statement is a correct grain declaration?",
+      "options": [
+        "The table holds all of the company's sales data from 2020 onwards",
+        "Each row is loaded within 15 minutes of the order being placed",
+        "Each row represents one order line item (one product on one order)",
+        "The table joins to the date, customer and product dimensions"
+      ],
+      "correct": 2,
+      "explanation": "The grain states exactly what one fact row represents and must be declared before choosing dimensions and measures; scope, load latency and related dimensions are useful documentation but do not define the grain."
+    },
+    {
+      "id": 30,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Semi-additive Measures",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "fact_account_balance is a daily snapshot that stores every account's closing balance for each day, together with the account's branch. Which logic gives each branch's total balance at the end of September?",
+      "options": [
+        "Sum balance across the branch's accounts using only the 30 September rows",
+        "Sum balance across all of the branch's rows for every day in September",
+        "Take MAX(balance) across all of the branch's rows in September",
+        "Average each account's balance over September, then sum those averages"
+      ],
+      "correct": 0,
+      "explanation": "A balance is semi-additive: it can be summed across accounts and branches but not across time, so use the snapshot for the last day of the period; summing every day counts each balance about 30 times, and MAX or average balances answer different questions."
+    },
+    {
+      "id": 31,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Point-in-Time Joins",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "fact_orders stores customer_id (the natural key) and order_date. dim_customer keeps every version of each customer, with valid_from, valid_to and is_current columns (the current row has valid_to = '9999-12-31'). To report revenue by the city each customer lived in when the order was placed, how should the two tables be joined?",
+      "options": [
+        "Match customer_id and keep only rows where d.is_current = true",
+        "Match customer_id and require valid_from <= order_date < valid_to",
+        "Match customer_id and keep the version with the earliest valid_from",
+        "Match customer_id only, since each customer appears in the dimension once"
+      ],
+      "correct": 1,
+      "explanation": "In this SCD Type 2 dimension each order must match the customer version whose validity range contains the order date; is_current restates all history with today's city, and joining on customer_id alone multiplies each order by every version of that customer."
+    },
+    {
+      "id": 32,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Join Fan-out & Grain",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "fact_orders stores each order once with its order_amount, while fact_shipments stores every shipment, and one order can ship in several parts. An analyst joins them on order_id and runs SUM(order_amount). What goes wrong?",
+      "options": [
+        "Each order's amount is counted once per shipment, inflating revenue",
+        "The join silently drops every order that was shipped in several parts",
+        "SUM ignores order_amount whenever the shipment columns are NULL",
+        "Nothing, because order_id is the primary key of fact_orders"
+      ],
+      "correct": 0,
+      "explanation": "Joining order-level data to shipment-level data repeats each order once per shipment (fan-out), so the sum double-counts; aggregate both facts to a common grain before joining. A key that is unique on one side does not prevent duplication from the other side."
+    },
+    {
+      "id": 33,
+      "field": "Data Engineer",
+      "step": 2,
+      "topic": "Columnar Warehouses & Cost",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "In BigQuery with on-demand (bytes-scanned) pricing, which change reduces the bytes billed for `SELECT * FROM sales WHERE region = 'South' LIMIT 10` on an unpartitioned, unclustered table?",
+      "options": [
+        "Changing LIMIT 10 to LIMIT 1",
+        "Adding ORDER BY region",
+        "Adding a second filter such as AND year = 2025 to the WHERE clause",
+        "Selecting only the three columns needed instead of *"
+      ],
+      "correct": 3,
+      "explanation": "BigQuery is columnar and bills for every byte in the columns a query reads; on an unpartitioned, unclustered table, LIMIT, ORDER BY and extra filters do not reduce the data scanned, but reading fewer columns does."
+    },
+    {
+      "id": 34,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "ETL vs ELT",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the key difference between ELT and ETL?",
+      "options": [
+        "In ELT, data is transformed on a separate server before it is ever loaded",
+        "ELT skips the transform step and only copies data between systems",
+        "In ELT, raw data is loaded first and transformed inside the warehouse",
+        "ELT works only for streaming data, while ETL works only for batch"
+      ],
+      "correct": 2,
+      "explanation": "ELT lands raw data in the warehouse or lakehouse and runs transformations there (often as SQL models in dbt) using its scalable compute; transforming on a separate engine before loading is classic ETL."
+    },
+    {
+      "id": 35,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "dbt Tests",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which pair of built-in dbt data tests checks that order_id can serve as a model's primary key?",
+      "options": [
+        "unique and not_null",
+        "accepted_values and relationships",
+        "not_null and accepted_values",
+        "relationships and unique"
+      ],
+      "correct": 0,
+      "explanation": "A primary key must be present and distinct in every row, which is exactly what not_null and unique assert; accepted_values checks values against an allowed list, and relationships checks foreign keys against another model."
+    },
+    {
+      "id": 36,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "dbt ref()",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In a dbt model, what does `{{ ref('stg_orders') }}` do?",
+      "options": [
+        "Copies every row of stg_orders into the current model's table at compile time",
+        "Resolves to the stg_orders relation and records it as an upstream dependency",
+        "Runs the data tests defined on stg_orders before this model is built",
+        "Imports a Python function named stg_orders into the SQL file"
+      ],
+      "correct": 1,
+      "explanation": "ref() compiles to the fully qualified name of stg_orders in the target environment and tells dbt this model depends on it, so models build in the right order and lineage is tracked; it does not copy data or run tests."
+    },
+    {
+      "id": 37,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Incremental Loads",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A nightly job copies a source orders table that has a reliable updated_at column. Which approach loads only new and changed rows?",
+      "options": [
+        "Truncate the target table and reload the full source table every night",
+        "Extract only the rows whose created_at falls on today's date",
+        "Extract the 10,000 rows with the highest order_id each night",
+        "Extract rows with updated_at above the last run's high-water mark"
+      ],
+      "correct": 3,
+      "explanation": "Saving the maximum updated_at loaded so far (a high-water mark, often with a small overlap) and extracting only newer rows picks up both inserts and updates; filtering on created_at misses updates, and a full reload works but is not incremental."
+    },
+    {
+      "id": 38,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Airflow Scheduling & Backfills",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A daily Airflow DAG has a start_date 30 days in the past and catchup=True. What happens when it is first unpaused?",
+      "options": [
+        "Only today's run is scheduled, and all of the past intervals are skipped",
+        "A single DAG run is created that processes all 30 of the missed days in one go",
+        "The scheduler creates runs for each missed daily interval since start_date",
+        "The DAG fails to load because its start_date lies in the past"
+      ],
+      "correct": 2,
+      "explanation": "With catchup=True the scheduler creates a run for every data interval between start_date and now that has no run yet (limited by max_active_runs); with catchup=False only the most recent interval is scheduled, and recent Airflow versions default to False, which is why it is set explicitly here."
+    },
+    {
+      "id": 39,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Idempotent Loads",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A daily task runs `INSERT INTO sales SELECT * FROM staging_sales WHERE sale_date = '{{ ds }}'`. After the run is retried, that day's totals are doubled. Which change makes the task idempotent?",
+      "options": [
+        "Set retries=0 so that Airflow can never run the task a second time",
+        "Add DISTINCT to the SELECT so each staging row is inserted only once",
+        "Delete that date's rows and re-insert them within one transaction",
+        "Wrap the INSERT alone in a transaction so a failed run never commits"
+      ],
+      "correct": 2,
+      "explanation": "Replacing the whole sale_date slice (DELETE + INSERT in one transaction, a partition overwrite, or a MERGE on a key) gives the same result however many times it runs; DISTINCT only removes duplicates within one run, and a transaction around the INSERT alone does not stop a successful re-run from appending again."
+    },
+    {
+      "id": 40,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Log-based CDC",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Why is log-based CDC (e.g. Debezium reading the PostgreSQL write-ahead log) often preferred over query-based CDC that repeatedly polls the source tables for recently changed rows?",
+      "options": [
+        "It works without any access to the source database or its transaction logs",
+        "It captures hard deletes and every update without repeated table scans",
+        "It lets source tables skip primary keys, since changes are captured by position",
+        "It removes the need to handle schema changes in downstream consumers"
+      ],
+      "correct": 1,
+      "explanation": "Reading the transaction log streams every insert, update and delete in commit order with little load on the source; polling on a timestamp column misses hard deletes and intermediate updates between polls, and depends on every writer setting that column correctly."
+    },
+    {
+      "id": 41,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "dbt Incremental Models",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A dbt incremental model selects source rows whose updated_at is newer than the max in {{ this }}, but no unique_key is configured. An order that was updated in the source is picked up on the next run. What happens?",
+      "options": [
+        "The updated order is appended, so the model now has two rows for it",
+        "dbt detects the existing order and updates it in place",
+        "The run fails because incremental models require a unique_key",
+        "The update is skipped because that order already exists in the model"
+      ],
+      "correct": 0,
+      "explanation": "Without a unique_key, dbt's incremental run simply inserts the selected rows, so the new version sits next to the old one; setting unique_key='order_id' makes dbt merge (or delete+insert) on that key and replace the existing row."
+    },
+    {
+      "id": 42,
+      "field": "Data Engineer",
+      "step": 3,
+      "topic": "Airflow Data Intervals",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "Why should an Airflow task select source data using the run's data interval (e.g. `{{ data_interval_start }}` or `{{ ds }}`) instead of calling datetime.now() inside the task?",
+      "options": [
+        "Jinja templates make the task run faster than Python's datetime functions",
+        "Airflow forbids importing the datetime module anywhere inside a DAG file",
+        "Using now() makes the scheduler create overlapping runs of the same DAG",
+        "Retries and backfills of an old run then process that run's own dates"
+      ],
+      "correct": 3,
+      "explanation": "Each DAG run has a fixed data interval, so retrying yesterday's run or backfilling last month reads exactly the same slice of data and produces the same result; datetime.now() changes on every execution, which breaks idempotency."
+    },
+    {
+      "id": 43,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Spark Transformations vs Actions",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In PySpark, which DataFrame call is an action that actually triggers a job to run?",
+      "options": [
+        "df.filter(df.amount > 0)",
+        "df.select('order_id')",
+        "df.withColumn('year', year(df.ts))",
+        "df.count()"
+      ],
+      "correct": 3,
+      "explanation": "filter, select and withColumn are lazy transformations that only build a logical plan; actions such as count(), collect(), show() or a write make Spark optimize the plan and run the job."
+    },
+    {
+      "id": 44,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Kafka Topics & Partitions",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In Apache Kafka, what is a topic?",
+      "options": [
+        "A queue that deletes each message as soon as one consumer reads it",
+        "A named, append-only log of events, split into partitions",
+        "A group of consumers that share the work of reading data",
+        "A table of indexed rows that consumers update in place"
+      ],
+      "correct": 1,
+      "explanation": "A topic is a named stream of records stored as partitioned, append-only logs; messages stay for the retention period whether or not they are read, and each consumer group tracks its own offsets, unlike a queue that deletes on read."
+    },
+    {
+      "id": 45,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Stream Windows",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "A dashboard must show 'orders in the last 10 minutes', refreshed every minute. Which window type fits?",
+      "options": [
+        "A 10-minute tumbling window with no overlap",
+        "A session window with a 10-minute inactivity gap",
+        "A 10-minute sliding window with a 1-minute slide",
+        "A single global window that is never closed"
+      ],
+      "correct": 2,
+      "explanation": "A 10-minute sliding (hopping) window that advances every minute produces overlapping windows, giving a fresh last-10-minutes count each minute; a tumbling window updates only once per 10 minutes, and session windows group bursts of activity."
+    },
+    {
+      "id": 46,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Kafka Keys & Ordering",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "All events for the same order_id must be consumed in the order they were produced. How should the producer publish them to a multi-partition topic?",
+      "options": [
+        "Use order_id as the message key",
+        "Use a random key so events spread evenly across partitions",
+        "Raise the topic's replication factor to 3",
+        "Add more consumers to the consumer group"
+      ],
+      "correct": 0,
+      "explanation": "Kafka guarantees order only within a partition, and the default partitioner sends all records with the same key to the same partition, so keying by order_id keeps each order's events in sequence; random keys scatter them, and replication does not affect ordering."
+    },
+    {
+      "id": 47,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Repartition vs Coalesce",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A PySpark DataFrame has 2,000 small partitions. Before writing, you want 20 output files without triggering a full shuffle. Which call fits?",
+      "options": [
+        "df.repartition(20)",
+        "spark.conf.set('spark.sql.shuffle.partitions', 20)",
+        "df.coalesce(20)",
+        "df.persist()"
+      ],
+      "correct": 2,
+      "explanation": "coalesce(n) merges existing partitions into fewer ones without a shuffle, whereas repartition(n) always performs a full shuffle; spark.sql.shuffle.partitions only affects stages that shuffle, and persist() just caches the data."
+    },
+    {
+      "id": 48,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Kafka Consumer Groups",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "A Kafka topic has 6 partitions, and a standard consumer group reading it has 8 consumers. What happens?",
+      "options": [
+        "Each consumer reads 0.75 of a partition's messages",
+        "Six consumers get one partition each, and two stay idle",
+        "Kafka automatically adds two more partitions to the topic to match",
+        "All eight consumers read every message from all six partitions"
+      ],
+      "correct": 1,
+      "explanation": "In a consumer group each partition is assigned to at most one consumer, so parallelism is capped by the partition count: six consumers work and two sit idle as standbys. To scale further you add partitions."
+    },
+    {
+      "id": 49,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Broadcast Joins",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A Spark job joins a 500 GB transactions DataFrame with a 20 MB countries lookup DataFrame, and the Spark UI shows a huge shuffle for the join. What is the usual fix?",
+      "options": [
+        "Broadcast the small DataFrame with broadcast(countries)",
+        "Call repartition(1) on both DataFrames before the join",
+        "collect() the transactions to the driver and join in Python",
+        "Convert both DataFrames to pandas with toPandas()"
+      ],
+      "correct": 0,
+      "explanation": "A broadcast hash join ships the small table to every executor so the large table is joined where it sits, without shuffling 500 GB (20 MB is above the default 10 MB auto-broadcast threshold, so the hint is needed); repartition(1), collect() or toPandas() funnel the data through a single task or machine."
+    },
+    {
+      "id": 50,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Data Skew",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In a Spark join stage, 199 tasks finish in about a minute, but one task runs for 40 minutes. What is the most likely cause and fix?",
+      "options": [
+        "Too few executors, so double the number of executors given to the job",
+        "The driver is short on memory, so raise spark.driver.memory",
+        "Parquet is slow to write, so write the output as CSV instead",
+        "Skew on the join key, so salt the hot key or enable AQE skew joins"
+      ],
+      "correct": 3,
+      "explanation": "One straggler task means one partition holds far more rows, typically a hot join key such as NULL or one huge customer; salting that key or letting Adaptive Query Execution split skewed partitions spreads the work, whereas more executors cannot speed up a single task."
+    },
+    {
+      "id": 51,
+      "field": "Data Engineer",
+      "step": 4,
+      "topic": "Exactly-once Semantics",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A pipeline reads from Kafka, aggregates in a stream processor and writes to a database. Which design gives effectively exactly-once results even when tasks fail and replay data?",
+      "options": [
+        "Producer acks=0, so messages are never sent twice",
+        "Consumer auto-commit with a very short commit interval",
+        "Checkpointed offsets plus an idempotent or transactional sink",
+        "At-least-once delivery with extra retries on every database write"
+      ],
+      "correct": 2,
+      "explanation": "Failures cause replays, so exactly-once results come from tracking offsets together with state (checkpoints) and making the output idempotent (upsert by key) or transactional; acks=0 can lose data, and auto-commit or retries alone give at-most-once or at-least-once behaviour."
+    },
+    {
+      "id": 52,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Data Lakes",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is a data lake?",
+      "options": [
+        "A warehouse that only accepts cleaned and fully modeled relational tables",
+        "Cheap storage, usually cloud object storage, for raw data in any format",
+        "An in-memory cache placed in front of BI dashboards to speed them up",
+        "A message broker that delivers real-time events to many consumers"
+      ],
+      "correct": 1,
+      "explanation": "A data lake keeps structured, semi-structured and unstructured data (CSV, JSON, Parquet, images, logs) in raw form on cheap storage such as Amazon S3 or ADLS, applying a schema when the data is read; a warehouse stores modeled tables."
+    },
+    {
+      "id": 53,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Medallion Architecture",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In a medallion (bronze/silver/gold) lakehouse architecture, what does the bronze layer usually hold?",
+      "options": [
+        "Business-level aggregates that feed dashboards",
+        "Cleaned, deduplicated and conformed tables",
+        "Raw data ingested as-is from source systems",
+        "Trained machine learning model files"
+      ],
+      "correct": 2,
+      "explanation": "Bronze stores raw source data as ingested (often append-only, with load metadata) so it can be reprocessed; silver holds cleaned and conformed data, and gold holds business-level aggregates and marts."
+    },
+    {
+      "id": 54,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Docker for Pipelines",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Why do data teams package pipeline code as Docker images?",
+      "options": [
+        "Code runs much faster inside a container than it does directly on the host",
+        "Code and dependencies run the same on a laptop, in CI and in production",
+        "The image stores the pipeline's output data permanently between runs",
+        "A container replaces the need for an orchestrator such as Airflow"
+      ],
+      "correct": 1,
+      "explanation": "An image bundles the code with pinned library versions and the runtime, removing 'works on my machine' differences between development, CI and production; containers do not make code faster, should not hold output data, and still need an orchestrator to schedule them."
+    },
+    {
+      "id": 55,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Secrets Management",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Where should a production pipeline's database password be stored?",
+      "options": [
+        "Hard-coded in the DAG file, since the Git repository is private",
+        "Baked into the Docker image as an ENV value at build time",
+        "In a config.yaml committed next to the pipeline code",
+        "In a secrets manager that the pipeline reads at runtime"
+      ],
+      "correct": 3,
+      "explanation": "A secrets manager (e.g. AWS Secrets Manager, HashiCorp Vault or an Airflow secrets backend) keeps credentials encrypted, access-controlled, audited and rotatable; anything committed to Git or baked into an image is exposed to everyone who can read the repo or pull the image."
+    },
+    {
+      "id": 56,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Delta Lake & Iceberg",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What do open table formats such as Delta Lake and Apache Iceberg add on top of plain Parquet files in object storage?",
+      "options": [
+        "ACID commits, schema evolution and time travel via a metadata layer",
+        "Conversion of the Parquet files into row-based CSV so they are readable",
+        "A dedicated database server that replaces the object storage underneath",
+        "Built-in BI dashboards generated automatically from every table"
+      ],
+      "correct": 0,
+      "explanation": "Delta and Iceberg keep a transaction log or metadata tree recording which data files make up each table version, enabling atomic commits, MERGE/UPDATE/DELETE, schema evolution and time travel; the data itself stays as Parquet files in object storage."
+    },
+    {
+      "id": 57,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Small Files & Compaction",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A streaming job writes thousands of 50 KB Parquet files per hour into a Delta table on S3, and queries keep getting slower. What is the usual fix?",
+      "options": [
+        "Store the data as CSV instead, since engines open CSV files faster",
+        "Add minute and second partition columns to spread the files out",
+        "Periodically compact them into larger files, e.g. with OPTIMIZE",
+        "Move the bucket to a colder storage class to cut access costs"
+      ],
+      "correct": 2,
+      "explanation": "Every tiny file adds open, list and metadata overhead, so engines spend more time handling files than reading data; compaction (Delta OPTIMIZE, Iceberg rewrite_data_files) rewrites them into files of roughly 128 MB to 1 GB, while finer partitions would create even more small files."
+    },
+    {
+      "id": 58,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "CI/CD for Data",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "In a CI/CD setup for a dbt project, what should run automatically on every pull request before it is merged?",
+      "options": [
+        "A direct deployment to production that is rolled back if dashboards break",
+        "Nothing, because data tests should run only after merging, in production",
+        "A manual check of sample rows exported to a spreadsheet",
+        "dbt build for the changed models and their tests in an isolated CI schema"
+      ],
+      "correct": 3,
+      "explanation": "CI should build and test the modified models (e.g. dbt build --select state:modified+) in a throwaway schema, so broken SQL or failing tests block the merge; testing only in production lets bad data reach users first."
+    },
+    {
+      "id": 59,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Data Lineage",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Before renaming a column in a silver table, an engineer checks the data lineage graph. What question does lineage answer here?",
+      "options": [
+        "How long each query that reads the table takes to run on average",
+        "Which downstream models and dashboards depend on that column",
+        "Which users and roles currently have read access to the table",
+        "How much the table costs to store in object storage each month"
+      ],
+      "correct": 1,
+      "explanation": "Lineage maps how data flows from sources through transformations to reports, at table or column level, so you can see the impact of a change before making it; latency, access grants and storage cost come from monitoring, IAM and billing tools."
+    },
+    {
+      "id": 60,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Data Observability",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Every Airflow task in a daily pipeline succeeded, but the upstream export file was empty, so the dashboard silently showed stale numbers. Which check would have caught this?",
+      "options": [
+        "A row-count check that alerts when a load is far below normal",
+        "An alert when warehouse CPU utilisation goes above 90 percent",
+        "A CI step that checks every DAG file parses without import errors",
+        "Unit tests for the Python helper functions used by the tasks"
+      ],
+      "correct": 0,
+      "explanation": "Task success only proves the code ran; data checks on volume and freshness (row count far below usual, or max(loaded_at) older than expected) catch empty or late inputs, while CPU alerts, DAG parsing and unit tests would all pass here."
+    },
+    {
+      "id": 61,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Partition Strategy",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A 20 TB clickstream dataset is stored as Parquet on Amazon S3 and queried with Athena. Nearly every query filters on a date range, and user_id has 10 million distinct values. Which partitioning scheme is the best choice?",
+      "options": [
+        "Partition by user_id, so that each user's events sit in their own folder",
+        "Partition by event timestamp down to the second, for the finest pruning",
+        "Partition by event_date, the column that almost every query filters on",
+        "Leave it unpartitioned, since Parquet min/max statistics make partitions redundant"
+      ],
+      "correct": 2,
+      "explanation": "Partition on a low-to-moderate-cardinality column that queries filter on, so Athena reads only the matching dates from reasonably large files; user_id or per-second partitions create millions of tiny files whose listing and planning overhead swamps the reads, and without partitions every query must still list and open every file."
+    },
+    {
+      "id": 62,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Time Travel & VACUUM",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A bad job overwrote a Delta Lake table 10 days ago and nobody noticed. VACUUM runs every night with the default 7-day retention. What happens if you now RESTORE the table to the version before the bad write?",
+      "options": [
+        "It fails, because VACUUM has already deleted the data files that version needs",
+        "It succeeds, because the transaction log stores a full copy of each version's rows",
+        "It succeeds, because VACUUM only removes files that no table version ever referenced",
+        "It fails, because Delta Lake keeps no table history older than 24 hours"
+      ],
+      "correct": 0,
+      "explanation": "VACUUM permanently deletes data files that the current version no longer references once they are older than the retention period (7 days by default), so the pre-overwrite files are gone and RESTORE to that version fails. The log stores only metadata, so its 30-day history cannot bring the files back."
+    },
+    {
+      "id": 63,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Storage Lifecycle & Cost",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Raw files on Amazon S3 are read often during their first 30 days, almost never afterwards, and must be kept for 7 years for compliance. Which setup meets this at the lowest cost?",
+      "options": [
+        "Keep every object in S3 Standard so that all files stay instantly readable",
+        "Upload every file straight to Glacier Deep Archive, the cheapest storage class",
+        "Delete files after 30 days and re-ingest them from the source when needed",
+        "A lifecycle rule: Standard-IA after 30 days, Glacier later, delete after 7 years"
+      ],
+      "correct": 3,
+      "explanation": "Lifecycle rules move objects to cheaper classes as access drops and expire them when retention ends, so you pay Standard prices only while files are hot; Deep Archive from day one makes the frequent early reads slow (restores take hours) and costly, and deleting early breaks the 7-year retention."
+    },
+    {
+      "id": 64,
+      "field": "Data Engineer",
+      "step": 5,
+      "topic": "Data Governance & PII",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Analysts must query a customers table but must not see raw phone numbers, while a small fraud team needs the real values. What is the best approach in a warehouse such as Snowflake or BigQuery?",
+      "options": [
+        "Rely on encryption at rest, which hides the raw phone numbers from analysts",
+        "A role-based masking policy on the column, unmasked for the fraud role",
+        "Drop the phone column for everyone, including the fraud team",
+        "Ask analysts not to select the column and review query logs monthly"
+      ],
+      "correct": 1,
+      "explanation": "Dynamic data masking (Snowflake masking policies, BigQuery column-level data masking) enforces least privilege on one governed table: other roles see masked values and the fraud role sees real ones. Encryption at rest is transparent to anyone allowed to query the table, and a request nobody enforces is not a control."
+    }
+  ]
+}

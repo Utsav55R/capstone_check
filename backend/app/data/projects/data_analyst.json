@@ -1,0 +1,104 @@
+{
+  "field": "Data Analyst",
+  "verified_on": "2026-10-07",
+  "projects": [
+    {
+      "id": "da-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "Retail Sales Performance Analysis with SQL and an Excel Dashboard",
+      "summary": "Load a public multi-table e-commerce dataset into a relational database, check its data quality and answer real business questions with SQL. Then turn the query results into an interactive Excel workbook with PivotTables, slicers and a one-page KPI dashboard, and write up what the business should do next.",
+      "skills": [
+        "SQL",
+        "PostgreSQL / MySQL / SQLite",
+        "Joins, CTEs & window functions",
+        "Excel",
+        "PivotTables & slicers",
+        "XLOOKUP",
+        "Data cleaning"
+      ],
+      "requirements": [
+        "Load a public sales dataset with at least 4 related tables and 10,000+ order rows (for example Olist Brazilian E-Commerce on Kaggle) into PostgreSQL, MySQL or SQLite with a schema.sql that declares primary keys, foreign keys and correct data types; the README includes an ER diagram and a data dictionary.",
+        "Write data-quality checks in checks.sql before any analysis: row counts per table, duplicate keys, NULLs in key columns, orders whose customer or product is missing (LEFT JOIN ... WHERE ... IS NULL) and impossible values such as negative prices or delivery before purchase; record each issue and how you handled it.",
+        "Answer at least 10 business questions in queries.sql, each preceded by a comment stating the question, using INNER and LEFT JOINs, GROUP BY with HAVING, at least 2 CTEs, one subquery, COALESCE/NULL handling and date functions for monthly trends.",
+        "Use window functions for at least 3 analyses: month-over-month revenue growth with LAG, the top 3 products per category with RANK or DENSE_RANK, and a running total or each customer's first order month with SUM/MIN ... OVER.",
+        "Export the results to an Excel workbook with the data stored as Excel Tables, at least 2 PivotTables with PivotCharts and slicers (month, category, region), an XLOOKUP that enriches one sheet from another, conditional formatting that highlights top and bottom performers, and a Dashboard sheet with 4 formula-driven KPI cells (revenue, orders, average order value, repeat-customer %).",
+        "Finish the README with 5 findings, each backed by a number from your queries, 3 actionable recommendations, and the exact steps (script order) to rebuild the database and the workbook."
+      ],
+      "reference_repo": {
+        "full_name": "microsoft/sql-server-samples",
+        "url": "https://github.com/microsoft/sql-server-samples",
+        "description": "Azure Data SQL Samples - Official Microsoft GitHub Repository containing code samples for SQL Server, Azure SQL, Azure Synapse, and Azure SQL Edge",
+        "stars": 11200,
+        "last_commit": "2026-09-11",
+        "why_reference": "Open samples/databases/northwind-pubs/instnwnd.sql to see how a classic sales database splits Orders, Order Details, Customers, Products, Categories, Employees and Shippers into related tables with primary keys, foreign keys and indexes on the join columns, then read its analysis views (Order Subtotals, Sales by Category, Summary of Sales by Quarter / by Year) and the Sales by Year procedure to see how business questions become JOIN + GROUP BY queries. samples/databases/wide-world-importers shows the step up from a transactional database to an analytics warehouse. The scripts are T-SQL for SQL Server, so translate the ideas to PostgreSQL/MySQL/SQLite and write your own queries on your own dataset. Use it as a reference, do not copy it."
+      }
+    },
+    {
+      "id": "da-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "A/B Test Analysis & Experiment Readout in Python",
+      "summary": "Analyse a real public A/B test that comes with at least one user attribute (for example the landing-page conversion test ab_data.csv with its countries.csv file on Kaggle) in a Jupyter notebook and decide whether the new page should ship. Clean and validate the experiment data with Pandas, test the result with proper statistics and confidence intervals, check segments for misleading patterns, and write a short recommendation a product manager can act on.",
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "SciPy / statsmodels",
+        "Hypothesis testing",
+        "A/B testing",
+        "Matplotlib / Seaborn",
+        "Jupyter"
+      ],
+      "requirements": [
+        "Use a public A/B test dataset with at least 10,000 users; clean it in Pandas (duplicate users, users who saw both variants or whose group and page do not match, invalid timestamps), merge in at least one user attribute (for example country or device), and show a table of the rows removed at each cleaning step.",
+        "Before looking at the result, write down the hypotheses, the primary metric, alpha (0.05) and the minimum detectable effect; compute the sample size per group needed for 80% power and state whether the test was adequately powered.",
+        "Validate the experiment: run a chi-square sample-ratio-mismatch (SRM) check against the planned traffic split and compare the variants on at least one pre-experiment attribute (for example device or country mix) to confirm that randomisation worked.",
+        "For the primary metric, report each variant's rate, the absolute and relative lift with a 95% confidence interval and a two-proportion z-test p-value (statsmodels), and confirm the interval with a bootstrap of at least 5,000 resamples.",
+        "Break the result down by at least 2 segments with groupby, flag any segment where the direction of the effect reverses (a Simpson's paradox check), and apply a Holm or Bonferroni correction to the segment p-values.",
+        "Include at least 4 labelled Matplotlib/Seaborn charts (rate by variant with CI error bars, daily cumulative rate per variant, lift by segment, bootstrap distribution); keep reusable functions in analysis.py, make the notebook pass Restart & Run All with a pinned requirements.txt, and end the README with a plain-English ship / don't ship / keep testing recommendation."
+      ],
+      "reference_repo": {
+        "full_name": "growthbook/growthbook",
+        "url": "https://github.com/growthbook/growthbook",
+        "description": "Open Source Feature Flags, Experimentation, and Product Analytics",
+        "stars": 8500,
+        "last_commit": "2026-10-07",
+        "why_reference": "GrowthBook is a full experimentation platform; focus only on its Python stats engine in packages/stats/gbstats. Read utils.py (check_srm runs the chi-square sample-ratio-mismatch test; frequentist_diff and frequentist_variance handle absolute vs relative lift), frequentist/tests.py (TwoSidedTTest and the one-sided tests compute the lift, its confidence interval and p-value, and the sequential tests show why peeking at results early is a problem), power/midexperimentpower.py for power analysis, and bayesian/ for the alternative 'chance to win' approach, plus packages/stats/tests to see how results are checked. Reference only: write your own analysis with Pandas, SciPy and statsmodels, do not import gbstats or copy its code."
+      }
+    },
+    {
+      "id": "da-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Executive Sales & Customer Retention Dashboard (Power BI or Tableau)",
+      "summary": "Build a multi-page interactive BI dashboard for an online business from a public transactional dataset (for example Olist Brazilian E-Commerce, UCI Online Retail II or the GA4 e-commerce sample). Model the data as a star schema, define the KPIs as DAX measures (or Tableau calculated fields), analyse customer cohorts and the order funnel, and present a data story with clear recommendations for leadership.",
+      "skills": [
+        "Power BI (or Tableau)",
+        "DAX",
+        "Power Query",
+        "Data modeling (star schema)",
+        "SQL",
+        "KPI design",
+        "Cohort & funnel analysis",
+        "Data storytelling"
+      ],
+      "requirements": [
+        "Shape the data with SQL or Power Query into a star schema: one fact table at a stated grain (for example one row per order line) and at least 3 dimensions including a dedicated, marked Date table; use one-to-many, single-direction relationships and put a screenshot of the model view in the README.",
+        "Create at least 8 measures: Revenue, Orders, Average Order Value, a profitability or cost measure (for example Gross Margin % or Freight Cost %), Active Customers, Repeat-Purchase Rate, a running total and month-over-month or year-over-year growth using time intelligence (DATEADD / SAMEPERIODLASTYEAR, or Tableau table calculations); document each in a README KPI table (name, formula, business meaning, target).",
+        "Build an Executive Overview page with 4-6 KPI cards compared against the previous period or a target, a revenue trend, breakdowns by category and region, synced slicers for date, region and one more business dimension (for example category, channel or payment type), and a drill-through to a customer or product detail page.",
+        "Build a Customers page with a monthly cohort retention matrix (first-purchase month x months since first purchase, shown as % with heatmap formatting) and a funnel (for example order placed -> approved -> shipped -> delivered, or view -> add to cart -> checkout -> purchase) that shows step-to-step conversion and highlights the biggest drop-off.",
+        "Apply dashboard best practices: one consistent theme file, no more than 8 visuals per page (slicers excluded), titles that state the insight, tooltips and colour-blind-safe colours; reconcile at least 3 KPI values against independent SQL or Excel calculations and record the matching numbers in the README.",
+        "Publish the dashboard (Power BI Publish to web or Tableau Public) or commit the .pbix/.twbx with screenshots of every page, and add a one-page executive summary: the business question, 3 insights with numbers, a recommended action with its expected impact, and the limitations of the data."
+      ],
+      "reference_repo": {
+        "full_name": "microsoft/powerbi-desktop-samples",
+        "url": "https://github.com/microsoft/powerbi-desktop-samples",
+        "description": "Power BI Desktop sample files for the monthly release. Here you can find the PBIX files used in the monthly release videos.",
+        "stars": 2100,
+        "last_commit": "2026-09-16",
+        "why_reference": "Open DAX/Adventure Works DW 2020.pbix in Power BI Desktop: its readme describes a nine-table model built around a Sales fact table (with Customer, Date, Product, Reseller and Sales Territory dimensions), a Date table with three relationships to Sales of which only Order Date is active, a July-June fiscal year and no pre-built measures, so it is a clean model to practise your own DAX on. Then open the revamped samples in '2026 Power BI Samples Revamp' (Store Sales, Regional Sales Sample, Revenue Opportunities) to study page layout, KPI cards, slicers, drill-through and tooltips, and 'Report Theme JSON Schema' to build a consistent theme file. If you choose Tableau, carry the same modelling and layout ideas over. Reference only: build your own model, measures and pages on your own dataset."
+      }
+    }
+  ]
+}

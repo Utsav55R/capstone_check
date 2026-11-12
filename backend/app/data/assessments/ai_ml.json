@@ -1,0 +1,1096 @@
+{
+  "track": "AI / ML Engineer",
+  "title": "AI-ML Engineer",
+  "source_document": "ai-ml_engineer_placement_assessment_expanded.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Python Data Structures",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which data structure in Python stores data in key-value pairs?",
+      "options": [
+        "List",
+        "Tuple",
+        "Dictionary",
+        "Set"
+      ],
+      "correct": 2,
+      "explanation": "A dict maps unique, hashable keys to values (e.g. {'name': 'Asha'}); lists and tuples are sequences indexed by position, and a set stores unique values with no associated value."
+    },
+    {
+      "id": 2,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "NumPy",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main purpose of NumPy in machine learning?",
+      "options": [
+        "Building web APIs for models",
+        "Fast numerical and array operations",
+        "Managing relational databases",
+        "Plotting interactive dashboards and charts"
+      ],
+      "correct": 1,
+      "explanation": "NumPy provides the n-dimensional array and vectorized math (broadcasting, linear algebra) that Pandas, scikit-learn and PyTorch build on; plotting and web APIs are handled by other libraries."
+    },
+    {
+      "id": 3,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Pandas",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Pandas function is commonly used to read a CSV file?",
+      "options": [
+        "pd.load()",
+        "pd.read_csv()",
+        "pd.csv()",
+        "pd.import()"
+      ],
+      "correct": 1,
+      "explanation": "pd.read_csv() parses a CSV file into a DataFrame; pd.load() and pd.csv() do not exist, and import is a reserved Python keyword."
+    },
+    {
+      "id": 4,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Supervised vs Unsupervised Learning",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which of the following is a supervised learning algorithm?",
+      "options": [
+        "K-Means",
+        "Linear Regression",
+        "PCA",
+        "Apriori"
+      ],
+      "correct": 1,
+      "explanation": "Linear regression learns from labelled examples (inputs with known target values); K-Means and PCA are unsupervised, and Apriori mines association rules from unlabelled transactions."
+    },
+    {
+      "id": 5,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Classification",
+      "difficulty": "Easy",
+      "dimension": "Problem Solving",
+      "question": "Which algorithm can be used to predict whether an email is spam or not spam?",
+      "options": [
+        "Linear Regression",
+        "Logistic Regression",
+        "K-Means",
+        "PCA"
+      ],
+      "correct": 1,
+      "explanation": "Spam detection is binary classification, and logistic regression outputs the probability of the positive class; linear regression predicts unbounded numbers, and K-Means and PCA are unsupervised."
+    },
+    {
+      "id": 6,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Train/Test Split",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Why do we divide a dataset into training and testing data?",
+      "options": [
+        "To make the dataset larger so the model trains for longer",
+        "To measure performance on data the model has not seen",
+        "To remove all missing values",
+        "To reduce the number of features"
+      ],
+      "correct": 1,
+      "explanation": "The held-out test set stands in for new, unseen data, so the score on it estimates real-world performance; scoring on the training data would reward memorisation."
+    },
+    {
+      "id": 7,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Overfitting",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A model performs extremely well on training data but poorly on testing data. What is the most likely problem?",
+      "options": [
+        "Underfitting",
+        "Overfitting",
+        "Too much regularization",
+        "Too few training epochs"
+      ],
+      "correct": 1,
+      "explanation": "The model has memorised noise specific to the training set and fails to generalise; underfitting, heavy regularization or too few epochs would also give poor training performance."
+    },
+    {
+      "id": 8,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Feature Scaling",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A k-NN classifier uses two unscaled features: age (18 to 70 years) and annual income (200,000 to 5,000,000 rupees). What is the most likely problem, and the fix?",
+      "options": [
+        "Income dominates the distances; standardize both features first",
+        "Age dominates the distances; drop the income column to balance it",
+        "Nothing; k-NN is unaffected by the units of its features",
+        "k-NN needs categories; one-hot encode both features first"
+      ],
+      "correct": 0,
+      "explanation": "k-NN compares Euclidean distances, so a feature measured in millions swamps one measured in years; standardization ((x - mean) / std, giving mean 0 and std 1) puts both on a comparable scale. Scale-invariant models such as decision trees would not need this."
+    },
+    {
+      "id": 9,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Evaluation Metrics",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "For an imbalanced classification problem, which metric can be more informative than simple accuracy?",
+      "options": [
+        "Precision, recall or F1-score",
+        "R² score",
+        "Mean squared error",
+        "Overall accuracy on the training set"
+      ],
+      "correct": 0,
+      "explanation": "With 99% negatives, always predicting 'negative' scores 99% accuracy but catches no positives; precision, recall and F1 measure performance on the minority class. R² and MSE are regression metrics."
+    },
+    {
+      "id": 10,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Activation Functions",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main purpose of an activation function in a neural network?",
+      "options": [
+        "Normalize the input features",
+        "Introduce non-linearity",
+        "Initialize the weights",
+        "Reduce the number of parameters"
+      ],
+      "correct": 1,
+      "explanation": "Without non-linear activations such as ReLU, a stack of linear layers collapses into one linear transformation, so the network could only learn linear relationships."
+    },
+    {
+      "id": 11,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Gradient Descent",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the primary purpose of gradient descent?",
+      "options": [
+        "Shuffle the training data",
+        "Minimize the model's loss function",
+        "Normalize the input features before training",
+        "Split the data into batches"
+      ],
+      "correct": 1,
+      "explanation": "Gradient descent repeatedly moves the parameters a small step opposite to the gradient of the loss, driving them towards a minimum of the loss function; batching is just how the gradient is estimated."
+    },
+    {
+      "id": 12,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "CNN",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Convolutional Neural Networks are particularly useful for which type of problem?",
+      "options": [
+        "Image recognition",
+        "Small tabular datasets",
+        "Association rule mining",
+        "Sorting large arrays"
+      ],
+      "correct": 0,
+      "explanation": "Convolutions slide small learned filters over the image, capturing local spatial patterns such as edges and textures with shared weights; on small tabular data, tree ensembles usually work better."
+    },
+    {
+      "id": 13,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Text Representation",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which technique converts text into numerical vectors that can be processed by machine-learning models?",
+      "options": [
+        "Tokenization and embeddings",
+        "Stemming",
+        "Stop-word removal",
+        "Part-of-speech (POS) tagging"
+      ],
+      "correct": 0,
+      "explanation": "Tokenization splits text into tokens mapped to ids, and embeddings (or TF-IDF) turn them into numeric vectors; stemming, stop-word removal and POS tagging still output text or tags."
+    },
+    {
+      "id": 14,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Model Serving",
+      "difficulty": "Easy",
+      "dimension": "System Design",
+      "question": "A trained ML model needs to be made available through an application so users can send input and receive predictions. What is commonly used?",
+      "options": [
+        "A REST API (e.g. FastAPI) that wraps the model",
+        "A Jupyter notebook shared by email",
+        "A CSV file of past predictions",
+        "A training script that someone reruns for each user request"
+      ],
+      "correct": 0,
+      "explanation": "Wrapping the model in a web API, such as a FastAPI /predict endpoint, lets any app send inputs over HTTP and get predictions back; notebooks and manual scripts cannot serve live requests."
+    },
+    {
+      "id": 15,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Imbalanced Data: Decision Threshold",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A fraud model outputs a probability for each transaction, and missing a fraud costs about 50 times more than a false alarm. At the default 0.5 threshold, recall on fraud is only 40%. Without retraining, what is the most sensible change?",
+      "options": [
+        "Lower the threshold, trading more false alarms for higher recall",
+        "Raise the threshold to 0.9 so only very confident cases are flagged",
+        "Keep 0.5 and switch the reported metric to overall accuracy",
+        "Pick the threshold that gives the highest accuracy on the test set"
+      ],
+      "correct": 0,
+      "explanation": "With a 50:1 cost ratio it pays to flag a transaction even at a low fraud probability (about 1/51, roughly 2%, if the model is calibrated), so lowering the threshold raises recall at the cost of precision; tune it on validation data, not the test set. Maximising accuracy on such imbalanced data pushes the threshold the wrong way, towards flagging almost nothing."
+    },
+    {
+      "id": 16,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Scikit-learn",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Python library is widely used for classical machine-learning algorithms such as decision trees and logistic regression?",
+      "options": [
+        "Flask",
+        "BeautifulSoup",
+        "Pygame",
+        "scikit-learn"
+      ],
+      "correct": 3,
+      "explanation": "scikit-learn implements classical algorithms (decision trees, logistic regression, SVMs, k-means) behind a consistent fit/predict API; Flask is a web framework, BeautifulSoup parses HTML and Pygame builds games."
+    },
+    {
+      "id": 17,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Categorical Encoding",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which technique commonly converts a nominal categorical feature into separate binary indicator columns?",
+      "options": [
+        "One-hot encoding",
+        "Label encoding",
+        "Standardization",
+        "Binning"
+      ],
+      "correct": 0,
+      "explanation": "One-hot encoding creates one 0/1 column per category (pd.get_dummies or OneHotEncoder); label encoding maps categories to a single integer column, which implies an order nominal data does not have."
+    },
+    {
+      "id": 18,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Regression Metrics",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which metric measures the average absolute difference between predicted and actual numerical values?",
+      "options": [
+        "Accuracy",
+        "Mean Absolute Error (MAE)",
+        "Root Mean Squared Error (RMSE)",
+        "Log loss"
+      ],
+      "correct": 1,
+      "explanation": "MAE = mean(|y - ŷ|), the average error in the target's own units; RMSE squares the errors before averaging, so it penalises large errors more heavily."
+    },
+    {
+      "id": 19,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Missing Data",
+      "difficulty": "Easy",
+      "dimension": "Problem Solving",
+      "question": "For a numerical feature with strong outliers, which simple imputation value is often more robust than the mean?",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Median",
+        "Standard deviation"
+      ],
+      "correct": 2,
+      "explanation": "The median is the middle value, so a few extreme outliers barely move it, while they drag the mean towards them; filling with zero or the maximum distorts the distribution."
+    },
+    {
+      "id": 20,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Features and Targets",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In supervised learning, what is a feature?",
+      "options": [
+        "The final trained model file",
+        "An input variable used to make a prediction",
+        "The error produced after deployment",
+        "A test-set label that stays hidden from the model during training"
+      ],
+      "correct": 1,
+      "explanation": "Features (X) are the input columns, such as age or income; the target or label (y) is the value the model learns to predict."
+    },
+    {
+      "id": 21,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Cross-Validation",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is the main idea of k-fold cross-validation?",
+      "options": [
+        "Split into k folds; each fold is the validation set once while the rest train",
+        "Train k models on the full dataset and keep the one with the best training score",
+        "Split into k folds and train only on the largest fold",
+        "Repeat a random split k times, tuning on the test set each time"
+      ],
+      "correct": 0,
+      "explanation": "Each of the k folds serves once as the validation set while the model trains on the other k-1 folds, and the k scores are averaged, giving a more reliable estimate than a single split."
+    },
+    {
+      "id": 22,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Regularization",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is the typical effect of L2 regularization in a model?",
+      "options": [
+        "It increases model complexity to reduce bias",
+        "It drives many coefficients to exactly zero, performing feature selection",
+        "It penalizes large weights, shrinking them to reduce overfitting",
+        "It removes correlated features before training"
+      ],
+      "correct": 2,
+      "explanation": "L2 (ridge) adds λ·Σw² to the loss, shrinking weights smoothly towards zero but rarely to exactly zero; setting coefficients exactly to zero (sparse feature selection) is characteristic of L1/lasso."
+    },
+    {
+      "id": 23,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Recall",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Which formula represents recall for the positive class?",
+      "options": [
+        "TN / (TN + FP)",
+        "TP / (TP + FP)",
+        "(TP + TN) / Total",
+        "TP / (TP + FN)"
+      ],
+      "correct": 3,
+      "explanation": "Recall (sensitivity) = TP / (TP + FN), the share of actual positives the model catches; TP / (TP + FP) is precision and TN / (TN + FP) is specificity."
+    },
+    {
+      "id": 24,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "PCA",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is Principal Component Analysis (PCA) primarily used for?",
+      "options": [
+        "Selecting the original features that are most correlated with the target",
+        "Projecting data onto fewer directions that capture the most variance",
+        "Clustering similar data points into k groups",
+        "Scaling every feature into the range [0, 1]"
+      ],
+      "correct": 1,
+      "explanation": "PCA finds orthogonal directions of maximum variance and projects the data onto the top few, reducing dimensionality; it ignores the target and builds new combined features rather than selecting original ones."
+    },
+    {
+      "id": 25,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Imbalanced Learning",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "How can class weights help with an imbalanced classification dataset?",
+      "options": [
+        "They make mistakes on the minority class cost more in the loss",
+        "They delete majority-class rows until the classes are balanced",
+        "They generate synthetic minority samples, like SMOTE",
+        "They guarantee equal precision and recall for every class"
+      ],
+      "correct": 0,
+      "explanation": "class_weight (e.g. 'balanced' in scikit-learn) scales each sample's loss by its class weight, so errors on rare classes are penalised more without changing the data; undersampling and SMOTE modify the dataset instead."
+    },
+    {
+      "id": 26,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Data Leakage",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Which situation is an example of data leakage?",
+      "options": [
+        "Evaluating the final model exactly once on a separate, held-out test set",
+        "Removing exact duplicate rows before splitting the data",
+        "Fitting a scaler on the full dataset before the train/test split",
+        "Training the same model for a few more epochs"
+      ],
+      "correct": 2,
+      "explanation": "A scaler (or imputer/encoder) fitted on all rows lets test-set statistics such as the mean and std influence training, making scores optimistic; fit preprocessing on the training split only, ideally inside a scikit-learn Pipeline."
+    },
+    {
+      "id": 27,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Transformers & Attention",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is the main role of the attention mechanism in a Transformer?",
+      "options": [
+        "Process tokens strictly one at a time, like an RNN",
+        "Let each token weigh the relevance of all other tokens in its context",
+        "Remove stop words and punctuation before the text ever reaches the model",
+        "Map each word to a fixed one-hot vector"
+      ],
+      "correct": 1,
+      "explanation": "Self-attention builds each token's representation as a weighted sum over all tokens, with weights from query-key similarity, so meaning depends on context; it also lets Transformers process tokens in parallel instead of one by one."
+    },
+    {
+      "id": 28,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Bias-Variance",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A model has high error on both the training set and validation set. Which issue is most likely?",
+      "options": [
+        "Data leakage",
+        "High variance / overfitting",
+        "A validation set that is too small",
+        "High bias / underfitting"
+      ],
+      "correct": 3,
+      "explanation": "If the model cannot even fit the training data, it is too simple or over-regularized (high bias); high variance would show low training error but much higher validation error."
+    },
+    {
+      "id": 29,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Model Monitoring",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "What does concept drift mean in a deployed machine-learning system?",
+      "options": [
+        "The relationship between the inputs and the target changes over time",
+        "Only the input feature distribution shifts, while P(y | x) stays the same",
+        "The model's weights slowly change by themselves after deployment",
+        "Prediction latency gradually increases as traffic grows"
+      ],
+      "correct": 0,
+      "explanation": "Concept drift means P(y | x) changes, e.g. fraud patterns evolve, so the same inputs now map to different outcomes; a shift in the inputs alone with P(y | x) unchanged is data (covariate) drift."
+    },
+    {
+      "id": 30,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Probability Calibration",
+      "difficulty": "Advanced",
+      "dimension": "Technical Communication",
+      "question": "A binary classifier is well calibrated. What should a predicted probability of about 0.8 mean over many similar cases?",
+      "options": [
+        "The model is correct on every such case",
+        "The positive class appears exactly 80 times in every batch of 100 cases",
+        "About 80% of such cases turn out positive in the long run",
+        "The decision threshold should be set to 0.8"
+      ],
+      "correct": 2,
+      "explanation": "Calibration is a long-run frequency property: among many predictions near 0.8, about 80% should be positive. It does not promise exact counts in any single batch or dictate the decision threshold."
+    },
+    {
+      "id": 31,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "List Comprehensions",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What does this code print?\n\nnums = [1, 2, 3, 4, 5]\nprint([n * n for n in nums if n % 2 == 1])",
+      "options": [
+        "[4, 16]",
+        "[1, 4, 9, 16, 25]",
+        "[1, 9, 25]",
+        "[1, 3, 5]"
+      ],
+      "correct": 2,
+      "explanation": "The condition n % 2 == 1 keeps only the odd numbers 1, 3 and 5, and the expression n * n squares them, giving [1, 9, 25]."
+    },
+    {
+      "id": 32,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Git Basics",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Git command saves your staged changes as a new snapshot in the local repository's history?",
+      "options": [
+        "git push",
+        "git add",
+        "git clone",
+        "git commit"
+      ],
+      "correct": 3,
+      "explanation": "git commit records the staged changes as a new commit in the local repository; git add only stages changes, and git push uploads existing commits to a remote such as GitHub."
+    },
+    {
+      "id": 33,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Dictionaries & Hashing",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Which of these can be used as a key in a Python dictionary?",
+      "options": [
+        "A list such as [1, 2]",
+        "A set such as {1, 2}",
+        "A dict such as {'a': 1}",
+        "A tuple such as (1, 2)"
+      ],
+      "correct": 3,
+      "explanation": "Dictionary keys must be hashable: an immutable tuple of hashable items is, whereas lists, sets and dicts are mutable and raise TypeError: unhashable type."
+    },
+    {
+      "id": 34,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "NumPy Broadcasting",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In NumPy, a has shape (3, 1) and b has shape (1, 4). What is the shape of a + b?",
+      "options": [
+        "(3, 4)",
+        "(3, 1)",
+        "(1, 4)",
+        "It raises a ValueError"
+      ],
+      "correct": 0,
+      "explanation": "Broadcasting stretches size-1 dimensions to match: (3, 1) and (1, 4) are compatible in every dimension, so the result has shape (3, 4)."
+    },
+    {
+      "id": 35,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "OOP: Class vs Instance Attributes",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "What does this code print?\n\nclass Model:\n    count = 0\n    def __init__(self):\n        Model.count += 1\n\na = Model()\nb = Model()\nprint(Model.count, a.count)",
+      "options": [
+        "1 1",
+        "2 1",
+        "2 2",
+        "AttributeError"
+      ],
+      "correct": 2,
+      "explanation": "count is a class attribute shared by all instances; each __init__ increments Model.count, so it becomes 2, and a.count finds no instance attribute and falls back to the same class attribute."
+    },
+    {
+      "id": 36,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Jupyter Notebooks",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Your Jupyter notebook worked all day, but after 'Restart Kernel and Run All' it fails with a NameError. What is the most likely cause?",
+      "options": [
+        "Restarting the kernel uninstalls the packages you imported",
+        "Run All executes the cells from the bottom up",
+        "The restart silently switched the notebook to an older Python interpreter",
+        "It used a variable from a cell you later edited or deleted (hidden state)"
+      ],
+      "correct": 3,
+      "explanation": "The kernel remembers every variable from every cell you ran, in any order, so a clean top-to-bottom run exposes code that depends on cells you changed or removed; a restart clears memory, not installed packages."
+    },
+    {
+      "id": 37,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "NumPy Views vs Copies",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "What does this code print?\n\nimport numpy as np\na = np.arange(5)\nb = a[1:4]\nb[0] = 99\nprint(a.tolist())",
+      "options": [
+        "[0, 1, 2, 3, 4]",
+        "[0, 99, 2, 3, 4]",
+        "[99, 1, 2, 3, 4]",
+        "[0, 1, 99, 3, 4]"
+      ],
+      "correct": 1,
+      "explanation": "Basic slicing of a NumPy array returns a view that shares memory with the original, so b[0] is a[1]; use a[1:4].copy() for an independent array (plain Python list slices, by contrast, copy)."
+    },
+    {
+      "id": 38,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Mutable Default Arguments",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "What does this code print?\n\ndef add_item(item, bucket=[]):\n    bucket.append(item)\n    return bucket\n\nadd_item(1)\nprint(add_item(2))",
+      "options": [
+        "[2]",
+        "[2, 1]",
+        "[1, 2]",
+        "TypeError"
+      ],
+      "correct": 2,
+      "explanation": "A default value is evaluated once, when the function is defined, so every call that omits bucket shares the same list; the idiomatic fix is bucket=None and creating a new list inside."
+    },
+    {
+      "id": 39,
+      "field": "AI / ML Engineer",
+      "step": 1,
+      "topic": "Generators & Memory",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "You must count the error lines in a 20 GB log file using Python on a laptop with 8 GB of RAM. Which approach works?",
+      "options": [
+        "Call f.readlines() and loop over the returned list",
+        "Read everything with f.read().splitlines(), then count the matching lines",
+        "Load it with a single pd.read_csv() call, then filter",
+        "Loop over the open file object (for line in f), one line at a time"
+      ],
+      "correct": 3,
+      "explanation": "A file object is a lazy iterator that yields one line at a time, so memory use stays tiny; readlines(), read() and a single read_csv() call all try to load the whole 20 GB into RAM."
+    },
+    {
+      "id": 40,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "SQL Basics",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which SQL clause filters individual rows before any grouping is done?",
+      "options": [
+        "HAVING",
+        "ORDER BY",
+        "WHERE",
+        "GROUP BY"
+      ],
+      "correct": 2,
+      "explanation": "WHERE filters rows before GROUP BY forms groups; HAVING filters the groups afterwards, which is why it can use aggregates such as COUNT(*)."
+    },
+    {
+      "id": 41,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Pandas GroupBy",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Given\n\ndf = pd.DataFrame({'city': ['Pune', 'Delhi', 'Pune', 'Delhi'],\n                   'sales': [10, 20, 30, 40]})\n\nwhat is df.groupby('city')['sales'].mean()['Delhi']?",
+      "options": [
+        "20.0",
+        "25.0",
+        "60.0",
+        "30.0"
+      ],
+      "correct": 3,
+      "explanation": "groupby('city') splits the rows by city; Delhi's sales are 20 and 40, so their mean is 30.0 (60 would be the sum and 25.0 the overall mean)."
+    },
+    {
+      "id": 42,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Statistics & EDA",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "During EDA, a histogram of household income shows a long tail to the right. How do the mean and median typically compare?",
+      "options": [
+        "The mean is greater than the median",
+        "The median is greater than the mean",
+        "They are equal, as in any distribution",
+        "It depends only on the sample size"
+      ],
+      "correct": 0,
+      "explanation": "A few very large incomes in the right tail pull the mean upwards while the median (the middle value) barely moves, so mean > median; this is why median income is usually reported."
+    },
+    {
+      "id": 43,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Linear Algebra Basics",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Matrix A has shape (4, 3) and matrix B has shape (3, 2). What is the shape of the product A @ B?",
+      "options": [
+        "(3, 3)",
+        "(4, 3)",
+        "(4, 2)",
+        "The product is undefined"
+      ],
+      "correct": 2,
+      "explanation": "Matrix multiplication needs matching inner dimensions (3 and 3) and returns the outer ones, so (4, 3) @ (3, 2) gives (4, 2); a dense neural-network layer applies exactly this to a batch of inputs."
+    },
+    {
+      "id": 44,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Bayes' Theorem",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A disease affects 1% of people. A test detects it 90% of the time when it is present, and gives a false positive 10% of the time when it is absent. If a random person tests positive, roughly what is the probability that they have the disease?",
+      "options": [
+        "About 90%",
+        "About 50%",
+        "About 1%",
+        "About 8%"
+      ],
+      "correct": 3,
+      "explanation": "P(disease | +) = (0.9 × 0.01) / (0.9 × 0.01 + 0.1 × 0.99) = 0.009 / 0.108 ≈ 8%: false positives from the 99% healthy majority outnumber the true positives (the base-rate fallacy)."
+    },
+    {
+      "id": 45,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "Pandas Merge",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "students has 100 rows (one per student). You run\n\npd.merge(students, marks, on='student_id', how='left')\n\nand the result has 250 rows. What is the most likely reason?",
+      "options": [
+        "how='left' keeps every row from both DataFrames",
+        "Many students have several matching rows in marks (one per subject)",
+        "Students with no marks are duplicated to fill the NaNs",
+        "merge() silently falls back to a cross join whenever the key column repeats"
+      ],
+      "correct": 1,
+      "explanation": "A merge emits one row per matching key pair, so a one-to-many relationship multiplies student rows; how='left' keeps unmatched students once (with NaN marks) and never adds unmatched rows from marks, which is what how='outer' does."
+    },
+    {
+      "id": 46,
+      "field": "AI / ML Engineer",
+      "step": 2,
+      "topic": "SQL Window Functions",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "Which query lists every employee with the rank of their salary within their own department, without collapsing rows?",
+      "options": [
+        "SELECT name, dept, salary, RANK() OVER (ORDER BY salary DESC) FROM emp ORDER BY dept;",
+        "SELECT dept, MAX(salary) FROM emp GROUP BY dept;",
+        "SELECT name, dept, RANK() OVER (PARTITION BY dept ORDER BY salary DESC) FROM emp;",
+        "SELECT name, dept, salary FROM emp ORDER BY dept, salary DESC;"
+      ],
+      "correct": 2,
+      "explanation": "PARTITION BY dept restarts the ranking for each department while keeping every row; GROUP BY collapses rows to one per group, and OVER without PARTITION BY ranks across the whole table."
+    },
+    {
+      "id": 47,
+      "field": "AI / ML Engineer",
+      "step": 3,
+      "topic": "Grouped Cross-Validation",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Your dataset has several chest X-ray images per patient. Random 5-fold cross-validation gives 97% accuracy, but accuracy on new patients is only 70%. What is the most likely flaw and fix?",
+      "options": [
+        "Five folds are too few; use 10-fold CV so each validation fold is more reliable",
+        "The model is underfitting; add more layers and train for more epochs",
+        "The classes are imbalanced; use StratifiedKFold so each fold keeps the same class ratios",
+        "Same-patient images leak across folds; use GroupKFold with patient ID as the group"
+      ],
+      "correct": 3,
+      "explanation": "Images of one patient are highly correlated, so random folds let the model recognise patients it has already seen; GroupKFold keeps each patient in a single fold, mimicking truly new patients. Stratification fixes class ratios, not this leakage."
+    },
+    {
+      "id": 48,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Epochs & Batches",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In neural-network training, what is one epoch?",
+      "options": [
+        "One full pass over the entire training dataset",
+        "One weight update computed from a single mini-batch of samples",
+        "The number of layers in the network",
+        "The time taken to process one sample"
+      ],
+      "correct": 0,
+      "explanation": "An epoch is one complete pass over all training samples; with 10,000 samples and a batch size of 100, one epoch contains 100 iterations (weight updates)."
+    },
+    {
+      "id": 49,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "PyTorch Training Loop",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "In a standard PyTorch training loop, why is optimizer.zero_grad() called before loss.backward() on every iteration?",
+      "options": [
+        "It resets the model's weights to zero before each update",
+        "It sets the learning rate to zero during warm-up",
+        "Gradients accumulate in .grad by default, so old ones must be cleared",
+        "It frees the GPU memory held by the computation graph from the last batch"
+      ],
+      "correct": 2,
+      "explanation": "loss.backward() adds new gradients to whatever is already stored in each parameter's .grad, so without zero_grad() gradients from earlier batches pile up and corrupt the update; the weights are untouched."
+    },
+    {
+      "id": 50,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Early Stopping",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Training loss keeps falling, but validation loss has been rising since epoch 8. Which technique directly addresses this?",
+      "options": [
+        "Increase the model size so it can learn more",
+        "Raise the learning rate to escape the plateau",
+        "Remove the dropout layers so the network can fit the data more closely",
+        "Early stopping: keep the checkpoint with the best validation loss"
+      ],
+      "correct": 3,
+      "explanation": "Rising validation loss with falling training loss means the network has started to overfit; early stopping halts training (or restores the best checkpoint) at the epoch with the lowest validation loss."
+    },
+    {
+      "id": 51,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "CNN Output Shapes",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A 32×32 RGB image passes through a Conv2d layer with 16 filters, kernel size 3, stride 1 and no padding. What is the output shape (channels × height × width)?",
+      "options": [
+        "16 × 32 × 32",
+        "16 × 30 × 30",
+        "3 × 30 × 30",
+        "16 × 29 × 29"
+      ],
+      "correct": 1,
+      "explanation": "Output size = (W - K + 2P) / S + 1 = (32 - 3 + 0) / 1 + 1 = 30, and each of the 16 filters produces one channel; padding=1 would keep the size at 32 × 32."
+    },
+    {
+      "id": 52,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Learning Rate",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "While training a neural network, the loss jumps around wildly and soon becomes NaN. What should you try first?",
+      "options": [
+        "Increase the learning rate",
+        "Train for more epochs",
+        "Lower the learning rate",
+        "Add more hidden layers"
+      ],
+      "correct": 2,
+      "explanation": "A learning rate that is too large makes updates overshoot the minimum, so the loss oscillates and can explode to NaN; lowering it (optionally with gradient clipping) is the standard first fix."
+    },
+    {
+      "id": 53,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "LSTM & Vanishing Gradients",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "Why do LSTMs handle long sequences better than vanilla RNNs?",
+      "options": [
+        "They process the entire sequence in parallel using self-attention instead",
+        "They use ReLU everywhere, so gradients can never vanish",
+        "They have no recurrent connections to backpropagate through",
+        "Their gated cell state lets gradients flow across many time steps"
+      ],
+      "correct": 3,
+      "explanation": "In a vanilla RNN the gradient is multiplied by the recurrent weights at every step and shrinks exponentially; the LSTM's additive cell-state path, controlled by forget/input/output gates, keeps the signal alive. Parallel self-attention is the Transformer's idea, not the LSTM's."
+    },
+    {
+      "id": 54,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Transfer Learning",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "You have only 2,000 labelled images of crop diseases. Which approach is most likely to give the best accuracy quickly?",
+      "options": [
+        "Fine-tune an ImageNet-pretrained CNN, with its early layers frozen at first",
+        "Train a deep CNN from scratch with random weights for 500 epochs",
+        "Flatten the pixels and train a logistic regression model",
+        "Train a large Vision Transformer from scratch on just the 2,000 labelled images"
+      ],
+      "correct": 0,
+      "explanation": "A pretrained network already knows generic visual features (edges, textures, shapes), so fine-tuning it on a small dataset converges fast and overfits less; deep models trained from scratch on 2,000 images overfit badly."
+    },
+    {
+      "id": 55,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "model.train() vs model.eval()",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Your PyTorch model gives different predictions for the same input on every call, and accuracy is below what you saw in validation. The inference code never calls model.eval(). Which layers are most likely responsible?",
+      "options": [
+        "Linear and Conv2d, whose weights keep updating at inference",
+        "The loss function and optimizer, which still run on each call",
+        "Dropout and BatchNorm, which behave differently in training mode",
+        "Embedding layers, which re-randomise their vectors every time they are called"
+      ],
+      "correct": 2,
+      "explanation": "In training mode dropout randomly zeroes activations and BatchNorm uses the current batch's statistics; model.eval() disables dropout and switches BatchNorm to its running averages, making inference deterministic. Weights only change when optimizer.step() runs."
+    },
+    {
+      "id": 56,
+      "field": "AI / ML Engineer",
+      "step": 4,
+      "topic": "Backpropagation (Chain Rule)",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A one-weight model computes y = w · x with loss L = (y - 10)². For x = 3 and w = 2, what is the gradient dL/dw?",
+      "options": [
+        "-8",
+        "24",
+        "-12",
+        "-24"
+      ],
+      "correct": 3,
+      "explanation": "y = 6, so dL/dy = 2(y - 10) = -8 and dy/dw = x = 3; by the chain rule dL/dw = -8 × 3 = -24 (the negative sign means increasing w lowers the loss)."
+    },
+    {
+      "id": 57,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Docker",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Why is a model's prediction API usually packaged in a Docker container before deployment?",
+      "options": [
+        "It makes the model's predictions more accurate",
+        "It runs with the same Python version and dependencies everywhere",
+        "It compresses the model weights so that inference needs almost no RAM",
+        "It removes the need for a framework like FastAPI"
+      ],
+      "correct": 1,
+      "explanation": "A Docker image bundles the code, Python version, libraries and system packages, so the service behaves the same on a laptop, in CI and in the cloud; it does not change the model's accuracy."
+    },
+    {
+      "id": 58,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Embeddings & Similarity",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In a semantic search system, which measure is most commonly used to compare two text embedding vectors?",
+      "options": [
+        "Edit (Levenshtein) distance",
+        "Exact string match",
+        "Cosine similarity",
+        "Difference in word counts"
+      ],
+      "correct": 2,
+      "explanation": "Cosine similarity measures the angle between two embedding vectors, so texts with similar meaning score close to 1 even without shared words; edit distance and exact matching compare raw characters."
+    },
+    {
+      "id": 59,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "BERT vs GPT",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is a key architectural difference between BERT and GPT-style models?",
+      "options": [
+        "BERT: decoder that generates text left to right; GPT: bidirectional encoder trained on masked tokens",
+        "BERT is built on RNNs, while GPT is built on Transformers",
+        "BERT works only on images, while GPT works only on text",
+        "BERT: encoder trained on masked tokens; GPT: decoder trained on next-token prediction"
+      ],
+      "correct": 3,
+      "explanation": "BERT uses a bidirectional Transformer encoder pretrained by predicting masked tokens, which suits classification and embeddings; GPT uses a causal decoder trained to predict the next token, which suits generation. Both are Transformers."
+    },
+    {
+      "id": 60,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "RAG Basics",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "In a Retrieval-Augmented Generation (RAG) chatbot over company PDFs, what happens when a user asks a question?",
+      "options": [
+        "Relevant chunks are retrieved from a vector index and added to the LLM's prompt",
+        "The LLM is fine-tuned on the PDFs again for every new question",
+        "The PDFs are converted to SQL tables and queried with SQL",
+        "The LLM answers only from its pre-training data, and the PDFs are just logged for audits"
+      ],
+      "correct": 0,
+      "explanation": "RAG embeds the question, retrieves the most similar document chunks from a vector store and passes them to the LLM as context, grounding answers in current documents without retraining; fine-tuning per query would be slow and costly."
+    },
+    {
+      "id": 61,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "MLflow Experiment Tracking",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "What is MLflow Tracking mainly used for in an ML project?",
+      "options": [
+        "Labelling raw images and text for supervised learning",
+        "Load-balancing prediction traffic across Kubernetes pods",
+        "Logging parameters, metrics and artifacts for each training run",
+        "Automatically searching for the best neural-network architecture for a task"
+      ],
+      "correct": 2,
+      "explanation": "MLflow Tracking records each run's hyperparameters, metrics and artifacts (models, plots) in one place, so experiments can be compared and the best model reproduced or registered."
+    },
+    {
+      "id": 62,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Data Drift Monitoring",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A loan-approval model was trained on 2023 data. Applicant incomes have since shifted, and true repayment labels arrive only after 6 months. What is the best way to detect problems early?",
+      "options": [
+        "Wait until the repayment labels arrive, and only then compare accuracy with the 2023 baseline",
+        "Retrain daily, treating the model's own predictions as the new ground-truth labels",
+        "Track only API latency and HTTP error rates, since they reflect model quality",
+        "Compare live input distributions with training data (e.g. PSI, KS test) and alert on drift"
+      ],
+      "correct": 3,
+      "explanation": "When labels are delayed, input (data) drift is the earliest signal: PSI or a Kolmogorov-Smirnov test flags live features that no longer resemble the training data. Training on the model's own predictions reinforces its errors, and latency says nothing about accuracy."
+    },
+    {
+      "id": 63,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Model Serving with FastAPI",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Your FastAPI service loads a 1 GB model from disk inside the /predict endpoint function, and every request takes about 4 seconds. What is the best fix?",
+      "options": [
+        "Load the model once at application startup and reuse it across requests",
+        "Add more Uvicorn workers so that each one can reload the model in parallel",
+        "Raise the request timeout so that slow responses don't fail",
+        "Return a placeholder prediction while the model is still loading"
+      ],
+      "correct": 0,
+      "explanation": "Loading per request repeats an expensive disk read and deserialisation every time; loading once at startup (e.g. in FastAPI's lifespan handler) keeps the model in memory so each request only runs inference. More workers or longer timeouts only hide the symptom."
+    },
+    {
+      "id": 64,
+      "field": "AI / ML Engineer",
+      "step": 5,
+      "topic": "Self-Attention Complexity",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "Roughly what happens to the compute and memory of standard self-attention when the input sequence length doubles?",
+      "options": [
+        "It roughly doubles, since cost grows linearly with the tokens",
+        "It stays roughly the same, since all tokens are processed in parallel on a GPU",
+        "It grows by a small constant, since only one layer is added",
+        "It roughly quadruples, since scores are computed for every pair of tokens"
+      ],
+      "correct": 3,
+      "explanation": "Standard self-attention builds an n × n score matrix, so its cost grows as O(n²) and doubling n gives about 4×; this is why long contexts are expensive. Parallelism speeds things up but does not reduce the total work."
+    }
+  ]
+}

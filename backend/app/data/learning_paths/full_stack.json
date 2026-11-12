@@ -1,0 +1,355 @@
+{
+  "field": "Full Stack Developer",
+  "core_skills": [
+    {
+      "id": "html_css",
+      "name": "HTML & CSS",
+      "step": 1,
+      "keywords": [
+        "html",
+        "html5",
+        "css",
+        "css3",
+        "tailwind",
+        "tailwindcss",
+        "tailwind css",
+        "bootstrap",
+        "sass",
+        "scss",
+        "flexbox",
+        "css grid",
+        "responsive design",
+        "responsive web design",
+        "styled-components"
+      ]
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "step": 2,
+      "keywords": [
+        "javascript",
+        "java script",
+        "ecmascript",
+        "es6",
+        "es2015",
+        "typescript",
+        "jquery",
+        "vanilla js",
+        "ajax",
+        "dom manipulation"
+      ]
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "step": 3,
+      "keywords": [
+        "react",
+        "react.js",
+        "reactjs",
+        "react js",
+        "react native",
+        "next.js",
+        "nextjs",
+        "redux",
+        "redux toolkit",
+        "react router",
+        "react hooks",
+        "zustand",
+        "next js",
+        "mern"
+      ]
+    },
+    {
+      "id": "node_express",
+      "name": "Node.js / Express",
+      "step": 4,
+      "keywords": [
+        "node",
+        "node.js",
+        "nodejs",
+        "node js",
+        "express.js",
+        "expressjs",
+        "nestjs",
+        "nest.js",
+        "fastify",
+        "koa",
+        "express js",
+        "mern",
+        "mean stack"
+      ]
+    },
+    {
+      "id": "databases",
+      "name": "Databases",
+      "step": 4,
+      "keywords": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "postgres",
+        "mongodb",
+        "mongo",
+        "mongoose",
+        "sqlite",
+        "redis",
+        "prisma",
+        "sequelize",
+        "typeorm",
+        "firebase",
+        "firestore",
+        "supabase",
+        "nosql",
+        "mariadb",
+        "dynamodb",
+        "mern",
+        "mssql"
+      ]
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "step": 5,
+      "keywords": [
+        "git",
+        "github",
+        "gitlab",
+        "bitbucket",
+        "version control"
+      ]
+    },
+    {
+      "id": "deployment",
+      "name": "Deployment",
+      "step": 5,
+      "keywords": [
+        "docker",
+        "docker compose",
+        "kubernetes",
+        "k8s",
+        "vercel",
+        "netlify",
+        "render.com",
+        "deployed on render",
+        "hosted on render",
+        "heroku",
+        "aws",
+        "amazon web services",
+        "ec2",
+        "azure",
+        "gcp",
+        "google cloud",
+        "ci/cd",
+        "cicd",
+        "github actions",
+        "jenkins",
+        "nginx",
+        "github pages",
+        "firebase hosting",
+        "digitalocean",
+        "cloudflare"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "HTML & CSS",
+      "subtitle": "Structure and style the web",
+      "description": "Write semantic, accessible HTML and lay it out with modern CSS: the box model, Flexbox, Grid and media queries. Every framework renders down to this, and interviewers expect you to build a responsive page from scratch.",
+      "topics": [
+        {
+          "id": "fs1-semantic-html",
+          "name": "Semantic HTML5 elements and page structure (header, nav, main, section, footer)"
+        },
+        {
+          "id": "fs1-forms-accessibility",
+          "name": "Forms, input types, labels and accessibility basics (alt text, ARIA, keyboard focus)"
+        },
+        {
+          "id": "fs1-selectors-specificity",
+          "name": "CSS selectors, specificity and the cascade"
+        },
+        {
+          "id": "fs1-box-model-positioning",
+          "name": "Box model, box-sizing, display and positioning (relative, absolute, fixed, sticky)"
+        },
+        {
+          "id": "fs1-flexbox-grid",
+          "name": "Flexbox and CSS Grid layouts"
+        },
+        {
+          "id": "fs1-responsive-design",
+          "name": "Responsive design: media queries, mobile-first and relative units (rem, %, vw)"
+        },
+        {
+          "id": "fs1-css-tooling",
+          "name": "CSS variables, transitions and a utility framework (Tailwind CSS or Bootstrap)"
+        }
+      ],
+      "coding_topics": []
+    },
+    {
+      "step": 2,
+      "title": "JavaScript",
+      "subtitle": "Make pages interactive",
+      "description": "Learn the language of the web: types, functions and closures, array methods, the DOM and asynchronous code with promises and async/await. These fundamentals power React on the frontend and Node.js on the backend.",
+      "topics": [
+        {
+          "id": "fs2-variables-types",
+          "name": "Variables (let, const, var), data types, equality and type coercion"
+        },
+        {
+          "id": "fs2-functions-closures",
+          "name": "Functions, arrow functions, scope, hoisting and closures"
+        },
+        {
+          "id": "fs2-arrays-objects",
+          "name": "Arrays and objects: map, filter, reduce, destructuring and spread"
+        },
+        {
+          "id": "fs2-dom-events",
+          "name": "DOM manipulation and events (bubbling, delegation, preventDefault)"
+        },
+        {
+          "id": "fs2-async-promises",
+          "name": "Asynchronous JavaScript: callbacks, promises and async/await with error handling"
+        },
+        {
+          "id": "fs2-event-loop",
+          "name": "The event loop: call stack, microtasks and macrotasks"
+        },
+        {
+          "id": "fs2-fetch-modules",
+          "name": "Fetch API, JSON and ES modules (import/export)"
+        }
+      ],
+      "coding_topics": [
+        "Arrays",
+        "Hashing",
+        "Strings"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "React",
+      "subtitle": "Build component-driven UIs",
+      "description": "Build single-page apps from reusable components using state, hooks, effects, context and client-side routing. React is the most requested frontend skill in full stack job descriptions.",
+      "topics": [
+        {
+          "id": "fs3-components-props",
+          "name": "Components, JSX and props"
+        },
+        {
+          "id": "fs3-state-events",
+          "name": "State with useState and event handling"
+        },
+        {
+          "id": "fs3-lists-conditional",
+          "name": "Rendering lists with keys and conditional rendering"
+        },
+        {
+          "id": "fs3-forms-lifting-state",
+          "name": "Controlled forms and lifting state up"
+        },
+        {
+          "id": "fs3-effects",
+          "name": "useEffect: data fetching, dependency arrays and cleanup"
+        },
+        {
+          "id": "fs3-hooks-memoization",
+          "name": "useRef, useMemo, useCallback, React.memo and custom hooks"
+        },
+        {
+          "id": "fs3-context-routing",
+          "name": "Context API and client-side routing with React Router"
+        }
+      ],
+      "coding_topics": [
+        "Stack"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Backend: Node.js, Express & Databases",
+      "subtitle": "Build APIs and persist data",
+      "description": "Design REST APIs with Node.js and Express, model data in SQL and NoSQL databases, and secure endpoints with hashed passwords and JWT or session auth. This turns your frontend into a complete full stack application.",
+      "topics": [
+        {
+          "id": "fs4-node-npm",
+          "name": "Node.js runtime, npm packages and project setup"
+        },
+        {
+          "id": "fs4-rest-api-design",
+          "name": "REST API design: resources, HTTP methods, status codes and idempotency"
+        },
+        {
+          "id": "fs4-express-middleware",
+          "name": "Express routing, middleware, input validation and error handling"
+        },
+        {
+          "id": "fs4-sql-basics",
+          "name": "SQL: CRUD queries, JOINs, GROUP BY and transactions (ACID)"
+        },
+        {
+          "id": "fs4-schema-nosql",
+          "name": "Schema design: normalization, SQL vs NoSQL (MongoDB), embedding vs referencing"
+        },
+        {
+          "id": "fs4-indexing-performance",
+          "name": "Indexes, query performance and the N+1 problem"
+        },
+        {
+          "id": "fs4-auth",
+          "name": "Authentication and authorization: password hashing (bcrypt), JWT and sessions"
+        }
+      ],
+      "coding_topics": [
+        "Hashing",
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Git, Deployment & Production",
+      "subtitle": "Ship, secure and run your app",
+      "description": "Collaborate with Git and GitHub, containerize with Docker, automate tests and deploys with CI/CD, and harden your app with HTTPS, CORS and security headers. A live, monitored project is what sets a placement-ready candidate apart.",
+      "topics": [
+        {
+          "id": "fs5-git-basics",
+          "name": "Git basics: commit, branch, merge, revert and resolving conflicts"
+        },
+        {
+          "id": "fs5-github-workflow",
+          "name": "GitHub workflow: pull requests, code review and .gitignore"
+        },
+        {
+          "id": "fs5-env-config",
+          "name": "Environment variables, configuration and secrets management"
+        },
+        {
+          "id": "fs5-docker",
+          "name": "Docker basics: Dockerfile, images, containers and Docker Compose"
+        },
+        {
+          "id": "fs5-cicd-hosting",
+          "name": "CI/CD with GitHub Actions and hosting on Vercel, Netlify, Render or AWS"
+        },
+        {
+          "id": "fs5-web-security",
+          "name": "Web security: HTTPS, CORS, security headers, XSS, CSRF and SQL injection"
+        },
+        {
+          "id": "fs5-performance-monitoring",
+          "name": "Performance, HTTP caching, logging and monitoring basics"
+        }
+      ],
+      "coding_topics": [
+        "Sliding Window",
+        "Two Pointers"
+      ]
+    }
+  ]
+}

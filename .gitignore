@@ -1,0 +1,27 @@
+# Node
+node_modules/
+.next/
+dist/
+build/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# VS Code / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local database
+*.db
+
+# Archives
+*.zip

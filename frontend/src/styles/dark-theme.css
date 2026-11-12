@@ -1,0 +1,168 @@
+/*
+ * SMART PLACED AI — Dark theme
+ *
+ * The components are styled with the brand palette as Tailwind arbitrary values
+ * (bg-[#FAF8F3], text-[#1C4A57], ...). Rather than adding `dark:` variants to every
+ * element, this layer remaps those palette classes when <html> carries the `dark`
+ * class (set by PreferencesContext). Light surfaces become dark surfaces and the deep
+ * teal ink becomes a light ink; solid brand fills (navbar, primary buttons) stay as-is.
+ *
+ * When adding a new palette class to a component, add its dark mapping here.
+ */
+
+html.dark {
+  color-scheme: dark;
+
+  --sp-page: 14 22 25;          /* was #F1EEE3 page cream   */
+  --sp-surface: 22 33 38;       /* was white cards          */
+  --sp-raised: 29 43 49;        /* was #FAF8F3 inputs/panels */
+  --sp-panel: 34 46 46;         /* was #EAE5D6 cream-yellow */
+  --sp-teal-tint: 30 60 66;     /* was #CFE3E0              */
+  --sp-sage-tint: 21 52 44;     /* was #E6F4F0              */
+  --sp-coral-tint: 60 35 28;    /* was #FDEAE5              */
+  --sp-amber-tint: 58 46 26;    /* was #FFF5E6              */
+  --sp-ink: 226 236 234;        /* was #1C4A57 text         */
+  --sp-muted: 150 170 172;      /* was gray/slate text      */
+  --sp-accent: 117 169 163;     /* focus rings, solid teal borders */
+  --sp-coral: 240 138 106;      /* was #D95D39 text         */
+  --sp-sage: 92 197 165;        /* was #2E7D68 text         */
+}
+
+html.dark body {
+  background-color: rgb(var(--sp-page));
+  color: rgb(var(--sp-ink));
+}
+
+/* ---------- Surfaces ---------- */
+html.dark .bg-white { background-color: rgb(var(--sp-surface)); }
+html.dark .bg-white\/95 { background-color: rgb(var(--sp-surface) / 0.95); }
+html.dark .bg-white\/80 { background-color: rgb(var(--sp-raised) / 0.8); }
+html.dark .bg-white\/70 { background-color: rgb(var(--sp-raised) / 0.7); }
+
+html.dark .bg-\[\#FAF8F3\] { background-color: rgb(var(--sp-raised)); }
+html.dark .bg-\[\#FAF8F3\]\/60 { background-color: rgb(var(--sp-raised) / 0.6); }
+html.dark .bg-\[\#F1EEE3\],
+html.dark .bg-cream-200 { background-color: rgb(var(--sp-page)); }
+html.dark .bg-\[\#EAE5D6\] { background-color: rgb(var(--sp-panel)); }
+html.dark .bg-\[\#EAE5D6\]\/70 { background-color: rgb(var(--sp-panel) / 0.7); }
+html.dark .bg-\[\#EAE5D6\]\/40 { background-color: rgb(var(--sp-panel) / 0.4); }
+
+html.dark .bg-\[\#CFE3E0\] { background-color: rgb(var(--sp-teal-tint)); }
+html.dark .bg-\[\#CFE3E0\]\/50 { background-color: rgb(var(--sp-teal-tint) / 0.5); }
+html.dark .bg-\[\#CFE3E0\]\/40 { background-color: rgb(var(--sp-teal-tint) / 0.4); }
+html.dark .bg-\[\#CFE3E0\]\/20 { background-color: rgb(var(--sp-teal-tint) / 0.25); }
+
+html.dark .bg-\[\#E6F4F0\],
+html.dark .bg-\[\#E6F4E6\] { background-color: rgb(var(--sp-sage-tint)); }
+html.dark .bg-\[\#E6F4F0\]\/70 { background-color: rgb(var(--sp-sage-tint) / 0.7); }
+html.dark .bg-\[\#E6F4F0\]\/60 { background-color: rgb(var(--sp-sage-tint) / 0.6); }
+html.dark .bg-\[\#E6F4F0\]\/50 { background-color: rgb(var(--sp-sage-tint) / 0.5); }
+
+html.dark .bg-\[\#FDEAE5\] { background-color: rgb(var(--sp-coral-tint)); }
+html.dark .bg-\[\#FDEAE5\]\/60 { background-color: rgb(var(--sp-coral-tint) / 0.6); }
+html.dark .bg-\[\#FFF5E6\] { background-color: rgb(var(--sp-amber-tint)); }
+
+html.dark .bg-\[\#1C4A57\]\/20 { background-color: rgb(var(--sp-ink) / 0.16); }
+html.dark .bg-\[\#1C4A57\]\/15 { background-color: rgb(var(--sp-ink) / 0.12); }
+html.dark .bg-\[\#1C4A57\]\/10 { background-color: rgb(var(--sp-ink) / 0.08); }
+html.dark .bg-gray-100,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 { background-color: rgb(var(--sp-raised)); }
+html.dark .bg-gray-200 { background-color: rgb(var(--sp-ink) / 0.12); }
+html.dark .bg-emerald-100 { background-color: rgb(var(--sp-sage-tint)); }
+
+/* Hover / focus surfaces (must out-rank the base surface overrides above) */
+html.dark .hover\:bg-\[\#FAF8F3\]:hover,
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover { background-color: rgb(var(--sp-raised)); }
+html.dark .hover\:bg-slate-200:hover { background-color: rgb(var(--sp-ink) / 0.12); }
+html.dark .hover\:bg-\[\#F1EEE3\]:hover { background-color: rgb(var(--sp-page)); }
+html.dark .hover\:bg-\[\#F1EEE3\]\/50:hover { background-color: rgb(var(--sp-page) / 0.5); }
+html.dark .hover\:bg-\[\#CFE3E0\]\/60:hover { background-color: rgb(var(--sp-teal-tint) / 0.6); }
+html.dark .hover\:bg-\[\#CFE3E0\]\/50:hover { background-color: rgb(var(--sp-teal-tint) / 0.5); }
+html.dark .hover\:bg-\[\#CFE3E0\]\/40:hover { background-color: rgb(var(--sp-teal-tint) / 0.4); }
+html.dark .hover\:bg-\[\#CFE3E0\]\/30:hover { background-color: rgb(var(--sp-teal-tint) / 0.3); }
+html.dark .hover\:bg-\[\#CFE3E0\]\/20:hover { background-color: rgb(var(--sp-teal-tint) / 0.25); }
+html.dark .hover\:bg-\[\#FDEAE5\]:hover { background-color: rgb(var(--sp-coral-tint)); }
+html.dark .hover\:bg-\[\#1C4A57\]\/5:hover { background-color: rgb(var(--sp-ink) / 0.05); }
+
+/* ---------- Text ---------- */
+/* Fallbacks so any unlisted opacity step of the teal ink/border stays legible;
+   the exact mappings below take precedence (same specificity, later in the file). */
+html.dark [class*="text-[#1C4A57]/"] { color: rgb(var(--sp-ink) / 0.65); }
+html.dark [class*="border-[#1C4A57]/"] { border-color: rgb(var(--sp-ink) / 0.12); }
+
+html.dark .text-\[\#1C4A57\],
+html.dark .text-slateTeal-800,
+html.dark .text-slate-700,
+html.dark .text-slate-800 { color: rgb(var(--sp-ink)); }
+html.dark .text-\[\#1C4A57\]\/90 { color: rgb(var(--sp-ink) / 0.9); }
+html.dark .text-\[\#1C4A57\]\/85 { color: rgb(var(--sp-ink) / 0.85); }
+html.dark .text-\[\#1C4A57\]\/80 { color: rgb(var(--sp-ink) / 0.8); }
+html.dark .text-\[\#1C4A57\]\/75 { color: rgb(var(--sp-ink) / 0.75); }
+html.dark .text-\[\#1C4A57\]\/70 { color: rgb(var(--sp-ink) / 0.7); }
+html.dark .text-\[\#1C4A57\]\/65 { color: rgb(var(--sp-ink) / 0.66); }
+html.dark .text-\[\#1C4A57\]\/60 { color: rgb(var(--sp-ink) / 0.62); }
+html.dark .text-\[\#1C4A57\]\/55 { color: rgb(var(--sp-ink) / 0.58); }
+html.dark .text-\[\#1C4A57\]\/50 { color: rgb(var(--sp-ink) / 0.52); }
+html.dark .text-\[\#1C4A57\]\/40 { color: rgb(var(--sp-ink) / 0.42); }
+html.dark .text-\[\#1C4A57\]\/30 { color: rgb(var(--sp-ink) / 0.32); }
+html.dark .text-\[\#1C4A57\]\/25 { color: rgb(var(--sp-ink) / 0.28); }
+html.dark .hover\:text-\[\#1C4A57\]:hover,
+html.dark .hover\:text-\[\#143741\]:hover,
+html.dark .group:hover .group-hover\:text-\[\#1C4A57\],
+html.dark .group:hover .group-hover\:text-\[\#143741\] { color: rgb(var(--sp-ink)); }
+
+html.dark .text-gray-400,
+html.dark .text-gray-500,
+html.dark .text-gray-600,
+html.dark .text-slate-400,
+html.dark .text-slate-500 { color: rgb(var(--sp-muted)); }
+html.dark .hover\:text-slate-600:hover { color: rgb(var(--sp-ink)); }
+html.dark .text-gray-200 { color: rgb(var(--sp-ink) / 0.12); }
+
+html.dark .text-\[\#D95D39\],
+html.dark .hover\:text-\[\#D95D39\]:hover { color: rgb(var(--sp-coral)); }
+html.dark .text-\[\#2E7D68\] { color: rgb(var(--sp-sage)); }
+html.dark .text-\[\#2E7D68\]\/80 { color: rgb(var(--sp-sage) / 0.8); }
+html.dark .text-\[\#008000\] { color: #6BD66B; }
+html.dark .text-emerald-800 { color: rgb(var(--sp-sage)); }
+html.dark .text-red-500 { color: #F87171; }
+html.dark .text-\[\#B86E00\] { color: #F0B860; }
+
+/* ---------- Borders & rings ---------- */
+html.dark .border-\[\#1C4A57\]\/25 { border-color: rgb(var(--sp-ink) / 0.2); }
+html.dark .border-\[\#1C4A57\]\/20 { border-color: rgb(var(--sp-ink) / 0.16); }
+html.dark .border-\[\#1C4A57\]\/15 { border-color: rgb(var(--sp-ink) / 0.12); }
+html.dark .border-\[\#1C4A57\]\/10 { border-color: rgb(var(--sp-ink) / 0.09); }
+html.dark .border-\[\#1C4A57\],
+html.dark .hover\:border-\[\#1C4A57\]:hover { border-color: rgb(var(--sp-accent)); }
+html.dark .hover\:border-\[\#1C4A57\]\/40:hover { border-color: rgb(var(--sp-accent) / 0.6); }
+html.dark .border-gray-100,
+html.dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]),
+html.dark .border-black\/5 { border-color: rgb(var(--sp-ink) / 0.07); }
+html.dark .border-gray-200,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-200\/60 { border-color: rgb(var(--sp-ink) / 0.12); }
+html.dark .border-gray-400,
+html.dark .border-slate-300 { border-color: rgb(var(--sp-ink) / 0.25); }
+html.dark .border-white { border-color: rgb(var(--sp-surface)); }
+html.dark .border-\[\#F5C6BA\] { border-color: rgb(var(--sp-coral) / 0.35); }
+
+html.dark .focus\:ring-\[\#1C4A57\]:focus { --tw-ring-color: rgb(var(--sp-accent)); }
+html.dark .focus\:ring-\[\#1C4A57\]\/30:focus { --tw-ring-color: rgb(var(--sp-accent) / 0.4); }
+html.dark .ring-\[\#1C4A57\]\/20 { --tw-ring-color: rgb(var(--sp-ink) / 0.15); }
+html.dark .ring-white { --tw-ring-color: rgb(var(--sp-surface)); }
+html.dark .ring-\[\#CFE3E0\] { --tw-ring-color: rgb(var(--sp-teal-tint)); }
+
+/* ---------- Shared badge helpers & scrollbars (index.css) ---------- */
+html.dark .badge-coral { background-color: rgb(var(--sp-coral-tint)); color: rgb(var(--sp-coral)); border-color: rgb(var(--sp-coral) / 0.35); }
+html.dark .badge-sage { background-color: rgb(var(--sp-sage-tint)); color: rgb(var(--sp-sage)); border-color: rgb(var(--sp-sage) / 0.35); }
+html.dark .badge-teal { background-color: rgb(var(--sp-teal-tint)); color: rgb(var(--sp-ink)); border-color: rgb(var(--sp-accent) / 0.4); }
+
+html.dark ::-webkit-scrollbar-track { background: rgb(var(--sp-page)); }
+html.dark ::-webkit-scrollbar-thumb { background: rgb(var(--sp-teal-tint)); }
+html.dark ::-webkit-scrollbar-thumb:hover { background: rgb(var(--sp-accent)); }
+
+html.dark ::placeholder { color: rgb(var(--sp-muted) / 0.8); }

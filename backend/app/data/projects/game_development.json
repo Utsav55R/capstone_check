@@ -1,0 +1,105 @@
+{
+  "field": "Game Developer",
+  "verified_on": "2026-10-07",
+  "projects": [
+    {
+      "id": "gd-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "Asteroids-Style Space Shooter Built Without an Engine",
+      "summary": "Build a complete Asteroids-style arcade game in C++ (or C# with the Raylib-cs binding), using raylib only for the window, input, drawing and sound. You write the game loop, vector math, physics and collision code yourself, so the finished game shows you understand what an engine does for you.",
+      "skills": [
+        "C++ or C#",
+        "raylib",
+        "OOP",
+        "Vector & matrix math",
+        "Collision detection",
+        "Fixed timestep",
+        "Git"
+      ],
+      "requirements": [
+        "Write your own Vec2 type (add, subtract, scale, length, normalize, dot, rotate) and a 2D transform (translate, rotate, scale) that places the ship and asteroid polygons, covered by at least 8 unit tests (doctest/Catch2 or xUnit/NUnit), including normalizing a zero vector.",
+        "Update gameplay at a fixed 60 Hz with an accumulator, separate from rendering: the ship rotates, thrusts along its facing vector, has drag and a max speed, and wraps around the screen edges. Movement speed must be the same with the frame cap at 30 FPS and at 144 FPS.",
+        "Use circle-circle collision for the ship, bullets and asteroids: a hit splits a large asteroid into two medium ones (and a medium into two small ones) with velocities rotated 20-45 degrees from the parent, asteroids bounce off each other with an impulse along the collision normal, and fast bullets never tunnel through small asteroids (sub-steps or a swept test).",
+        "Model the game with classes (Ship, Asteroid, Bullet) and a Menu/Playing/Paused/GameOver state enum. Keep bullets in a fixed-size array that reuses free slots instead of allocating per shot; in C++ use value types or smart pointers (no raw new/delete) and note a clean AddressSanitizer or Valgrind run in the README.",
+        "Load tuning values (thrust, drag, bullet speed, asteroid speed per size) from a key=value config file into a hash map (std::unordered_map or Dictionary) at start-up, and add waves that get harder, 3 lives with 2 seconds of invulnerability after respawn, and a saved top-5 high-score table.",
+        "Build with one command (CMake or dotnet), commit a proper .gitignore with at least 15 meaningful commits, and write a README with a gameplay GIF and a short explanation of your fixed-timestep loop and collision response."
+      ],
+      "reference_repo": {
+        "full_name": "raysan5/raylib",
+        "url": "https://github.com/raysan5/raylib",
+        "description": "A simple and easy-to-use library to enjoy videogames programming.",
+        "stars": 35000,
+        "last_commit": "2026-10-06",
+        "why_reference": "Read src/raymath.h to see how a game library writes vector, matrix and quaternion math (Vector2DotProduct, Vector2Normalize, Vector2Reflect, Vector2Rotate, Vector2Transform, MatrixRotateZ, QuaternionSlerp) and src/rshapes.c for CheckCollisionCircles, CheckCollisionCircleRec and CheckCollisionPointPoly. Then run examples/core/core_delta_time.c, examples/core/core_custom_frame_control.c and examples/shapes/shapes_bouncing_ball.c to see frame timing and simple physics inside a game loop. Use raylib only for the window, input, drawing and audio, and write the math, physics and collision code yourself. Use it as a reference, do not copy it."
+      }
+    },
+    {
+      "id": "gd-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "Polished 2D Action Platformer in Unity or Godot",
+      "summary": "Build a short but polished 2D platformer in Unity (C#) or Godot 4 (GDScript or C#): three tile-based levels, an animated player with a responsive controller, several enemy types and collectibles. The focus is using the engine well and adding the graphics, animation and audio polish (shaders, 2D lights, particles, audio mixing) that makes a game feel finished.",
+      "skills": [
+        "Unity or Godot",
+        "C# / GDScript",
+        "Tilemaps",
+        "Animation state machines",
+        "Shader Graph / shaders",
+        "2D lighting",
+        "Particles",
+        "Game audio",
+        "Game UI"
+      ],
+      "requirements": [
+        "Build at least 3 levels from Tilemaps with rule tiles (or terrain autotiling) and merged tilemap colliders, sorting layers, a parallax background with 3 or more layers, one-way platforms, a moving platform and checkpoints; levels open from a level-select screen.",
+        "Write a physics-based player controller in FixedUpdate (or _physics_process) with acceleration, variable jump height, coyote time (about 0.1 s) and jump buffering, read through Input System actions (or the Godot Input Map) so keyboard and gamepad both work.",
+        "Drive the player with an Animator Controller (or AnimationTree state machine) of at least 6 states (idle, run, jump, fall, hurt, death) switched by parameters, and add at least 3 enemy types with their own state logic (for example patrol and turn at ledges, chase when the player is near, die when stomped).",
+        "Write at least 2 custom shaders in Shader Graph, HLSL or the Godot shading language (a white hit-flash during invincibility frames, plus a dissolve or water/heat-distortion effect), and light one dark cave level with 2D lights (URP 2D Lights or Godot PointLight2D) and normal-mapped sprites.",
+        "Add particle effects (run dust, landing puff, coin pickup, death), a camera that follows with a dead zone, stays inside the level bounds and shakes on damage, and route music and SFX through an Audio Mixer (or Godot audio buses) with Music and SFX volume sliders saved between sessions.",
+        "Provide main, pause (Time.timeScale = 0 or get_tree().paused) and game-over menus plus a HUD for health and coins, save unlocked levels and best times to a JSON file, and put a playable Windows or Web build and a 60-second gameplay video or GIF in the README."
+      ],
+      "reference_repo": {
+        "full_name": "SuperTux/supertux",
+        "url": "https://github.com/SuperTux/supertux",
+        "description": "SuperTux source code: a classic 2D jump'n'run platformer inspired by the Super Mario Bros. games, written in C++ with SDL and OpenGL.",
+        "stars": 3200,
+        "last_commit": "2026-10-02",
+        "why_reference": "SuperTux is a complete 2D platformer on its own C++ engine (SDL + OpenGL), so study the ideas and rebuild them with Unity or Godot tools. src/object/player.cpp shows walk/run acceleration, a max run speed, COYOTE_TIME, JUMP_GRACE_TIME (jump buffering) and stronger gravity once jump is released; src/badguy/badguy.hpp (the State enum) and src/badguy/walking_badguy.cpp (turn_around, might_fall at ledges) show simple enemy logic. Open data/images/creatures/snowball/snowball.sprite to see animations defined as named actions with fps and hitboxes, then look at src/object/tilemap.cpp, the *_particle_system.cpp files, light.cpp and ambient_light.cpp in src/object/, the GLSL files in data/shader/ and src/audio/sound_manager.cpp (set_music_volume, set_sound_volume). Use it as a reference only: do not copy its code (GPLv3) or its assets, which have their own licences."
+      }
+    },
+    {
+      "id": "gd-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Online Co-op Tower Defense with Smart Enemy AI",
+      "summary": "Build a 2-player online co-op tower defense game in Unity (Netcode for GameObjects or Mirror) or Godot 4 (high-level multiplayer). Players build towers on a shared grid, enemy waves find their own way to the base, and the host runs the authoritative simulation. The project shows you can write your own pathfinding and AI, keep hundreds of entities at 60 FPS, network a game properly and ship a public build.",
+      "skills": [
+        "Unity or Godot",
+        "A* pathfinding",
+        "State machines / behaviour trees",
+        "Object pooling",
+        "Spatial partitioning",
+        "Profiling",
+        "Multiplayer networking",
+        "Publishing builds"
+      ],
+      "requirements": [
+        "Implement A* yourself on the tile grid (binary-heap open set, Manhattan or octile heuristic) without NavMesh for the main route. Enemies re-plan when a tower is placed, a placement that would fully block the route is rejected, and a debug overlay shows the current path and the explored nodes.",
+        "Give at least 3 enemy types different behaviour with a finite state machine or behaviour tree (for example follow path, attack a blocking tower, flee to a healer below 30% HP), and add a boss wave driven by a behaviour tree with at least 6 nodes.",
+        "Keep 500 or more active enemies and projectiles at 60 FPS on a mid-range laptop: pool enemies, projectiles and VFX instead of Instantiate/Destroy (or queue_free), let towers find targets through a uniform grid or quadtree instead of scanning every enemy, and cut draw calls with sprite atlases or GPU instancing. Put Profiler (or Godot Monitors) screenshots with before/after frame times and draw-call counts in the README.",
+        "Make the host authoritative: clients only send requests (place or upgrade a tower, ready up), the host checks gold and placement and simulates all enemies, and clients draw replicated enemies with snapshot interpolation about 100 ms in the past. Test with 150 ms simulated latency and 2% packet loss (for example the Unity Transport network simulator) and describe the results.",
+        "Add a lobby flow (host and join by code or IP, for example Unity Relay + Lobby, Steam or a direct connection), shared gold and lives, a clear message when a player disconnects, and keep tower, enemy and wave balance in data assets (ScriptableObjects or Godot Resources) instead of hard-coded values.",
+        "Publish versioned release builds for Windows plus one more platform (WebGL, Linux or Android) on itch.io with a settings menu and controls screen, build them automatically in GitHub Actions (for example GameCI), and link the itch.io page in the README."
+      ],
+      "reference_repo": {
+        "full_name": "Anuken/Mindustry",
+        "url": "https://github.com/Anuken/Mindustry",
+        "description": "The automation tower defense RTS: an open-source tower defense and factory-building game with online co-op and PvP, written in Java.",
+        "stars": 29300,
+        "last_commit": "2026-10-06",
+        "why_reference": "Mindustry is a large open-source tower defense RTS with online co-op, written in Java on the Arc framework, so study its ideas and rebuild them in your engine. All paths are under core/src/mindustry/. ai/Pathfinder.java builds flow fields on a background thread, with separate cost types for ground, legged and naval units, and marks them dirty when a building changes a tile: compare it with your A* and with the classic A* in ai/Astar.java (priority queue, Manhattan heuristic). ai/types/GroundAI.java (pathing to the enemy core, stuck detection) and ai/WaveSpawner.java show how wave enemies spawn and move. entities/EntityGroup.java keeps a QuadTree for spatial queries, and entities/comp/BulletComp.java declares pooled bullets that find collisions through each team's tree. core/NetServer.java sends periodic entity snapshots and validates build requests and player positions, core/NetClient.java applies them, and entities/comp/SyncComp.java interpolates remote entities. Use it as a reference, do not copy it (GPLv3)."
+      }
+    }
+  ]
+}

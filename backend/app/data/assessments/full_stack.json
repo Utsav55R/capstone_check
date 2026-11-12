@@ -1,0 +1,1096 @@
+{
+  "track": "Full Stack Developer",
+  "title": "Full Stack Engineer",
+  "source_document": "full_stack_engineer_placement_assessment_expanded.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "Semantic HTML",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which HTML tag is used to create a hyperlink?",
+      "options": [
+        "<link>",
+        "<a>",
+        "<href>",
+        "<url>"
+      ],
+      "correct": 1,
+      "explanation": "The anchor element <a> with an href attribute creates a hyperlink; <link> sits in the <head> and references external resources such as stylesheets."
+    },
+    {
+      "id": 2,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Basics",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which CSS property changes the text color?",
+      "options": [
+        "font-color",
+        "text-color",
+        "color",
+        "foreground"
+      ],
+      "correct": 2,
+      "explanation": "The color property sets an element's text (foreground) color; font-color and text-color are not valid CSS properties."
+    },
+    {
+      "id": 3,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Variables (let/const)",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which keyword can be used to declare a variable whose value can be reassigned?",
+      "options": [
+        "const",
+        "final",
+        "let",
+        "static"
+      ],
+      "correct": 2,
+      "explanation": "let declares a block-scoped variable that can be reassigned; const forbids reassignment, final is Java, and static only marks class members in JavaScript."
+    },
+    {
+      "id": 4,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "JavaScript Arrays",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which method adds an element to the end of an array?",
+      "options": [
+        "push()",
+        "add()",
+        "append()",
+        "insertEnd()"
+      ],
+      "correct": 0,
+      "explanation": "Array.prototype.push() appends one or more elements to the end of an array and returns the new length; arrays have no add(), append() or insertEnd() method (append() belongs to Python lists and DOM elements)."
+    },
+    {
+      "id": 5,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "HTTP Methods",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which HTTP method is generally used to retrieve data from a server?",
+      "options": [
+        "POST",
+        "DELETE",
+        "GET",
+        "PATCH"
+      ],
+      "correct": 2,
+      "explanation": "GET retrieves a representation of a resource without changing server state; POST creates, PATCH partially updates and DELETE removes resources."
+    },
+    {
+      "id": 6,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "React",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is React primarily used for?",
+      "options": [
+        "Building user interfaces from reusable components",
+        "Handling HTTP routing and middleware on a Node.js server",
+        "Querying and managing relational databases",
+        "Bundling and minifying JavaScript files"
+      ],
+      "correct": 0,
+      "explanation": "React is a JavaScript library for building user interfaces out of reusable components; server routing, databases and bundling are handled by other tools (Express, SQL engines, Vite/webpack)."
+    },
+    {
+      "id": 7,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "React Components",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is a component in React?",
+      "options": [
+        "A stylesheet scoped to a single page",
+        "A global store that holds all application state",
+        "A reusable piece of UI that returns JSX",
+        "A browser API for sending HTTP requests"
+      ],
+      "correct": 2,
+      "explanation": "A React component is a reusable function (or class) that takes props and returns JSX describing part of the UI; a global state store is something like Redux or Context."
+    },
+    {
+      "id": 8,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "REST API",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the purpose of a REST API?",
+      "options": [
+        "Render HTML on the server before sending it to the browser",
+        "Let clients and servers exchange resources over HTTP using standard methods",
+        "Keep a persistent two-way socket open between browser and server",
+        "Store application data in tables linked by relationships"
+      ],
+      "correct": 1,
+      "explanation": "A REST API exposes resources (e.g. /users/42) that clients read and change with standard HTTP methods such as GET, POST, PUT and DELETE; a persistent two-way socket describes WebSockets."
+    },
+    {
+      "id": 9,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "SQL Queries",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which SQL command is used to retrieve data?",
+      "options": [
+        "GET",
+        "READ",
+        "RETRIEVE",
+        "SELECT"
+      ],
+      "correct": 3,
+      "explanation": "SELECT retrieves rows from one or more tables; GET is an HTTP method, and READ/RETRIEVE are not SQL commands."
+    },
+    {
+      "id": 10,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "SQL JOIN",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In SQL, what is the purpose of a JOIN?",
+      "options": [
+        "Stack the results of two queries vertically into one result set",
+        "Combine rows from two or more tables based on a related column",
+        "Group rows that share a value so aggregates can be computed",
+        "Copy rows from one table into another table"
+      ],
+      "correct": 1,
+      "explanation": "A JOIN combines rows from two or more tables using a related column (e.g. orders.user_id = users.id); stacking two result sets vertically is UNION, and grouping for aggregates is GROUP BY."
+    },
+    {
+      "id": 11,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Authentication",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the purpose of authentication?",
+      "options": [
+        "Verify the identity of a user",
+        "Decide which resources a user is allowed to access",
+        "Encrypt data while it travels over the network",
+        "Record user actions for later auditing"
+      ],
+      "correct": 0,
+      "explanation": "Authentication answers 'who are you?' by verifying identity (password, OTP, OAuth login); deciding what the user may access is authorization."
+    },
+    {
+      "id": 12,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Authorization",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A logged-in user whose role is 'student' sends DELETE /api/jobs/42 with a valid token, but only admins may delete job posts. Which status code should the API return?",
+      "options": [
+        "401 Unauthorized",
+        "400 Bad Request",
+        "405 Method Not Allowed",
+        "403 Forbidden"
+      ],
+      "correct": 3,
+      "explanation": "The user is authenticated but not authorized for this action, which is exactly what 403 Forbidden means; 401 Unauthorized is for missing or invalid credentials, and 405 would mean the resource does not support DELETE at all."
+    },
+    {
+      "id": 13,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Node.js & Express",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which of the following is commonly used to build a backend REST API?",
+      "options": [
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "React Testing Library",
+        "Node.js with Express"
+      ],
+      "correct": 3,
+      "explanation": "Express is a minimal Node.js web framework for routes and middleware, a common choice for REST APIs; Tailwind CSS, Redux Toolkit and React Testing Library are frontend styling, state and testing tools."
+    },
+    {
+      "id": 14,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Database Design",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "What is database normalization primarily used for?",
+      "options": [
+        "Reducing redundant data and update anomalies",
+        "Speeding up every read query by automatically adding indexes to all foreign key columns",
+        "Converting all columns to the same data type",
+        "Merging related data into one wide table to avoid joins"
+      ],
+      "correct": 0,
+      "explanation": "Normalization (1NF, 2NF, 3NF) organizes tables around keys and dependencies so each fact is stored once, reducing redundancy and update anomalies; merging into one wide table is denormalization."
+    },
+    {
+      "id": 15,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Full Stack Request Flow",
+      "difficulty": "Intermediate",
+      "dimension": "Technical Communication",
+      "question": "A user submits a registration form. Which sequence best describes the typical flow from the frontend to the database and back?",
+      "options": [
+        "Frontend → Database → Validation/Business Logic → API/Backend → Response → Frontend",
+        "Frontend → Validation/Business Logic → Database → API/Backend → Response → Frontend",
+        "Frontend → API/Backend → Validation/Business Logic → Database → Response → Frontend",
+        "Frontend → API/Backend → Database → Response → Validation/Business Logic → Frontend"
+      ],
+      "correct": 2,
+      "explanation": "The browser sends the form to an API endpoint; the backend validates input and applies business logic (e.g. hashing the password) before writing to the database, then returns a response. Browsers never talk to the database directly, and validation must happen before the write."
+    },
+    {
+      "id": 16,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "Semantic HTML",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which semantic HTML element is intended for a section containing major navigation links?",
+      "options": [
+        "<span>",
+        "<section>",
+        "<nav>",
+        "<strong>"
+      ],
+      "correct": 2,
+      "explanation": "<nav> marks a block of major navigation links, which helps screen readers and search engines; <section> is a generic thematic grouping."
+    },
+    {
+      "id": 17,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Flexbox",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which CSS declaration turns an element into a flex container?",
+      "options": [
+        "display: flex;",
+        "position: flex;",
+        "layout: flex;",
+        "flex: display;"
+      ],
+      "correct": 0,
+      "explanation": "display: flex makes the element a flex container whose direct children become flex items; position and layout do not accept a flex value."
+    },
+    {
+      "id": 18,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "JavaScript Equality",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What does the JavaScript === operator do?",
+      "options": [
+        "Assigns a value to a variable",
+        "Compares only object references in every case",
+        "Converts both values to strings before comparison",
+        "Compares values without type coercion"
+      ],
+      "correct": 3,
+      "explanation": "=== is strict equality: it compares without converting types, so 1 === '1' is false while 1 == '1' is true."
+    },
+    {
+      "id": 19,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "JSON",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is JSON commonly used for in web applications?",
+      "options": [
+        "Styling webpages",
+        "Exchanging structured data between systems",
+        "Compiling JavaScript into native machine code for the browser",
+        "Managing operating-system processes"
+      ],
+      "correct": 1,
+      "explanation": "JSON is a lightweight text format for exchanging structured data, for example between a browser and an API; JSON.stringify and JSON.parse convert between objects and JSON text."
+    },
+    {
+      "id": 20,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "HTTP Status Codes",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which HTTP status code most commonly indicates that a new resource was successfully created?",
+      "options": [
+        "200",
+        "204",
+        "201",
+        "404"
+      ],
+      "correct": 2,
+      "explanation": "201 Created means the request succeeded and a new resource was created (often with a Location header); 200 is a generic success and 204 means success with no response body."
+    },
+    {
+      "id": 21,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "React useEffect",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What is React's useEffect hook primarily used for?",
+      "options": [
+        "Memoizing an expensive calculation between renders",
+        "Running side effects such as data fetching or subscriptions",
+        "Storing a mutable value that does not trigger re-renders",
+        "Sharing state with deeply nested components"
+      ],
+      "correct": 1,
+      "explanation": "useEffect runs side effects such as fetching data, subscriptions or timers after React commits a render; useMemo memoizes calculations, useRef holds mutable values and Context shares state."
+    },
+    {
+      "id": 22,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "React Forms",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In React, what is a controlled form input?",
+      "options": [
+        "An input whose value is read from the DOM through a ref only when the form is submitted",
+        "An input that has the disabled attribute set",
+        "An input rendered only on the server",
+        "An input whose value comes from React state and is updated via onChange"
+      ],
+      "correct": 3,
+      "explanation": "A controlled input takes its value from React state and updates that state in onChange, so React is the single source of truth; reading the value from the DOM through a ref describes an uncontrolled input."
+    },
+    {
+      "id": 23,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "CORS",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What is CORS mainly concerned with in browser-based web applications?",
+      "options": [
+        "Compressing API responses before they reach the browser",
+        "Encrypting traffic between the browser and the server so it cannot be read in transit",
+        "Blocking every request that does not carry a valid JWT",
+        "Controlling whether browser scripts may read responses from a different origin"
+      ],
+      "correct": 3,
+      "explanation": "CORS lets a server use headers such as Access-Control-Allow-Origin to tell the browser which other origins may read its responses; it is enforced by browsers and is neither encryption nor authentication."
+    },
+    {
+      "id": 24,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "SQL Indexing",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Which statement about a database index is generally correct?",
+      "options": [
+        "It guarantees that every query on the table becomes faster, including writes",
+        "It removes the need for primary keys",
+        "It can speed up reads but adds storage and can increase write cost",
+        "It automatically normalizes every table"
+      ],
+      "correct": 2,
+      "explanation": "Indexes (usually B-trees) speed up lookups on the indexed columns, but they use extra storage and must be updated on every INSERT, UPDATE and DELETE, so they do not make every query faster."
+    },
+    {
+      "id": 25,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "SQL Injection",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Which technique is a primary defense against SQL injection when accepting user input?",
+      "options": [
+        "Escaping single quotes with a regex before building the query string",
+        "Using parameterized queries/prepared statements",
+        "Hiding the database port behind a firewall so attackers cannot reach it",
+        "Limiting the input length on the frontend form"
+      ],
+      "correct": 1,
+      "explanation": "Parameterized queries send the SQL and the user input separately, so input is always treated as data and never executed; hand-written escaping is easy to get wrong and frontend checks can be bypassed."
+    },
+    {
+      "id": 26,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Database Transactions",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A money transfer runs two UPDATE statements in one transaction: debit account A by 500, then credit account B by 500. The database server crashes after the first UPDATE, before COMMIT. After the restart, account A still has its original balance. Which ACID property guarantees this?",
+      "options": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
+      ],
+      "correct": 0,
+      "explanation": "Atomicity means a transaction's statements take effect together or not at all, so the uncommitted debit is rolled back during recovery; durability only promises that changes which were already committed survive a crash."
+    },
+    {
+      "id": 27,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "N+1 Query Problem",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "GET /api/posts returns 50 posts with each author's name. The logs show one query for the posts, followed by 50 separate SELECT * FROM users WHERE id = ? queries. What is the best fix?",
+      "options": [
+        "Add an index on posts.created_at so the first query runs faster",
+        "Raise the connection pool size so the 50 user queries run in parallel",
+        "Let the browser fetch each author from /api/users/:id after the posts load",
+        "Load all the authors in one go with a JOIN or a single IN (...) query"
+      ],
+      "correct": 3,
+      "explanation": "This is the N+1 query problem: one query for the list plus one more per item. Loading the authors with a JOIN, eager loading or one WHERE id IN (...) query cuts 51 round trips to one or two, while a bigger pool or client-side fetching still makes 50 extra requests."
+    },
+    {
+      "id": 28,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "JWT Security",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "What does a valid digital signature on a JWT primarily provide?",
+      "options": [
+        "Confidentiality, because the signed payload is encrypted and unreadable by the client",
+        "Integrity and authenticity of the token's contents, assuming the key is trusted",
+        "Protection against the token being stolen and replayed",
+        "Automatic revocation of the token when the user logs out"
+      ],
+      "correct": 1,
+      "explanation": "A JWT signature lets the server detect tampering and confirm who issued the token, but the payload is only Base64URL-encoded (readable by anyone), and a stolen token stays usable until it expires."
+    },
+    {
+      "id": 29,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "XSS Prevention",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Which practice is most directly effective at reducing cross-site scripting (XSS) risk when displaying untrusted content?",
+      "options": [
+        "Store the content in an encrypted database column",
+        "Serve every page over HTTPS with a valid TLS certificate and an HSTS header enabled",
+        "Apply context-appropriate output encoding/sanitization and avoid inserting raw HTML",
+        "Rate-limit the endpoint that saves the content"
+      ],
+      "correct": 2,
+      "explanation": "XSS happens when untrusted input is rendered as executable HTML/JS, so the direct defence is encoding or sanitizing output for its context (and avoiding innerHTML/dangerouslySetInnerHTML with raw input); HTTPS and encryption at rest do not stop injected scripts."
+    },
+    {
+      "id": 30,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Idempotency",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Why is an idempotency key useful for a payment-creation API?",
+      "options": [
+        "It encrypts the payment amount so it cannot be tampered with in transit",
+        "It lets the client skip authentication when retrying",
+        "It lets the server recognise a retried request and avoid creating a duplicate payment",
+        "It guarantees requests are processed in the order they were sent"
+      ],
+      "correct": 2,
+      "explanation": "The server stores the outcome of the first request for each idempotency key and returns it for retries, so a timeout followed by a retry does not charge the customer twice."
+    },
+    {
+      "id": 31,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Specificity",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "What color is the text of the paragraph below?\n\n<p id=\"intro\" class=\"lead\">Hello</p>\n\n#intro { color: blue; }\n.lead { color: green; }\np { color: red; }",
+      "options": [
+        "red",
+        "green",
+        "black (the browser default)",
+        "blue"
+      ],
+      "correct": 3,
+      "explanation": "An ID selector (1,0,0) is more specific than a class (0,1,0) or a type selector (0,0,1), so blue wins; source order only breaks ties between equally specific rules."
+    },
+    {
+      "id": 32,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Box Model",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "An element has width: 200px; padding: 20px; border: 5px solid black; and the default box-sizing (content-box). How wide is it on screen, excluding margins?",
+      "options": [
+        "200px",
+        "240px",
+        "225px",
+        "250px"
+      ],
+      "correct": 3,
+      "explanation": "With content-box, width sets only the content area, so the rendered width is 200 + 2×20 (padding) + 2×5 (border) = 250px; box-sizing: border-box would keep it at 200px."
+    },
+    {
+      "id": 33,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Flexbox",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "In a flex container with the default flex-direction: row, which declaration on the container centers its items vertically?",
+      "options": [
+        "align-items: center;",
+        "justify-content: center;",
+        "text-align: center;",
+        "vertical-align: middle;"
+      ],
+      "correct": 0,
+      "explanation": "align-items aligns flex items along the cross axis, which is vertical for a row container; justify-content works along the main (horizontal) axis."
+    },
+    {
+      "id": 34,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "Responsive Design",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Using a mobile-first approach, which media query adds styles only when the viewport is at least 768px wide?",
+      "options": [
+        "@media (max-width: 768px) { ... }",
+        "@media (min-width: 768px) { ... }",
+        "@media (width: 768px) { ... }",
+        "@media (orientation: landscape) { ... }"
+      ],
+      "correct": 1,
+      "explanation": "Mobile-first CSS writes base styles for small screens and layers larger-screen styles on top with min-width queries; max-width targets screens up to 768px, the opposite direction."
+    },
+    {
+      "id": 35,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Positioning",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A child element has position: absolute; top: 0; right: 0;. Its parent has no position set, but its grandparent has position: relative. Where is the child placed?",
+      "options": [
+        "At the top-right corner of its parent",
+        "At the top-right of the viewport, staying fixed while scrolling",
+        "At the top-right corner of its grandparent",
+        "In normal flow, because top and right are ignored"
+      ],
+      "correct": 2,
+      "explanation": "An absolutely positioned element is placed relative to its nearest positioned ancestor (position other than static); the parent is static, so the grandparent is the containing block. Staying fixed while scrolling is position: fixed."
+    },
+    {
+      "id": 36,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "CSS Grid",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "What does grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); do on a grid container?",
+      "options": [
+        "Fits as many columns of at least 200px as possible and stretches them to fill leftover space",
+        "Creates fixed 200px columns that overflow on narrow screens",
+        "Creates exactly one column for every child element, no matter how wide the container is",
+        "Creates 200 equal columns, each 1fr wide"
+      ],
+      "correct": 0,
+      "explanation": "auto-fit creates as many tracks as fit the container, and minmax(200px, 1fr) keeps each at least 200px while letting them grow to share free space, giving a responsive grid without media queries."
+    },
+    {
+      "id": 37,
+      "field": "Full Stack Developer",
+      "step": 1,
+      "topic": "Semantic HTML & Accessibility",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A submit control is built as <div onclick=\"submitForm()\">Submit</div>. Keyboard users cannot reach or activate it, and screen readers do not announce it as a button. Which single change fixes all of these problems?",
+      "options": [
+        "Add role=\"button\" so assistive technology treats the div as a button",
+        "Replace the div with a native <button type=\"submit\"> element",
+        "Add tabindex=\"0\" so the div can receive keyboard focus",
+        "Add aria-label=\"Submit button\" so screen readers read its purpose"
+      ],
+      "correct": 1,
+      "explanation": "A native <button> is focusable, activates with Enter and Space, exposes the button role and submits its form; role=\"button\" only changes what is announced and tabindex=\"0\" only adds focus, so the div would still need key handlers."
+    },
+    {
+      "id": 38,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Hoisting & TDZ",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "What happens when this code runs?\n\nconsole.log(a);\nconsole.log(b);\nvar a = 1;\nlet b = 2;",
+      "options": [
+        "Logs 1, then 2",
+        "Logs undefined, then undefined",
+        "Logs undefined, then throws a ReferenceError",
+        "Throws a ReferenceError on the very first line"
+      ],
+      "correct": 2,
+      "explanation": "var declarations are hoisted and initialised to undefined, so the first log prints undefined; let is hoisted but stays in the temporal dead zone until its declaration runs, so reading b throws a ReferenceError."
+    },
+    {
+      "id": 39,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Array Methods",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "What does this code log?\n\nconst nums = [1, 2, 3, 4];\nconst result = nums.filter(n => n % 2 === 0).map(n => n * 10);\nconsole.log(result);",
+      "options": [
+        "[10, 30]",
+        "[2, 4]",
+        "[10, 20, 30, 40]",
+        "[20, 40]"
+      ],
+      "correct": 3,
+      "explanation": "filter keeps only the even numbers [2, 4], then map multiplies each by 10, giving [20, 40]; neither method changes the original array."
+    },
+    {
+      "id": 40,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "DOM Events & Delegation",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A <ul> holds hundreds of <li> items that are added and removed dynamically. What is the most efficient way to handle clicks on any item?",
+      "options": [
+        "Attach one listener to the parent <ul> and use event.target to find the clicked <li>",
+        "Attach a separate click listener to every <li> each time the list changes",
+        "Use setInterval to check which item currently has focus",
+        "Add an inline onclick string attribute to each <li> as it is created"
+      ],
+      "correct": 0,
+      "explanation": "Click events bubble from the <li> up to the <ul>, so one delegated listener on the parent handles current and future items (event.target.closest('li') finds the item); per-item listeners cost memory and must be re-attached."
+    },
+    {
+      "id": 41,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Async/Await",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What does this code log?\n\nasync function getScore() {\n  return 42;\n}\nconsole.log(getScore());",
+      "options": [
+        "42",
+        "A Promise that resolves to 42",
+        "undefined",
+        "A SyntaxError, because async functions cannot return values"
+      ],
+      "correct": 1,
+      "explanation": "An async function always returns a Promise, so the log shows a Promise object fulfilled with 42; you need await getScore() or getScore().then(...) to get the number itself."
+    },
+    {
+      "id": 42,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Event Loop",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In what order are the letters logged?\n\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');",
+      "options": [
+        "A B C D",
+        "A D B C",
+        "A C D B",
+        "A D C B"
+      ],
+      "correct": 3,
+      "explanation": "Synchronous code runs first (A, D); then the microtask queue (promise callbacks, C) is emptied before the next macrotask (the setTimeout callback, B), even with a 0 ms delay."
+    },
+    {
+      "id": 43,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Closures & Scope",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "What does this code log?\n\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}",
+      "options": [
+        "0 1 2",
+        "3 3 3",
+        "2 2 2",
+        "undefined undefined undefined"
+      ],
+      "correct": 1,
+      "explanation": "var is function-scoped, so all three callbacks close over the same i, which is already 3 when the timers fire; declaring the loop variable with let creates a new binding per iteration and logs 0 1 2."
+    },
+    {
+      "id": 44,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Objects & Copying",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "What does this code log?\n\nconst a = { name: 'Ravi', skills: ['js'] };\nconst b = { ...a };\nb.name = 'Meera';\nb.skills.push('react');\nconsole.log(a.name, a.skills.length);",
+      "options": [
+        "Ravi 2",
+        "Meera 2",
+        "Ravi 1",
+        "Meera 1"
+      ],
+      "correct": 0,
+      "explanation": "Spread makes a shallow copy: b gets its own name property, but b.skills points to the same array as a.skills, so the push is visible through a. Use structuredClone for a deep copy."
+    },
+    {
+      "id": 45,
+      "field": "Full Stack Developer",
+      "step": 2,
+      "topic": "Promises",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "A dashboard calls three independent APIs and should show whatever data arrives, even if one call fails. Which approach fits best?",
+      "options": [
+        "await Promise.race([...]) and use whichever settles first",
+        "await Promise.all([...]), which resolves with every result even if one request rejects",
+        "await Promise.allSettled([...]) and render the fulfilled results",
+        "Wrap each fetch in setTimeout so failures do not block the others"
+      ],
+      "correct": 2,
+      "explanation": "Promise.allSettled waits for every promise and reports each as fulfilled or rejected, so partial data can still be shown; Promise.all rejects as soon as any one promise rejects."
+    },
+    {
+      "id": 46,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "Lists & Keys",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Why does React ask for a key prop on items rendered with map()?",
+      "options": [
+        "Keys are required by the browser before it can render <li> elements inside a <ul>",
+        "Keys expose the list items to screen readers",
+        "Keys act as CSS selectors for styling individual items",
+        "Keys let React match items between renders to update, move or remove the right ones"
+      ],
+      "correct": 3,
+      "explanation": "Keys give each item a stable identity, so reconciliation can tell which items were added, removed or moved and keep the right DOM nodes and state; the browser never sees them."
+    },
+    {
+      "id": 47,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "useState",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "count starts at 0. What is its value after one click?\n\nconst [count, setCount] = useState(0);\nconst handleClick = () => {\n  setCount(count + 1);\n  setCount(count + 1);\n};",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "It throws an error because setCount is called twice"
+      ],
+      "correct": 1,
+      "explanation": "Both calls read count from the same render (0), so both schedule the value 1; use the updater form setCount(c => c + 1) when the next state depends on the previous one."
+    },
+    {
+      "id": 48,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "Context API",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Several deeply nested components need the logged-in user's details. Which built-in React feature avoids passing a user prop through every intermediate component?",
+      "options": [
+        "Refs (useRef)",
+        "Fragments (React.Fragment)",
+        "Context (createContext + useContext)",
+        "Portals (createPortal from react-dom)"
+      ],
+      "correct": 2,
+      "explanation": "Context lets a provider make a value available to any descendant that calls useContext, avoiding prop drilling; refs hold mutable values or DOM nodes, and portals render children into a different DOM node."
+    },
+    {
+      "id": 49,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "React Router",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "With React Router, a route is defined as path=\"/jobs/:jobId\". Which hook reads jobId inside the matched component?",
+      "options": [
+        "useParams()",
+        "useLocation()",
+        "useNavigate()",
+        "useSearchParams()"
+      ],
+      "correct": 0,
+      "explanation": "useParams returns the dynamic segments of the matched URL, e.g. { jobId: '42' }; useSearchParams reads the query string (?page=2) and useNavigate changes routes in code."
+    },
+    {
+      "id": 50,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "useEffect Cleanup",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A profile page fetches /api/users/:id inside useEffect with [id] as the dependency. When the user switches profiles quickly, an older response sometimes overwrites the newer one. What is the best fix?",
+      "options": [
+        "Remove the dependency array so the effect runs after every render",
+        "Return a cleanup that aborts or ignores the outdated request",
+        "Wrap the fetch call in setTimeout to give earlier requests time to finish",
+        "Move the fetch into the component body so it runs during rendering"
+      ],
+      "correct": 1,
+      "explanation": "React runs an effect's cleanup before re-running it for a new id, so aborting the old request or setting an 'ignore' flag there stops stale responses from updating state; delays and extra renders only hide the race."
+    },
+    {
+      "id": 51,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "Hooks & Stale Closures",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "This counter shows 1 and then never increases. Why?\n\nconst [count, setCount] = useState(0);\nuseEffect(() => {\n  const id = setInterval(() => setCount(count + 1), 1000);\n  return () => clearInterval(id);\n}, []);",
+      "options": [
+        "setInterval cannot be used inside useEffect",
+        "clearInterval runs right after the first tick because the cleanup fires on every render",
+        "The callback captured count = 0; use setCount(c => c + 1)",
+        "State setters cannot be called from asynchronous callbacks"
+      ],
+      "correct": 2,
+      "explanation": "With an empty dependency array the effect runs once, so the interval callback keeps the count from the first render (0) and sets 1 every second; the updater form always reads the latest state."
+    },
+    {
+      "id": 52,
+      "field": "Full Stack Developer",
+      "step": 3,
+      "topic": "Memoization (React.memo, useCallback)",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "A parent renders <Row onSelect={() => select(id)} /> where Row is wrapped in React.memo, yet Row re-renders every time the parent renders. Why?",
+      "options": [
+        "React.memo only works with class components",
+        "React.memo compares props deeply, so function props always look different",
+        "Any component that receives a function prop always re-renders whenever its parent renders",
+        "A new function is created every render, so the shallow check fails"
+      ],
+      "correct": 3,
+      "explanation": "React.memo skips a re-render only when every prop is shallow-equal to the previous one; an inline arrow creates a new function reference each render, so memoize it with useCallback (with the right dependencies)."
+    },
+    {
+      "id": 53,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Express Middleware",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In an Express app, req.body is undefined inside a POST /api/users handler even though the client sends JSON with Content-Type: application/json. What is the most likely cause?",
+      "options": [
+        "The client must send the data as a query string instead of a body",
+        "The express.json() middleware is not registered, or is registered after the route",
+        "Express route handlers cannot read request bodies in POST routes",
+        "The route must be declared with app.get() instead of app.post() for req.body to be populated"
+      ],
+      "correct": 1,
+      "explanation": "Express does not parse request bodies by default; app.use(express.json()) must be registered before the route so the JSON is parsed into req.body, because middleware runs in the order it is added."
+    },
+    {
+      "id": 54,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "Password Hashing",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "What is the recommended way to store user passwords in a database?",
+      "options": [
+        "Hash them with a slow, salted algorithm like bcrypt",
+        "Encrypt them with AES so the server can decrypt and compare them during login",
+        "Store a single fast SHA-256 hash of each password",
+        "Encode them in Base64 so they are not human-readable"
+      ],
+      "correct": 0,
+      "explanation": "Passwords should be hashed one-way with a deliberately slow, salted algorithm (bcrypt, scrypt, Argon2) so leaked hashes are expensive to crack; encryption is reversible and a fast unsalted SHA-256 is easy to brute-force."
+    },
+    {
+      "id": 55,
+      "field": "Full Stack Developer",
+      "step": 4,
+      "topic": "NoSQL Schema Design",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "You are designing a MongoDB schema for a blog where a popular post can collect thousands of comments that are paginated and moderated on their own. Which design fits best?",
+      "options": [
+        "Embed every comment in an array inside its post document",
+        "Add numbered fields such as comment1, comment2 to the post document",
+        "Keep comments in a separate database and merge them in the browser",
+        "Use a separate comments collection with an indexed postId field"
+      ],
+      "correct": 3,
+      "explanation": "Unbounded arrays push documents toward MongoDB's 16 MB limit and are hard to paginate, so a separate comments collection referencing the post (with an index) scales better; embedding suits small, bounded data read together with its parent."
+    },
+    {
+      "id": 56,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Git Branching",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Git command creates a new branch named feature-login and switches to it?",
+      "options": [
+        "git branch feature-login --switch",
+        "git merge feature-login",
+        "git commit -b feature-login",
+        "git checkout -b feature-login"
+      ],
+      "correct": 3,
+      "explanation": "git checkout -b <name> (or the newer git switch -c <name>) creates the branch and checks it out in one step; git branch <name> alone creates it without switching."
+    },
+    {
+      "id": 57,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Git Basics",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the purpose of a .gitignore file?",
+      "options": [
+        "It lists files and folders Git should not track, such as node_modules and .env",
+        "It deletes files from the remote repository",
+        "It hides selected commits from collaborators who do not have write access to the repository",
+        "It stores the credentials Git uses when pushing"
+      ],
+      "correct": 0,
+      "explanation": "Patterns in .gitignore keep untracked files such as dependencies, build output and secrets out of commits; a file that is already tracked must first be removed with git rm --cached."
+    },
+    {
+      "id": 58,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Environment Variables & Secrets",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Where should the production database password of a Node.js API be kept?",
+      "options": [
+        "Hard-coded in the database connection file",
+        "In the React frontend bundle, so the browser can connect to the database directly",
+        "In an environment variable or a secrets manager",
+        "In the project README so new team members can find it"
+      ],
+      "correct": 2,
+      "explanation": "Secrets belong in environment variables (e.g. process.env.DATABASE_URL) or the host's secrets manager so they stay out of source control and can differ per environment; anything in a frontend bundle is visible to every user."
+    },
+    {
+      "id": 59,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Docker Basics",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In Docker, what is the relationship between an image and a container?",
+      "options": [
+        "An image is a running process; a container is the template it starts from",
+        "A container is a running instance created from an image",
+        "They are two names for exactly the same thing",
+        "An image is only for databases, while containers are for applications"
+      ],
+      "correct": 1,
+      "explanation": "An image is a read-only template built from a Dockerfile, and a container is a running (or stopped) instance of it; one image can start many containers."
+    },
+    {
+      "id": 60,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "CI/CD",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A team uses GitHub Actions for continuous integration. What should the workflow typically do when a pull request is opened?",
+      "options": [
+        "Run install, lint, tests and a build to catch problems before merging",
+        "Merge the pull request into main as soon as it is opened",
+        "Delete the feature branch once a reviewer approves it",
+        "Squash and rewrite the branch history so that failing commits are hidden"
+      ],
+      "correct": 0,
+      "explanation": "Continuous integration automatically builds and tests every change so broken code is caught before it reaches main; deployment (CD) usually runs after the merge."
+    },
+    {
+      "id": 61,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Git Workflow",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "You pushed a commit that introduced a bug to the shared main branch, and teammates have already pulled it. What is the safest way to undo it?",
+      "options": [
+        "git reset --hard HEAD~1, then git push --force to main",
+        "git commit --amend, then force-push main",
+        "git revert <commit-hash>, then push the new commit",
+        "Delete the remote main branch and push a fixed copy of it again"
+      ],
+      "correct": 2,
+      "explanation": "git revert adds a new commit that undoes the bad one without rewriting shared history; reset or amend plus a force-push rewrites commits teammates already have and breaks their local branches."
+    },
+    {
+      "id": 62,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "Docker Layer Caching",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "In a Node.js Dockerfile, why do teams copy package.json and package-lock.json and run npm ci before copying the rest of the source code?",
+      "options": [
+        "So the dependency layer stays cached and is reused when only source code changes",
+        "Because npm ci fails when application source files are already present",
+        "So that node_modules is automatically left out of the final image",
+        "Because Docker always copies files in alphabetical order"
+      ],
+      "correct": 0,
+      "explanation": "Each Dockerfile instruction creates a cached layer; if the package files have not changed, Docker reuses the npm ci layer and only re-copies the source, so rebuilds are much faster. Excluding node_modules is the job of .dockerignore."
+    },
+    {
+      "id": 63,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "CSRF & Cookies",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "Your app authenticates users with a session cookie. Which cookie attribute most directly reduces the risk of cross-site request forgery (CSRF)?",
+      "options": [
+        "HttpOnly",
+        "Secure",
+        "Max-Age=3600",
+        "SameSite=Lax"
+      ],
+      "correct": 3,
+      "explanation": "SameSite=Lax (or Strict) stops the browser from attaching the cookie to most requests started by other sites, which is what CSRF relies on; HttpOnly hides the cookie from JavaScript (an XSS defence) and Secure only sends it over HTTPS."
+    },
+    {
+      "id": 64,
+      "field": "Full Stack Developer",
+      "step": 5,
+      "topic": "HTTP Caching & Performance",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A build tool outputs files like main.3f9a1c.js whose names change whenever their content changes. Which response header is the best fit for serving these files?",
+      "options": [
+        "Cache-Control: no-store, no-cache, must-revalidate",
+        "Cache-Control: public, max-age=31536000, immutable",
+        "Access-Control-Allow-Origin: *",
+        "Content-Type: text/html"
+      ],
+      "correct": 1,
+      "explanation": "Because any content change produces a new filename, an old URL never needs revalidation, so browsers and CDNs can safely cache it for a year; no-store would force a full download on every visit."
+    }
+  ]
+}

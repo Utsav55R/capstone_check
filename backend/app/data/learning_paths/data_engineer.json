@@ -1,0 +1,423 @@
+{
+  "field": "Data Engineer",
+  "core_skills": [
+    {
+      "id": "python",
+      "name": "Python for Data",
+      "step": 1,
+      "keywords": [
+        "python",
+        "python3",
+        "python 3",
+        "pandas",
+        "numpy",
+        "polars",
+        "pyarrow",
+        "jupyter",
+        "jupyter notebook"
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL & Relational Databases",
+      "step": 1,
+      "keywords": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "postgres",
+        "sqlite",
+        "sql server",
+        "ms sql",
+        "mssql",
+        "microsoft sql server",
+        "oracle database",
+        "oracle sql",
+        "pl/sql",
+        "plsql",
+        "t-sql",
+        "tsql",
+        "mariadb",
+        "stored procedures",
+        "query optimization"
+      ]
+    },
+    {
+      "id": "data_modeling_warehousing",
+      "name": "Data Modeling & Warehousing",
+      "step": 2,
+      "keywords": [
+        "data warehouse",
+        "data warehouses",
+        "data warehousing",
+        "data modeling",
+        "data modelling",
+        "dimensional modeling",
+        "dimensional modelling",
+        "star schema",
+        "snowflake schema",
+        "snowflake",
+        "bigquery",
+        "google bigquery",
+        "redshift",
+        "amazon redshift",
+        "azure synapse",
+        "synapse analytics",
+        "data mart",
+        "data marts",
+        "olap",
+        "slowly changing dimension",
+        "slowly changing dimensions",
+        "fact table",
+        "fact tables",
+        "clickhouse",
+        "teradata",
+        "kimball methodology"
+      ]
+    },
+    {
+      "id": "etl_orchestration",
+      "name": "ETL/ELT Pipelines & Orchestration",
+      "step": 3,
+      "keywords": [
+        "etl",
+        "elt pipeline",
+        "elt pipelines",
+        "data pipeline",
+        "data pipelines",
+        "data ingestion",
+        "apache airflow",
+        "airflow dag",
+        "airflow dags",
+        "airflow pipeline",
+        "airflow pipelines",
+        "amazon mwaa",
+        "mwaa",
+        "data build tool",
+        "dagster",
+        "apache nifi",
+        "aws glue",
+        "azure data factory",
+        "informatica",
+        "talend",
+        "ssis",
+        "fivetran",
+        "airbyte",
+        "change data capture",
+        "debezium",
+        "great expectations",
+        "cloud composer",
+        "dbt core",
+        "dbt-core",
+        "dbt cloud",
+        "dbt labs",
+        "dbt model",
+        "dbt models",
+        "dbt project",
+        "airflow operators"
+      ]
+    },
+    {
+      "id": "spark",
+      "name": "Apache Spark & Big Data",
+      "step": 4,
+      "keywords": [
+        "apache spark",
+        "pyspark",
+        "spark sql",
+        "sparksql",
+        "hadoop",
+        "apache hadoop",
+        "hdfs",
+        "mapreduce",
+        "map reduce",
+        "apache hive",
+        "hiveql",
+        "amazon emr",
+        "aws emr",
+        "dataproc",
+        "google dataproc",
+        "spark core",
+        "spark rdd",
+        "spark rdds",
+        "spark job",
+        "spark jobs",
+        "spark dataframe",
+        "spark dataframes",
+        "databricks"
+      ]
+    },
+    {
+      "id": "kafka_streaming",
+      "name": "Kafka & Stream Processing",
+      "step": 4,
+      "keywords": [
+        "kafka",
+        "apache kafka",
+        "kafka streams",
+        "ksqldb",
+        "flink",
+        "apache flink",
+        "pyflink",
+        "spark streaming",
+        "structured streaming",
+        "kinesis",
+        "amazon kinesis",
+        "apache beam",
+        "google cloud dataflow",
+        "cloud pub/sub",
+        "google pub/sub",
+        "gcp pub/sub",
+        "azure event hubs",
+        "event hubs",
+        "redpanda",
+        "apache pulsar",
+        "event streaming",
+        "confluent kafka",
+        "confluent cloud",
+        "confluent platform"
+      ]
+    },
+    {
+      "id": "cloud_data_platforms",
+      "name": "Cloud Data Platforms & Lakehouse",
+      "step": 5,
+      "keywords": [
+        "aws",
+        "amazon web services",
+        "azure",
+        "microsoft azure",
+        "gcp",
+        "google cloud",
+        "google cloud platform",
+        "amazon s3",
+        "aws s3",
+        "s3 bucket",
+        "s3 buckets",
+        "google cloud storage",
+        "azure data lake",
+        "adls",
+        "adls gen2",
+        "data lake",
+        "data lakes",
+        "lakehouse",
+        "data lakehouse",
+        "databricks",
+        "delta lake",
+        "apache iceberg",
+        "apache hudi",
+        "aws athena",
+        "amazon athena",
+        "trino",
+        "unity catalog",
+        "lake formation",
+        "microsoft fabric",
+        "dataops",
+        "data lineage",
+        "openlineage",
+        "iceberg table",
+        "iceberg tables"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Python & SQL Foundations",
+      "subtitle": "Write the code every pipeline runs on",
+      "description": "Data engineering is built on two languages: Python to move and reshape data, and SQL to query it. Learn to process files efficiently (CSV, JSON, Parquet), write advanced SQL with window functions, and understand how indexes and transactions keep databases fast and correct.",
+      "topics": [
+        {
+          "id": "de1-python-core",
+          "name": "Python for data: lists, dicts, sets, comprehensions, functions and exception handling"
+        },
+        {
+          "id": "de1-python-files",
+          "name": "Processing large files with iterators and generators, plus the csv and json modules"
+        },
+        {
+          "id": "de1-file-formats",
+          "name": "File formats: CSV vs JSON vs Parquet (row vs columnar, schema, compression) with pandas/PyArrow"
+        },
+        {
+          "id": "de1-sql-core",
+          "name": "SQL core: SELECT, WHERE, JOINs, GROUP BY/HAVING and NULL handling"
+        },
+        {
+          "id": "de1-advanced-sql",
+          "name": "Advanced SQL: subqueries, CTEs and window functions (ROW_NUMBER, RANK, LAG) for deduplication and running totals"
+        },
+        {
+          "id": "de1-keys-indexes",
+          "name": "Keys and indexes: primary/foreign keys, B-tree and composite indexes, reading EXPLAIN plans"
+        },
+        {
+          "id": "de1-transactions",
+          "name": "Transactions: ACID, isolation levels and upserts (INSERT ... ON CONFLICT / MERGE)"
+        }
+      ],
+      "coding_topics": [
+        "Arrays",
+        "Hashing",
+        "Strings"
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Data Modeling & Warehousing",
+      "subtitle": "Design tables that analytics can trust",
+      "description": "Learn how analytical databases differ from application databases and how to model data for them: normalization vs denormalization, star and snowflake schemas, fact grain and slowly changing dimensions. You also see how columnar cloud warehouses such as Snowflake, BigQuery and Redshift store your data and charge for your queries.",
+      "topics": [
+        {
+          "id": "de2-oltp-olap",
+          "name": "OLTP vs OLAP workloads and why analytics runs in a separate warehouse"
+        },
+        {
+          "id": "de2-normalization",
+          "name": "Normalization (1NF to 3NF) vs denormalization and their trade-offs"
+        },
+        {
+          "id": "de2-dimensional-modeling",
+          "name": "Dimensional modeling: facts and measures (additive vs semi-additive), dimensions, grain, surrogate keys and conformed dimensions"
+        },
+        {
+          "id": "de2-star-snowflake",
+          "name": "Star vs snowflake schemas: design a sales data mart end to end"
+        },
+        {
+          "id": "de2-scd",
+          "name": "Slowly changing dimensions: Type 1, Type 2 (valid_from/valid_to, is_current), Type 3 and point-in-time joins"
+        },
+        {
+          "id": "de2-columnar-partitioning",
+          "name": "Columnar storage, compression, partitioning and clustering/sort keys"
+        },
+        {
+          "id": "de2-cloud-warehouses",
+          "name": "Cloud warehouses (Snowflake, BigQuery, Redshift): storage/compute separation and cost-aware queries"
+        }
+      ],
+      "coding_topics": [
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "ETL/ELT Pipelines & Orchestration",
+      "subtitle": "Move data reliably, on schedule",
+      "description": "Build batch pipelines that can be re-run safely: idempotent and incremental loads, change data capture and backfills. Orchestrate them with Apache Airflow, transform and test data with dbt, and add data quality checks so bad data never reaches a dashboard.",
+      "topics": [
+        {
+          "id": "de3-etl-elt",
+          "name": "ETL vs ELT and layered batch pipelines (raw, staging, marts)"
+        },
+        {
+          "id": "de3-idempotency",
+          "name": "Idempotent, re-runnable loads: partition overwrite, MERGE/upsert and safe backfills"
+        },
+        {
+          "id": "de3-incremental-cdc",
+          "name": "Incremental loads with high-water marks, and log-based change data capture (CDC) with Debezium"
+        },
+        {
+          "id": "de3-airflow",
+          "name": "Apache Airflow: DAGs, operators, dependencies, schedules, data intervals, retries and catchup"
+        },
+        {
+          "id": "de3-dbt",
+          "name": "dbt: models, ref() and sources, materializations (view, table, incremental) and data tests"
+        },
+        {
+          "id": "de3-data-quality",
+          "name": "Data quality checks: not-null, uniqueness, referential integrity, volume and freshness"
+        },
+        {
+          "id": "de3-failure-handling",
+          "name": "Failure handling: retries, alerting, SLAs and quarantining bad records"
+        }
+      ],
+      "coding_topics": [
+        "Graphs"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Big Data & Streaming",
+      "subtitle": "Process data at scale, in batch and in real time",
+      "description": "Scale out with Apache Spark: DataFrames, lazy evaluation, partitioning, shuffles and join strategies. Then move to real-time data with Kafka topics, partitions and consumer groups, and stream-processing ideas such as windows, watermarks and exactly-once semantics.",
+      "topics": [
+        {
+          "id": "de4-spark-architecture",
+          "name": "Spark architecture: driver, executors, lazy transformations vs actions, jobs, stages and tasks"
+        },
+        {
+          "id": "de4-spark-dataframes",
+          "name": "PySpark DataFrames and Spark SQL: select, filter, groupBy, joins and built-in functions vs UDFs"
+        },
+        {
+          "id": "de4-spark-performance",
+          "name": "Partitions and shuffles: repartition vs coalesce, broadcast joins, data skew and AQE"
+        },
+        {
+          "id": "de4-kafka-core",
+          "name": "Kafka fundamentals: brokers, topics, partitions, offsets, replication and retention"
+        },
+        {
+          "id": "de4-kafka-clients",
+          "name": "Kafka producers and consumer groups: message keys and ordering, partition assignment, offset commits and lag"
+        },
+        {
+          "id": "de4-stream-processing",
+          "name": "Stream processing: event time vs processing time, tumbling/sliding/session windows and watermarks"
+        },
+        {
+          "id": "de4-delivery-semantics",
+          "name": "Delivery guarantees: at-most-once, at-least-once and exactly-once with checkpoints and idempotent sinks"
+        }
+      ],
+      "coding_topics": [
+        "Sliding Window"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Cloud Data Platforms & DataOps",
+      "subtitle": "Run production data platforms in the cloud",
+      "description": "Put it all together on a modern cloud platform: data lakes and lakehouses built with Delta Lake or Apache Iceberg on object storage, Docker and CI/CD for pipelines, and the monitoring, lineage, governance and security practices that keep production data reliable and compliant.",
+      "topics": [
+        {
+          "id": "de5-lake-lakehouse",
+          "name": "Data lake vs warehouse vs lakehouse, and the medallion (bronze/silver/gold) architecture"
+        },
+        {
+          "id": "de5-table-formats",
+          "name": "Open table formats: Delta Lake and Apache Iceberg (ACID commits, time travel and VACUUM retention, schema evolution, compaction)"
+        },
+        {
+          "id": "de5-cloud-storage",
+          "name": "Cloud object storage (Amazon S3, GCS, ADLS): partition layout, file sizing and query engines such as Athena"
+        },
+        {
+          "id": "de5-docker-cicd",
+          "name": "Docker for pipelines and CI/CD for data: Git workflow, automated dbt builds and tests on pull requests"
+        },
+        {
+          "id": "de5-observability-lineage",
+          "name": "Data observability: freshness and volume monitoring, alerting and data lineage"
+        },
+        {
+          "id": "de5-governance-security",
+          "name": "Governance and security: IAM least privilege, secrets management, encryption and PII masking"
+        },
+        {
+          "id": "de5-cost",
+          "name": "Cost control: partition and column pruning, auto-suspending compute and storage lifecycle rules"
+        }
+      ],
+      "coding_topics": [
+        "Dynamic Programming"
+      ]
+    }
+  ]
+}

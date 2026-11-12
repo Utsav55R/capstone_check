@@ -1,0 +1,1045 @@
+{
+  "track": "Game Developer",
+  "title": "Game Development",
+  "source_document": "game_development_assessment.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Game Loop",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is the main purpose of a game loop?",
+      "options": [
+        "Redraw the screen only when the operating system reports a window event",
+        "Repeatedly process input, update the game state and render a frame",
+        "Load every asset into memory once before the first scene starts",
+        "Run the physics simulation only on frames where the player gives input"
+      ],
+      "correct": 1,
+      "explanation": "A game loop runs continuously, dozens of times per second: read input, update the simulation (movement, AI, physics), then render. Event-driven apps redraw only on events, but a game must keep simulating even when the player does nothing."
+    },
+    {
+      "id": 2,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Sprites",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In 2D game development, what is a sprite?",
+      "options": [
+        "A 3D mesh with a skeleton used for animated characters",
+        "An invisible collision shape attached to a character",
+        "A sound effect triggered by an animation event",
+        "A 2D image that represents a game object or effect"
+      ],
+      "correct": 3,
+      "explanation": "A sprite is a 2D bitmap (often one frame of a sprite sheet) drawn on a quad to show characters, items or effects; skinned meshes with skeletons are 3D models, and collision shapes are invisible colliders, not images."
+    },
+    {
+      "id": 3,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Delta Time",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Why is delta time commonly used when moving objects in a game?",
+      "options": [
+        "To lock the game to exactly 60 frames per second",
+        "To make movement speed independent of the frame rate",
+        "To measure network latency between client and server",
+        "To reduce how often the physics engine checks collisions"
+      ],
+      "correct": 1,
+      "explanation": "Delta time is the time since the last frame, so position += speed * dt moves an object the same distance per second at 30 FPS or 144 FPS instead of the same distance per frame."
+    },
+    {
+      "id": 4,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Collision Detection (AABB)",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which test is the standard, cheap way to check whether two axis-aligned rectangles (AABBs) overlap?",
+      "options": [
+        "Check whether the top-left corner of one rectangle lies inside the other",
+        "Check that their ranges overlap on both the x axis and the y axis",
+        "Check whether either rectangle's centre lies inside the other",
+        "Compare the areas of the two rectangles"
+      ],
+      "correct": 1,
+      "explanation": "Two AABBs overlap only if their ranges overlap on every axis (a.minX <= b.maxX && a.maxX >= b.minX, and the same for y); a corner check misses two rectangles crossing like a plus sign, and a centre check misses large rectangles that overlap only slightly."
+    },
+    {
+      "id": 5,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Tilemaps",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What is a tilemap mainly used for in a 2D game?",
+      "options": [
+        "Mapping keyboard keys to player actions",
+        "Packing many animation frames into one texture",
+        "Building levels from a grid of reusable tiles",
+        "Storing the UV layout of a 3D model's texture"
+      ],
+      "correct": 2,
+      "explanation": "A tilemap places small reusable tiles (ground, walls, water) on a grid to build large levels cheaply; packing frames into one texture is a sprite sheet or atlas, not a tilemap."
+    },
+    {
+      "id": 6,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Blend Trees",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A character should blend smoothly from walking to jogging to running as the player pushes the analogue stick further. Which Unity Animator feature is designed for this?",
+      "options": [
+        "A 1D Blend Tree driven by a Speed parameter",
+        "An Avatar Mask on a separate upper-body layer",
+        "Animation Events placed on the walk clip",
+        "The Animator's Apply Root Motion option"
+      ],
+      "correct": 0,
+      "explanation": "A 1D Blend Tree mixes the walk, jog and run clips with weights computed from one parameter (e.g. Speed = stick magnitude), so the motion changes continuously instead of snapping between states; Unreal's equivalent is a Blend Space. Avatar Masks limit a layer to certain bones, and Animation Events call functions at set frames."
+    },
+    {
+      "id": 7,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Object Pooling",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A shooter fires dozens of bullets per second, and the Profiler shows frame spikes from Instantiate() and Destroy() plus frequent garbage collection. Which change addresses this most directly?",
+      "options": [
+        "Replace each bullet's mesh collider with a sphere collider",
+        "Spawn the bullets from a coroutine instead of from Update()",
+        "Raise the Fixed Timestep so physics updates less often",
+        "Reuse inactive bullets from a pool instead of creating new ones"
+      ],
+      "correct": 3,
+      "explanation": "Object pooling pre-creates bullets and toggles them active/inactive, so the game stops paying for Instantiate/Destroy and stops producing the garbage that triggers GC pauses; a simpler collider, a coroutine or a slower physics rate removes none of those allocations."
+    },
+    {
+      "id": 8,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "A* Pathfinding",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "In the A* pathfinding algorithm, what is the heuristic h(n) used for?",
+      "options": [
+        "Storing the exact cost of the path from the start to node n",
+        "Guaranteeing that the path visits every node exactly once",
+        "Breaking ties randomly so that enemies take different routes",
+        "Estimating the remaining cost from node n to the goal"
+      ],
+      "correct": 3,
+      "explanation": "A* expands the node with the lowest f(n) = g(n) + h(n), where g is the known cost from the start and h estimates the cost still to go; an admissible h that never overestimates (e.g. Manhattan distance on a 4-way grid) keeps the path optimal."
+    },
+    {
+      "id": 9,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Kinematics & Integration",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "An object has velocity v and constant acceleration a. Which update is commonly used each frame with delta time dt?",
+      "options": [
+        "v = a * dt",
+        "v = v + a * dt",
+        "v = v + a / dt",
+        "v = v * a * dt"
+      ],
+      "correct": 1,
+      "explanation": "Acceleration is the change in velocity per second, so each frame adds a × dt to v (and then position += v × dt, semi-implicit Euler); dividing by dt would make the change grow as the frame rate rises."
+    },
+    {
+      "id": 10,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Parallax Scrolling",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "How is a parallax scrolling effect typically created in a 2D game?",
+      "options": [
+        "Scroll distant layers faster than near layers as the camera moves",
+        "Scroll every layer at exactly the same speed as the camera",
+        "Scroll distant layers slower than near layers as the camera moves",
+        "Swap the background image for a new one every few frames"
+      ],
+      "correct": 2,
+      "explanation": "Far-away objects appear to move less as the viewer moves, so background layers scroll at a fraction of the camera's speed (e.g. 0.2× for mountains, 0.6× for trees), creating an illusion of depth."
+    },
+    {
+      "id": 11,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Fixed Timestep",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Why is a fixed timestep (e.g. 50 physics steps per second) usually preferred for physics simulation over the variable frame time?",
+      "options": [
+        "It guarantees that fast-moving objects can never tunnel through thin colliders",
+        "Each step uses the same dt, so results are stable and repeatable at any FPS",
+        "It removes the need to multiply velocities by the time step",
+        "It runs physics exactly once per rendered frame, saving CPU time"
+      ],
+      "correct": 1,
+      "explanation": "Integrators and collision solvers behave differently with different step sizes; with a fixed dt the loop runs zero or more physics steps per frame and results stay consistent. Tunneling can still happen and needs continuous collision detection."
+    },
+    {
+      "id": 12,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Spatial Partitioning",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A 2D world has 10,000 objects, most of them packed into a few crowded towns while the rest of the map is nearly empty. Why can a quadtree suit broad-phase collision detection here better than a uniform grid?",
+      "options": [
+        "It subdivides only crowded areas, so its cells adapt to object density",
+        "It runs the narrow-phase collision tests on the GPU instead of the CPU",
+        "It never needs updating when objects move from one region to another",
+        "It makes each individual collision test cheaper by simplifying shapes"
+      ],
+      "correct": 0,
+      "explanation": "A uniform grid has one cell size, so it either packs hundreds of objects into each town cell or wastes memory on millions of empty cells, while a quadtree splits a node only when it holds too many objects. Moving objects must still be re-inserted, and the narrow-phase test for each remaining pair is unchanged."
+    },
+    {
+      "id": 13,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Entity Component System",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "Why can a data-oriented ECS (for example Unity DOTS) update 100,000 moving entities much faster than 100,000 GameObjects that each run their own Update()?",
+      "options": [
+        "It compiles gameplay logic into shaders that run on the GPU",
+        "It skips updating entities that are not visible on screen",
+        "Systems loop over packed component arrays in a cache-friendly order",
+        "It computes each entity's transform once at load time and caches it"
+      ],
+      "correct": 2,
+      "explanation": "In ECS an entity is just an ID and each component type is stored as contiguous plain data, so a system streams through memory with few cache misses and no per-object Update() call (and Burst and the Job System can spread the work across cores). Logic still runs on the CPU, and entities are updated whether or not they are visible."
+    },
+    {
+      "id": 14,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Draw Calls & Batching",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "The Frame Debugger shows a 2D level issuing about 1,200 draw calls per frame, roughly one per sprite, because every sprite uses its own separate texture. Which change will cut the draw calls the most?",
+      "options": [
+        "Halve the resolution of every sprite texture",
+        "Pack the sprites into a shared texture atlas",
+        "Generate mipmaps for every sprite texture",
+        "Use a compressed format for every sprite texture"
+      ],
+      "correct": 1,
+      "explanation": "Sprites can only be combined into one batch when they share a texture and material, so an atlas lets the renderer draw many of them per draw call; smaller, mipmapped or compressed textures save memory and bandwidth, but each sprite still needs its own draw call."
+    },
+    {
+      "id": 15,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Network Interpolation",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In an online game, the server sends 20 snapshots per second. Remote players end up in the correct positions but move in visible jumps each time a snapshot arrives. Which technique is the standard fix?",
+      "options": [
+        "Entity interpolation: render them slightly in the past, blending between snapshots",
+        "Client-side prediction: apply the local player's inputs before the server confirms",
+        "Lag compensation: rewind the server state to the shooter's time when checking hits",
+        "Delta compression: send only the fields that changed since the last snapshot"
+      ],
+      "correct": 0,
+      "explanation": "Clients buffer snapshots and draw remote players about 100 ms in the past, interpolating between the two snapshots around that time, so movement looks smooth despite the low tick rate and jitter; prediction is for the local player, lag compensation is a server-side hit check, and delta compression only saves bandwidth."
+    },
+    {
+      "id": 16,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Polymorphism",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In C#, Player and Enemy both inherit from a Character base class and override its virtual Attack() method. Calling Attack() through a Character reference runs the right version for each object. Which OOP principle is this?",
+      "options": [
+        "Polymorphism",
+        "Encapsulation",
+        "Abstraction",
+        "Composition"
+      ],
+      "correct": 0,
+      "explanation": "Runtime polymorphism (virtual/override, i.e. dynamic dispatch) picks the method from the object's actual type, so one loop over a List<Character> can call Attack() on players and enemies alike; encapsulation is about hiding internal state."
+    },
+    {
+      "id": 17,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Hash Maps",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "A game must look up item stats by a unique string ID such as \"sword_01\" many times per frame. Which C# collection gives average O(1) lookups by key?",
+      "options": [
+        "Dictionary<string, Item>",
+        "List<Item>",
+        "Queue<Item>",
+        "SortedList<string, Item>"
+      ],
+      "correct": 0,
+      "explanation": "Dictionary<TKey, TValue> is a hash table, so lookups by key take O(1) on average; SortedList uses binary search (O(log n)) and a List needs a linear O(n) scan. The C++ equivalent is std::unordered_map."
+    },
+    {
+      "id": 18,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Git for Game Projects",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which file tells Git not to track generated folders such as Unity's Library/ and Temp/ directories?",
+      "options": [
+        ".gitattributes",
+        ".gitkeep",
+        ".gitignore",
+        ".git/HEAD"
+      ],
+      "correct": 2,
+      "explanation": ".gitignore lists path patterns Git should not track, such as Unity's Library/, Temp/ and Builds/; .gitattributes sets per-path attributes, for example which large binary files Git LFS handles."
+    },
+    {
+      "id": 19,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Stack vs Heap (C++)",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In C++, where is an object created with `new Enemy()` stored, and when is it freed?",
+      "options": [
+        "On the stack; it is freed automatically at the end of the scope",
+        "In static storage; it lives until the program exits",
+        "In GPU memory; the driver frees it when the level unloads",
+        "On the heap; it stays until delete is called on it"
+      ],
+      "correct": 3,
+      "explanation": "new allocates on the heap (free store), and the object lives until delete is called on it or a smart pointer such as std::unique_ptr deletes it; a local variable like `Enemy e;` lives on the stack and is destroyed when its scope ends."
+    },
+    {
+      "id": 20,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Value vs Reference Types",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Point is declared as `struct Point { public int X; }`. What does this C# code print?\n\nPoint a = new Point { X = 1 };\nPoint b = a;\nb.X = 5;\nConsole.WriteLine(a.X);",
+      "options": [
+        "5",
+        "0",
+        "1",
+        "It does not compile"
+      ],
+      "correct": 2,
+      "explanation": "A struct is a value type, so `Point b = a;` copies the whole value and changing b leaves a untouched; if Point were a class (a reference type), both variables would point to one object and it would print 5."
+    },
+    {
+      "id": 21,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Composition over Inheritance",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "Your game has FlyingEnemy and ShootingEnemy subclasses and now needs an enemy that both flies and shoots. The class hierarchy keeps growing. Which design scales best?",
+      "options": [
+        "Make FlyingShootingEnemy inherit from both FlyingEnemy and ShootingEnemy",
+        "Copy the flying code into ShootingEnemy behind a canFly flag",
+        "Make the movement and shooting methods static so any class can call them",
+        "Compose enemies from reusable Flying and Shooting components"
+      ],
+      "correct": 3,
+      "explanation": "Composition lets any enemy mix behaviours without a new class for every combination, which is the component model Unity and Unreal are built on; C# does not allow inheriting from two classes, and copy-paste or flags duplicate logic."
+    },
+    {
+      "id": 22,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "List Removal Cost",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Every frame, dead enemies are removed from the middle of a C# List<Enemy> holding 10,000 items using RemoveAt(i). Why can this become slow?",
+      "options": [
+        "Each RemoveAt shifts all later elements left, so it costs O(n)",
+        "RemoveAt triggers a full garbage collection every time it is called",
+        "List<T> re-sorts all of its elements after each removal",
+        "RemoveAt allocates a brand-new internal array on each call"
+      ],
+      "correct": 0,
+      "explanation": "A List is a dynamic array, so removing from the middle moves every later element one slot down; if order does not matter, swap the dead enemy with the last element and remove the last one in O(1)."
+    },
+    {
+      "id": 23,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Observer Pattern & Events",
+      "difficulty": "Intermediate",
+      "dimension": "System Design",
+      "question": "When the player's health changes, the health bar, the audio manager and the achievement system must all react, but the Player class should not reference any of them. Which pattern fits best?",
+      "options": [
+        "Singleton: the Player calls a global instance of each system",
+        "Observer: the Player raises an event that the systems subscribe to",
+        "Factory: the Player creates the UI, audio and achievement objects itself",
+        "Object pool: the Player reuses the systems' instances each frame"
+      ],
+      "correct": 1,
+      "explanation": "With the observer pattern (a C# event or Action, a UnityEvent or an Unreal delegate) the Player just raises OnHealthChanged and any number of listeners subscribe, keeping the systems decoupled; a singleton still hard-wires the Player to each system."
+    },
+    {
+      "id": 24,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Smart Pointers & Ownership",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "In C++, a Level owns many enemies of different subclasses of Enemy (which has a virtual destructor). Each enemy must be destroyed exactly once when the Level is destroyed. Which container is the idiomatic modern C++ choice?",
+      "options": [
+        "std::vector<Enemy*>, calling delete on each in ~Level()",
+        "std::vector<Enemy>, storing each subclass object by value",
+        "std::vector<std::weak_ptr<Enemy>>",
+        "std::vector<std::unique_ptr<Enemy>>"
+      ],
+      "correct": 3,
+      "explanation": "unique_ptr expresses sole ownership and deletes each enemy automatically (RAII) when the vector is destroyed; storing by value slices subclass objects down to Enemy, weak_ptr owns nothing, and raw pointers rely on a manual delete that is easy to miss on early returns or exceptions."
+    },
+    {
+      "id": 25,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Virtual Destructors",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "A C++ base class Enemy has a non-virtual destructor, and Boss derives from it. What happens when this runs?\n\nEnemy* e = new Boss();\ndelete e;",
+      "options": [
+        "Undefined behaviour; usually only ~Enemy() runs and Boss's members leak",
+        "~Boss() runs and then ~Enemy(), exactly as with a virtual destructor",
+        "A compile error, because a Boss cannot be deleted through an Enemy pointer",
+        "Only ~Boss() runs, because the object's dynamic type is Boss"
+      ],
+      "correct": 0,
+      "explanation": "Deleting a derived object through a base pointer whose destructor is not virtual is undefined behaviour; in practice only the base destructor runs, so Boss's members are never cleaned up. Any class meant for polymorphic deletion needs a virtual destructor."
+    },
+    {
+      "id": 26,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Garbage Collection Spikes",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A Unity game stutters every few seconds. The Profiler shows GC.Alloc inside Update() from `new List<Collider>()` and from rebuilding the score string with concatenation every frame. What is the best fix?",
+      "options": [
+        "Reuse a cached list and update the score text only when it changes",
+        "Call System.GC.Collect() every frame so that garbage never builds up",
+        "Move the same code from Update() into FixedUpdate()",
+        "Allocate a new Collider[64] array each frame instead of a List"
+      ],
+      "correct": 0,
+      "explanation": "The stutters are garbage-collector pauses triggered by per-frame allocations, so the fix is to stop allocating: reuse a cached collection (or a non-allocating API) and rebuild strings only when the value changes. Forcing GC.Collect() every frame makes things worse."
+    },
+    {
+      "id": 27,
+      "field": "Game Developer",
+      "step": 1,
+      "topic": "Choosing a Data Structure",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "An open world is 1,000,000 × 1,000,000 grid cells, but only a few thousand cells are blocked at any time. The game checks many times per frame whether a cell (x, y) is blocked, and cells become blocked or unblocked as players build. Which structure fits best?",
+      "options": [
+        "A 2D bool array covering every cell of the world",
+        "A List of blocked coordinates searched linearly",
+        "A sorted array of blocked coordinates with binary search",
+        "A HashSet of blocked (x, y) coordinates"
+      ],
+      "correct": 3,
+      "explanation": "A hash set stores only the few thousand blocked cells and gives O(1) average lookups, inserts and removals; a full 2D bool array would need 10^12 entries (about 1 TB), a list needs O(n) scans, and a sorted array needs O(n) shifts on every insert."
+    },
+    {
+      "id": 28,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Vector Normalization",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In a top-down game, the input direction (x, y) is normalized before being multiplied by speed. Why?",
+      "options": [
+        "So the vector always points toward the world origin",
+        "So the vector's components are rounded to whole numbers",
+        "So diagonal movement is not faster than straight movement",
+        "So movement no longer needs to be multiplied by delta time"
+      ],
+      "correct": 2,
+      "explanation": "Pressing up and right gives (1, 1), whose length is √2 ≈ 1.41, so the player would move about 41% faster diagonally; normalizing scales the vector to length 1 while keeping its direction."
+    },
+    {
+      "id": 29,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Dot Product",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "The dot product of two unit vectors is 0. What does that tell you about them?",
+      "options": [
+        "They are perpendicular",
+        "They point in the same direction",
+        "They point in opposite directions",
+        "At least one of them is the zero vector"
+      ],
+      "correct": 0,
+      "explanation": "For unit vectors a·b = cos θ, and cos θ = 0 means θ = 90°; a dot product of 1 means the same direction and -1 means opposite directions. A unit vector can never be the zero vector."
+    },
+    {
+      "id": 30,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Dot Product: Field of View",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "An enemy's forward vector f and the direction to the player d are both normalized. Which check tells you whether the player is inside the enemy's 90° field of view (45° to each side)?",
+      "options": [
+        "dot(f, d) >= 0.707",
+        "dot(f, d) >= 0",
+        "dot(f, d) <= -0.707",
+        "length(cross(f, d)) >= 0.707"
+      ],
+      "correct": 0,
+      "explanation": "dot(f, d) = cos θ, and the player is within 45° of forward when cos θ >= cos 45° ≈ 0.707; checking >= 0 would allow a full 180° view, and the cross product's length (sin θ) is large when the player is off to the side."
+    },
+    {
+      "id": 31,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Transform Hierarchy",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A parent object is at world position (10, 0, 0) with a uniform scale of 2 and no rotation. Its child has local position (3, 0, 0). Where is the child in world space?",
+      "options": [
+        "(13, 0, 0)",
+        "(26, 0, 0)",
+        "(16, 0, 0)",
+        "(6, 0, 0)"
+      ],
+      "correct": 2,
+      "explanation": "A child's local position is transformed by the parent's scale, then rotation, then translation: (3 × 2) + 10 = 16 on x. (13, 0, 0) ignores the parent's scale, and (26, 0, 0) wrongly scales the parent's position as well."
+    },
+    {
+      "id": 32,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Quaternions & Gimbal Lock",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Why do game engines generally use quaternions rather than Euler angles to represent and interpolate rotations internally?",
+      "options": [
+        "They use fewer numbers than Euler angles",
+        "They are easier for designers to read and type in",
+        "They avoid gimbal lock and interpolate smoothly (slerp)",
+        "GPU shaders can only rotate vertices with quaternions, not matrices"
+      ],
+      "correct": 2,
+      "explanation": "Euler angles can lose a degree of freedom when two axes line up (gimbal lock) and interpolate unevenly, while unit quaternions compose robustly and slerp smoothly; they use four numbers, not fewer, and editors still show Euler angles to designers."
+    },
+    {
+      "id": 33,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Tunneling & Continuous Collision",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A small, very fast bullet sometimes passes straight through a thin wall without any collision being reported. What is the most robust fix?",
+      "options": [
+        "Increase the bullet's mass so the impact always registers",
+        "Use continuous collision detection or raycast along the path",
+        "Move the bullet in Update() instead of FixedUpdate()",
+        "Mark the wall's collider as a trigger so overlaps are detected"
+      ],
+      "correct": 1,
+      "explanation": "With discrete detection the bullet can be in front of the wall in one physics step and behind it in the next, so the overlap is never seen (tunneling); continuous detection, or a raycast/sweep from the old to the new position, tests the whole path. Mass has no effect on detection."
+    },
+    {
+      "id": 34,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Frame-Rate Independent Smoothing",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "This line runs in Update() to make a camera follow a target smoothly:\n\ntransform.position = Vector3.Lerp(transform.position, target.position, 0.1f);\n\nWhat is the problem with it?",
+      "options": [
+        "Lerp only accepts t values of 0 or 1, so the camera never moves",
+        "The camera reaches the target in exactly 10 frames and stops",
+        "The follow speed depends on the frame rate",
+        "The camera overshoots and oscillates around the target"
+      ],
+      "correct": 2,
+      "explanation": "Covering 10% of the remaining distance per frame means a 144 FPS player catches up much faster than a 30 FPS player; a frame-rate independent version uses t = 1 - Mathf.Exp(-k * Time.deltaTime) or SmoothDamp. The camera approaches the target gradually and never overshoots."
+    },
+    {
+      "id": 35,
+      "field": "Game Developer",
+      "step": 2,
+      "topic": "Collision Response (Reflection)",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A ball with velocity v hits a wall whose unit surface normal is n. Which formula gives the velocity after a perfectly elastic bounce?",
+      "options": [
+        "v + 2(v·n)n",
+        "v - 2(v·n)n",
+        "v - (v·n)n",
+        "-v"
+      ],
+      "correct": 1,
+      "explanation": "Reflection removes the velocity component along the normal and adds it back reversed: v - 2(v·n)n. v - (v·n)n only removes that component, so the ball slides along the wall, and -v sends it straight back the way it came."
+    },
+    {
+      "id": 36,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Unity Script Lifecycle",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In Unity, which MonoBehaviour method is called once every rendered frame and is the usual place to read player input?",
+      "options": [
+        "Start()",
+        "Awake()",
+        "FixedUpdate()",
+        "Update()"
+      ],
+      "correct": 3,
+      "explanation": "Update() runs once per frame, so it never misses an input event; FixedUpdate() runs on the fixed physics clock (zero or several times per frame), and Awake()/Start() run only once when the script initializes."
+    },
+    {
+      "id": 37,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Prefabs",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In Unity, what is a prefab?",
+      "options": [
+        "A script that runs automatically before the first scene loads",
+        "A pre-baked lightmap stored with the scene",
+        "A compressed texture format for mobile devices",
+        "A reusable GameObject template saved as an asset"
+      ],
+      "correct": 3,
+      "explanation": "A prefab stores a GameObject with its components, children and settings as an asset, so you can Instantiate() copies at runtime and edit the prefab once to update every instance; Unreal's closest equivalent is a Blueprint class."
+    },
+    {
+      "id": 38,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Unreal Blueprints",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In Unreal Engine, what are Blueprints?",
+      "options": [
+        "A visual scripting system for gameplay logic and classes",
+        "A grid system for snapping static meshes together in the level editor",
+        "Unreal's compressed file format for texture assets",
+        "The node graph used only for building materials"
+      ],
+      "correct": 0,
+      "explanation": "Blueprint Visual Scripting lets you create classes and gameplay logic with nodes instead of C++, and Blueprint classes can extend C++ classes; materials use the separate node-based Material Editor."
+    },
+    {
+      "id": 39,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "FixedUpdate & Physics",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Why should continuous forces be applied to a Unity Rigidbody in FixedUpdate() rather than in Update()?",
+      "options": [
+        "Update() cannot access Rigidbody components",
+        "FixedUpdate() runs in step with the physics simulation",
+        "FixedUpdate() runs once per rendered frame, so it is smoother",
+        "Forces applied in Update() are ignored by the physics engine"
+      ],
+      "correct": 1,
+      "explanation": "Physics advances in fixed steps (0.02 s by default) and FixedUpdate() runs right before each one, so a force is applied once per step at any frame rate; from Update() it would be added a varying number of times per physics step."
+    },
+    {
+      "id": 40,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Awake vs Start",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Script A reads a value in its Start() that Script B sets up in its Awake(). Both scripts are on active GameObjects loaded with the same scene. Is this safe in Unity?",
+      "options": [
+        "Yes; Awake runs on all of them before any Start is called",
+        "No; Awake and Start are called per object in an unpredictable order",
+        "Only if A and B are attached to the same GameObject",
+        "Only if B's GameObject is above A's in the Hierarchy"
+      ],
+      "correct": 0,
+      "explanation": "For objects loaded with a scene, Unity calls Awake (and OnEnable) on all active scripts before Start on any of them, so set up your own state in Awake and read others' in Start; the Awake order between different scripts, however, is not guaranteed."
+    },
+    {
+      "id": 41,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Unreal Actor Lifecycle",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "In Unreal Engine C++, which Actor function is the closest equivalent of Unity's Start() for gameplay setup when the game begins?",
+      "options": [
+        "Tick(float DeltaSeconds)",
+        "The class constructor",
+        "EndPlay()",
+        "BeginPlay()"
+      ],
+      "correct": 3,
+      "explanation": "BeginPlay() is called when the Actor starts play in the world, so it is the place for gameplay initialization; the constructor also runs for the Class Default Object and in the editor, so it should only create components and set default values."
+    },
+    {
+      "id": 42,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "UI Scaling",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A Unity UI designed at 1920×1080 looks tiny on a high-resolution 2960×1440 phone. Which Canvas Scaler setting best fixes this?",
+      "options": [
+        "UI Scale Mode set to Constant Pixel Size",
+        "Canvas Render Mode set to World Space instead of Screen Space",
+        "A higher Sort Order on the Canvas",
+        "UI Scale Mode set to Scale With Screen Size"
+      ],
+      "correct": 3,
+      "explanation": "Scale With Screen Size scales the whole UI relative to a reference resolution (e.g. 1920×1080), so elements keep the same share of the screen on any device; Constant Pixel Size keeps every element the same number of pixels, which looks tiny on dense displays."
+    },
+    {
+      "id": 43,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Time Scale & Coroutines",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A pause menu sets Time.timeScale = 0. The menu's fade-in coroutine uses `yield return new WaitForSeconds(0.5f);` and never continues. What is the fix?",
+      "options": [
+        "Start the coroutine from FixedUpdate() instead of Update()",
+        "Set Time.fixedDeltaTime to 0 while the game is paused",
+        "Start the coroutine on the Canvas instead of the menu script",
+        "Use WaitForSecondsRealtime, which ignores Time.timeScale"
+      ],
+      "correct": 3,
+      "explanation": "WaitForSeconds counts scaled game time, which stops advancing when timeScale is 0, so the coroutine never resumes; WaitForSecondsRealtime (or Time.unscaledDeltaTime) uses real time. FixedUpdate() also stops being called at a timeScale of 0."
+    },
+    {
+      "id": 44,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Destroy Timing",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "In a Unity script, `Destroy(enemy);` is called and the next line in the same method checks `enemy == null`. What does the check return?",
+      "options": [
+        "false, because destruction is deferred until later in the frame",
+        "true, because Destroy removes the object from the scene immediately",
+        "It throws a MissingReferenceException",
+        "true, but only if the GameObject has no children"
+      ],
+      "correct": 0,
+      "explanation": "Destroy() only marks the object; Unity destroys it after the current Update loop (before rendering), so it still exists for the rest of this method. After destruction, Unity's overloaded == null returns true even though the C# reference itself is not null."
+    },
+    {
+      "id": 45,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Structs in Unity Transforms",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Why does `transform.position.x = 5f;` fail to compile in Unity C#?",
+      "options": [
+        "Vector3.x is a read-only property",
+        "Transforms can only be moved through a Rigidbody",
+        "position returns a struct copy, so changing x would be lost",
+        "position can only be changed with SetPositionAndRotation()"
+      ],
+      "correct": 2,
+      "explanation": "transform.position is a property that returns a Vector3 struct by value, so changing a field of that temporary copy is meaningless and the compiler reports CS1612; copy it to a variable, change x and assign it back (var p = transform.position; p.x = 5f; transform.position = p;)."
+    },
+    {
+      "id": 46,
+      "field": "Game Developer",
+      "step": 3,
+      "topic": "Unreal Garbage Collection",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "In Unreal C++, an Actor keeps a pointer to a UObject it created with NewObject in a member variable that is not marked UPROPERTY(). A while later the pointer is dangling. What is the most likely cause?",
+      "options": [
+        "UObjects are deleted at the end of every frame unless they are declared static",
+        "Raw pointers are reset whenever the level is saved in the editor",
+        "The garbage collector did not see that reference and freed the object",
+        "The object was moved by Unreal's memory defragmenter"
+      ],
+      "correct": 2,
+      "explanation": "Unreal's garbage collector only follows UObject references it can see, such as UPROPERTY() members (TObjectPtr in UE5) or objects in the root set, so an unmarked raw pointer neither keeps the object alive nor gets cleared when it is collected."
+    },
+    {
+      "id": 47,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Shaders",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In a typical rendering pipeline, what does the fragment (pixel) shader compute?",
+      "options": [
+        "The screen position of each vertex",
+        "Which objects lie inside the camera's view frustum",
+        "The colour of each fragment a triangle covers",
+        "The collision shape of the mesh"
+      ],
+      "correct": 2,
+      "explanation": "After rasterization, the fragment shader runs for each fragment a triangle covers and outputs its colour (sampling textures and applying lighting); transforming vertices to screen space is the vertex shader's job."
+    },
+    {
+      "id": 48,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Particle Systems",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In Unity's Particle System, which setting controls how many new particles are spawned each second?",
+      "options": [
+        "Start Lifetime in the Main module",
+        "Rate over Time in the Emission module",
+        "Max Particles in the Main module",
+        "Render Mode in the Renderer module"
+      ],
+      "correct": 1,
+      "explanation": "Emission > Rate over Time sets how many particles are emitted per second (Bursts emit many at once); Start Lifetime sets how long each particle lives, and Max Particles only caps how many can be alive at the same time."
+    },
+    {
+      "id": 49,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Normal Maps",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "What does a normal map add to a low-poly 3D model?",
+      "options": [
+        "Extra vertices generated on the GPU at runtime",
+        "Surface detail in the lighting without extra geometry",
+        "The base colour (albedo) of the surface",
+        "Which parts of the mesh are transparent"
+      ],
+      "correct": 1,
+      "explanation": "A normal map stores per-pixel surface directions, so lighting shows bumps, grooves and scratches on a flat, low-poly surface; unlike tessellation or displacement it adds no vertices, so the silhouette is unchanged."
+    },
+    {
+      "id": 50,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Audio Import Settings",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "On mobile, a short gunshot clip plays hundreds of times per minute while a 4-minute music track plays once in the background. Which Unity audio Load Type settings fit best?",
+      "options": [
+        "Gunshot: Decompress On Load; music: Streaming",
+        "Gunshot: Streaming; music: Decompress On Load",
+        "Both: Decompress On Load",
+        "Both: Streaming"
+      ],
+      "correct": 0,
+      "explanation": "Short, frequent sounds should be decompressed into memory once so playback costs almost no CPU, while long music is streamed from disk in small chunks; decompressing a 4-minute track would waste tens of megabytes of RAM."
+    },
+    {
+      "id": 51,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Overdraw & Fill Rate",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In a mobile game, the frame rate drops sharply whenever large, overlapping transparent smoke particles cover the screen, even though the triangle count stays low. What is the most likely cause?",
+      "options": [
+        "Vertex count: the particles exceed the GPU's triangle budget per frame",
+        "Overdraw: each pixel is shaded many times, making it fill-rate bound",
+        "The particle textures are too small and are being upscaled",
+        "Transparent particles force every light to cast shadows"
+      ],
+      "correct": 1,
+      "explanation": "Transparent layers cannot use the depth buffer to skip hidden pixels, so every overlapping particle shades the same screen pixels again; fewer or smaller particles, cheaper shaders or a lower-resolution effect reduce this fill-rate cost."
+    },
+    {
+      "id": 52,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Pixel Art Rendering",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "In a 2D pixel-art game, sprites look blurry and thin lines flicker between tiles as the camera moves. Which fix addresses both problems?",
+      "options": [
+        "Use Trilinear filtering and generate mipmaps for every sprite",
+        "Raise anisotropic filtering to 16x on all textures",
+        "Use Point filtering and add padding around tiles in the atlas",
+        "Switch the camera from orthographic to perspective"
+      ],
+      "correct": 2,
+      "explanation": "Bilinear filtering blends neighbouring texels, which blurs pixel art and lets edge pixels bleed between tiles at sub-pixel camera positions; Point (no filter) sampling plus padded or extruded tiles, often with a pixel-perfect camera, keeps pixels crisp and seams closed."
+    },
+    {
+      "id": 53,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Normal Transformation",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "When an object has non-uniform scale, why are its normals transformed with the inverse-transpose of the model matrix instead of the model matrix itself?",
+      "options": [
+        "The model matrix cannot be multiplied with three-component vectors",
+        "The inverse-transpose also converts normals from world space to screen space",
+        "It is only needed to keep each normal at unit length",
+        "The model matrix would tilt normals so they are no longer perpendicular"
+      ],
+      "correct": 3,
+      "explanation": "Non-uniform scale changes surface slopes, so transforming normals like positions leaves them no longer perpendicular to the surface and lighting looks wrong; the inverse-transpose keeps them perpendicular (you still renormalize afterwards)."
+    },
+    {
+      "id": 54,
+      "field": "Game Developer",
+      "step": 4,
+      "topic": "Animator Transitions",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In Unity's Animator, the jump animation starts only after a noticeable delay, even though the Jump trigger is set the moment the button is pressed. What is the most likely cause?",
+      "options": [
+        "Loop Time is enabled on the Run clip",
+        "The Animator's Culling Mode is set to Always Animate on the character",
+        "Has Exit Time is enabled on the Run → Jump transition",
+        "The Jump state's Speed multiplier is set to 1"
+      ],
+      "correct": 2,
+      "explanation": "With Has Exit Time enabled, the transition waits until the Run state reaches its exit time (for example the end of the cycle) before it can fire; disabling it lets the trigger condition switch states immediately, which responsive actions like jumping need."
+    },
+    {
+      "id": 55,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "BFS on Grids",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "On a grid where every move costs the same, which algorithm finds a path with the fewest moves from an enemy to the player?",
+      "options": [
+        "Breadth-first search (BFS)",
+        "Depth-first search (DFS)",
+        "Greedy best-first search toward the player",
+        "Prim's algorithm"
+      ],
+      "correct": 0,
+      "explanation": "BFS explores cells in order of distance from the start, so the first time it reaches the player it has found a shortest path on an unweighted grid; DFS and greedy best-first search can return longer paths, and Prim's builds a minimum spanning tree."
+    },
+    {
+      "id": 56,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Finite State Machines (AI)",
+      "difficulty": "Easy",
+      "dimension": "System Design",
+      "question": "A guard switches between Patrol, Chase and Attack depending on whether it can see the player and how close the player is. Which simple AI technique models this directly?",
+      "options": [
+        "A finite state machine",
+        "A* pathfinding",
+        "A quadtree",
+        "A neural network trained on player data"
+      ],
+      "correct": 0,
+      "explanation": "A finite state machine keeps the guard in exactly one state at a time with explicit transitions (sees player → Chase, in range → Attack); A* only plans the route the guard walks, and a quadtree answers spatial queries."
+    },
+    {
+      "id": 57,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Authoritative Server",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In a competitive online shooter, why is an authoritative server commonly used?",
+      "options": [
+        "It removes all network latency for every player",
+        "The server validates the game state, making cheating harder",
+        "Each client decides for itself whether its own shots hit other players",
+        "Clients no longer need to send any input to the server"
+      ],
+      "correct": 1,
+      "explanation": "The server runs the real simulation and accepts only player inputs, so a hacked client cannot simply claim it teleported or landed a hit; latency still exists and is hidden with prediction and interpolation."
+    },
+    {
+      "id": 58,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Frame Budget",
+      "difficulty": "Easy",
+      "dimension": "Problem Solving",
+      "question": "A game targets a steady 60 FPS. Roughly how much time can it spend on each frame, including game logic and rendering?",
+      "options": [
+        "About 33.3 ms",
+        "About 60 ms",
+        "About 16.7 ms",
+        "About 1.6 ms"
+      ],
+      "correct": 2,
+      "explanation": "1000 ms ÷ 60 frames ≈ 16.7 ms per frame for input, gameplay, physics, rendering and everything else; 33.3 ms is the budget at 30 FPS, and 120 FPS leaves only about 8.3 ms."
+    },
+    {
+      "id": 59,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Publishing Builds",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which package format does Google Play require when publishing a new Android game?",
+      "options": [
+        "Android Package (.apk)",
+        "iOS App Store Package (.ipa)",
+        "Unity Package (.unitypackage)",
+        "Android App Bundle (.aab)"
+      ],
+      "correct": 3,
+      "explanation": "Since August 2021, new apps on Google Play must be uploaded as Android App Bundles, from which Play generates optimized APKs for each device; an .apk is what finally gets installed and is still used for sideloading and other stores."
+    },
+    {
+      "id": 60,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "Behaviour Trees",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "In a behaviour tree, how does a Selector (also called Fallback) node behave?",
+      "options": [
+        "It runs its children in order and fails as soon as any single child fails",
+        "It runs its children in order and succeeds as soon as one child succeeds",
+        "It runs all of its children in parallel on every tick",
+        "It picks one random child to run on each tick"
+      ],
+      "correct": 1,
+      "explanation": "A Selector tries its children left to right until one succeeds (or is still running), which models fallbacks like 'attack if possible, otherwise chase, otherwise patrol'; failing on the first failing child describes a Sequence node."
+    },
+    {
+      "id": 61,
+      "field": "Game Developer",
+      "step": 5,
+      "topic": "CPU vs GPU Bound",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Halving the render resolution barely changes the frame time, but disabling the enemy AI scripts raises the frame rate from 40 to 60 FPS. What is the game most likely bound by?",
+      "options": [
+        "GPU pixel shading and fill rate",
+        "Network latency to the game server",
+        "Disk read speed while streaming assets",
+        "CPU time spent running game logic"
+      ],
+      "correct": 3,
+      "explanation": "Frame time that ignores resolution but improves when scripts are disabled points to the CPU (main-thread game logic) rather than the GPU's pixel work; confirm it in the CPU Profiler, then optimize the AI, for example by updating it less often or spreading it across frames."
+    }
+  ]
+}

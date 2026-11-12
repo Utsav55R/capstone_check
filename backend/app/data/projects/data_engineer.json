@@ -1,0 +1,106 @@
+{
+  "field": "Data Engineer",
+  "verified_on": "2026-10-07",
+  "projects": [
+    {
+      "id": "de-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "E-commerce Sales Warehouse: Python ETL into a Star Schema with SCD Type 2",
+      "summary": "Build a batch pipeline in Python that extracts a public multi-table e-commerce dataset from CSV and JSON files, stores the raw data as Parquet and loads it into a PostgreSQL star schema with a Type 2 slowly changing customer dimension. Loads run inside transactions and are safe to re-run, and a set of analytical SQL queries with indexes and EXPLAIN plans proves the model answers real business questions.",
+      "skills": [
+        "Python",
+        "pandas / PyArrow",
+        "Parquet",
+        "PostgreSQL",
+        "CTEs & window functions",
+        "Dimensional modeling",
+        "SCD Type 2",
+        "Indexes & EXPLAIN"
+      ],
+      "requirements": [
+        "Extract a public e-commerce dataset with at least 4 related tables and 50,000+ order rows (for example Olist Brazilian E-Commerce on Kaggle) plus one JSON source (for example daily exchange rates saved from a public API such as Frankfurter). Read large CSVs in chunks, check column names and types, write each raw table to Parquet with PyArrow, and report row counts and CSV vs Parquet file sizes in the README.",
+        "Design a star schema in PostgreSQL: a fact_order_items table at the stated grain of one row per order line, with additive measures (price, freight_value) and surrogate foreign keys to dim_customer, dim_product, dim_seller and a generated dim_date (year, quarter, month, weekday, is_weekend). Commit the DDL in schema.sql, and put an ER diagram, the grain statement and a data dictionary in the README.",
+        "Build dim_customer as an SCD Type 2 dimension with a surrogate key, the natural key, valid_from, valid_to and is_current. Create a second customer snapshot in which at least 20 customers change city or state; loading it must close the old rows and insert new versions, and a point-in-time join must link each fact row to the customer version that was valid on the order date.",
+        "Make every load idempotent and transactional: load rows into staging tables, then upsert with INSERT ... ON CONFLICT (or MERGE) inside one transaction that rolls back on error. Running the pipeline twice must leave identical row counts and revenue totals (prove it with a check script), and rows that fail validation (missing keys, negative prices, delivery before purchase) go to a rejects table with a reason column.",
+        "Answer at least 8 business questions in analytics.sql using CTEs and window functions, including month-over-month revenue growth with LAG, the top 3 products per category with DENSE_RANK and the repeat-customer rate. Add composite indexes on the fact table's foreign keys and include EXPLAIN (ANALYZE) output for 2 queries before and after indexing.",
+        "Package the pipeline as a command (python -m pipeline run) that reads its database settings from environment variables (commit .env.example only), add at least 5 pytest tests covering the cleaning and SCD Type 2 logic, and list the exact commands to rebuild the warehouse from scratch in the README."
+      ],
+      "reference_repo": {
+        "full_name": "dlt-hub/dlt",
+        "url": "https://github.com/dlt-hub/dlt",
+        "description": "data load tool (dlt) is an open source Python library that makes data loading easy",
+        "stars": 5900,
+        "last_commit": "2026-10-05",
+        "why_reference": "Read docs/website/docs/general-usage/merge-loading.md and incremental-loading.md to see how a real loading library defines write dispositions (append, replace, merge) and merge strategies (delete-insert, upsert and scd2 with validity columns). Then open dlt/destinations/sql_jobs.py (SqlMergeFollowupJob with gen_merge_sql and gen_scd2_sql) to see the staging and temp-table SQL it generates, and skim schema-evolution.md and the extract, normalize and load packages under dlt/. Reference only: write your own loader and SCD Type 2 SQL instead of calling dlt, and do not copy its code."
+      }
+    },
+    {
+      "id": "de-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "Real-Time Taxi Trip Analytics with Kafka, Spark Structured Streaming and Airflow",
+      "summary": "Replay NYC taxi trips as a live event stream into Kafka, aggregate them in real time with PySpark Structured Streaming, and land the raw events in a Parquet data lake. A daily Airflow DAG then runs a PySpark batch job and dbt models with data tests over each day's data, so one project shows both stream and batch processing on the same dataset.",
+      "skills": [
+        "Apache Kafka",
+        "PySpark",
+        "Spark Structured Streaming",
+        "Apache Airflow",
+        "dbt",
+        "PostgreSQL",
+        "Parquet",
+        "Docker Compose"
+      ],
+      "requirements": [
+        "Write a Python producer that replays at least one month of NYC TLC Yellow Taxi trips (public Parquet files) into a Kafka topic with at least 3 partitions, using the pickup zone ID as the message key so each zone's events stay in order. Every event carries an event_id and its event time; deliberately inject about 1% duplicate and late (more than 10 minutes old) events, and send malformed records to a dead-letter topic.",
+        "Build a PySpark Structured Streaming job that reads the topic with an explicit schema, removes duplicates with dropDuplicatesWithinWatermark on event_id, and computes 5-minute tumbling-window metrics per zone (trip count, revenue, average fare) on event time with a 10-minute watermark.",
+        "Write the window results to PostgreSQL from foreachBatch with an idempotent upsert keyed on (window_start, zone_id) and a checkpoint location, and also write the raw events to Parquet partitioned by pickup date. Kill and restart the job mid-stream and show that no window is counted twice.",
+        "Write a daily PySpark batch job that reads one date partition, joins trips to the taxi-zone lookup with a broadcast join and overwrites that day's partition of the zone and borough marts. Include explain() output or a Spark UI screenshot showing the broadcast join replacing a sort-merge join, and explain how you chose the number of output files (repartition vs coalesce).",
+        "Orchestrate the batch with an Airflow DAG that processes the run's data interval (not 'today'), retries failed tasks and supports catchup for backfills, then runs dbt staging and mart models with not_null, unique, relationships and accepted_values tests plus a row-count check that fails the DAG when a day's volume drops by more than 50%.",
+        "Provide a one-command local setup (docker-compose.yml for Kafka in KRaft mode, Spark, PostgreSQL and Airflow), show consumer-group lag with kafka-consumer-groups.sh, and add a README with an architecture diagram and a short section explaining which end-to-end delivery guarantee the pipeline gives (at-least-once reads plus idempotent writes) and why."
+      ],
+      "reference_repo": {
+        "full_name": "apache/spark",
+        "url": "https://github.com/apache/spark",
+        "description": "Apache Spark - A unified analytics engine for large-scale data processing",
+        "stars": 44100,
+        "last_commit": "2026-10-07",
+        "why_reference": "Start with examples/src/main/python/sql/streaming: structured_kafka_wordcount.py shows how to read a Kafka topic, while structured_network_wordcount_windowed.py and structured_sessionization.py show event-time windows and session state. Then read docs/streaming/apis-on-dataframes-and-datasets.md (event-time windows, watermarks, streaming deduplication, output modes, checkpoints), docs/streaming/structured-streaming-kafka-integration.md (Kafka source options and offsets) and docs/sql-performance-tuning.md (broadcast join hints, AQE, skew joins, coalescing shuffle partitions). Reference only: build and explain your own pipeline, do not copy the examples."
+      }
+    },
+    {
+      "id": "de-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Cloud Lakehouse with Medallion Layers, Data Quality Gates, Lineage and CI/CD",
+      "summary": "Build a production-style lakehouse on cloud object storage that ingests change data from an operational PostgreSQL database and a public API into bronze, silver and gold Delta Lake or Apache Iceberg tables, orchestrated with Dagster or Airflow. Add data-quality gates, freshness monitoring, lineage, PII protection and a CI/CD pipeline so a team could run and change the platform safely.",
+      "skills": [
+        "Delta Lake / Apache Iceberg",
+        "Amazon S3 / MinIO",
+        "PySpark or dbt",
+        "Dagster / Airflow",
+        "Change data capture",
+        "Data quality & observability",
+        "Docker",
+        "GitHub Actions",
+        "IAM & data governance"
+      ],
+      "requirements": [
+        "Ingest at least 2 sources into bronze tables on S3, GCS, ADLS or MinIO: change events from a PostgreSQL application database (Debezium with Kafka Connect, or an incremental extract with a high-water mark) and a public REST API loaded incrementally. Bronze is append-only, partitioned by ingestion date, and every row carries _ingested_at and _source metadata columns.",
+        "Build silver and gold Delta Lake or Iceberg tables with Spark or dbt: silver deduplicates, casts types and applies CDC changes (including deletes) with MERGE INTO and keeps one SCD Type 2 dimension; gold holds a star schema and aggregate tables for a dashboard. Demonstrate schema evolution (add a column), time travel to restore a table after a deliberately bad load, and compaction followed by VACUUM / expire_snapshots with a stated retention period.",
+        "Orchestrate the full flow daily with Dagster or Airflow, including partitioned backfills. Run data-quality checks on every layer (dbt tests, Great Expectations or Soda, or Dagster asset checks) for nulls, uniqueness, referential integrity, value ranges and row volume; a failed check blocks the gold publish and sends a Slack or email alert, and a freshness check alerts when gold is more than 26 hours old.",
+        "Show end-to-end lineage from source through bronze, silver and gold to the dashboard (Dagster asset graph, dbt docs, or OpenLineage with Marquez), plus a run-health view with run duration, rows processed, freshness lag and check results; include screenshots in the README.",
+        "Containerise the platform with Docker and docker-compose for local runs (object storage, orchestrator, Spark or DuckDB, PostgreSQL) with separate dev and prod configs, and add a GitHub Actions workflow that runs ruff, sqlfluff, unit tests on small fixture data and dbt build (or the Spark jobs) against a CI target on every pull request, then deploys the pipeline code when main changes.",
+        "Apply governance, security and cost controls: secrets come from environment variables or a secret manager (never Git), a least-privilege IAM policy lets the pipeline role read bronze and write only silver/gold while analysts read gold only, PII such as email and phone is hashed or masked in silver, buckets are encrypted, and a lifecycle rule moves bronze objects older than 30 days to a cold storage class. Show partition and column pruning in a gold query plan (Trino, Athena, Spark or DuckDB)."
+      ],
+      "reference_repo": {
+        "full_name": "dagster-io/dagster",
+        "url": "https://github.com/dagster-io/dagster",
+        "description": "An orchestration platform for the development, production, and observation of data assets.",
+        "stars": 16200,
+        "last_commit": "2026-10-06",
+        "why_reference": "Study examples/data-quality-patterns (Dagster asset checks, FreshnessPolicy, Great Expectations and dbt tests on the same data), examples/development_to_production (swappable resources so local runs never touch production data, plus tests with mock data) and examples/deploy_docker (docker-compose with separate webserver, daemon and user-code containers). For the storage and transform layers, read python_modules/libraries/dagster-deltalake and dagster-dbt to see how assets are written to Delta tables and how dbt models join the same lineage graph. Reference only: design and write your own smaller platform, do not copy the examples."
+      }
+    }
+  ]
+}

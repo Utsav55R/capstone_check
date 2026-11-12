@@ -1,0 +1,102 @@
+{
+  "field": "AI / ML Engineer",
+  "verified_on": "2026-10-06",
+  "projects": [
+    {
+      "id": "ml-basic",
+      "level": "Basic",
+      "unlock_after_step": 2,
+      "title": "Data Cleaning, EDA & SQL Insights Report",
+      "summary": "Take a messy real-world public dataset (for example campus placements, job postings or used-car listings), clean it with Pandas, load it into SQLite and answer business questions with SQL. Publish a reproducible EDA notebook with labelled charts, a hypothesis test and a small reusable function that profiles any CSV file.",
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "SQL (SQLite)",
+        "Matplotlib / Seaborn",
+        "Statistics",
+        "Git"
+      ],
+      "requirements": [
+        "Use a public dataset with at least 1,000 rows and 8 columns; the README links the source and includes a data dictionary (column, type, meaning).",
+        "A clean.py script (or notebook section) handles missing values, duplicates, wrong data types and outliers, states the reason for each decision, and writes a cleaned CSV.",
+        "The cleaned data is loaded into SQLite and at least 5 business questions are answered in a queries.sql file, using at least one JOIN or GROUP BY/HAVING and at least one window function.",
+        "At least 6 labelled charts (including a histogram, a box plot, a scatter plot and a correlation heatmap), each followed by a one-line written insight.",
+        "At least one hypothesis test (t-test or chi-square) with the null hypothesis, p-value and a plain-English conclusion.",
+        "A reusable profile_csv(path) function reports dtypes, missing-value %, duplicate rows and summary statistics; the notebook passes Restart & Run All and dependencies are pinned in requirements.txt."
+      ],
+      "reference_repo": {
+        "full_name": "Data-Centric-AI-Community/fg-data-profiling",
+        "url": "https://github.com/Data-Centric-AI-Community/fg-data-profiling",
+        "description": "1 Line of code data quality profiling & exploratory data analysis for Pandas and Spark DataFrames (the project formerly known as ydata-profiling / pandas-profiling).",
+        "stars": 13700,
+        "last_commit": "2026-09-11",
+        "why_reference": "Study which checks a professional EDA tool runs on a DataFrame - column type inference, missing-value patterns, duplicate rows, correlations and the automatic data-quality alerts (high correlation, skewness, zeros, missing values) - and browse src/ and examples/ to see how each report section is computed. Use those sections as a checklist for your own profile_csv function. Reference only: write your own cleaning and profiling code instead of calling the library."
+      }
+    },
+    {
+      "id": "ml-intermediate",
+      "level": "Intermediate",
+      "unlock_after_step": 4,
+      "title": "Image Classifier with Transfer Learning (PyTorch)",
+      "summary": "Build an image classifier for a real problem (for example plant-disease leaves, waste sorting or X-ray categories). Start with a classical scikit-learn baseline, then fine-tune a pretrained CNN in PyTorch with data augmentation and early stopping, and present an honest evaluation with error analysis and a command-line prediction tool.",
+      "skills": [
+        "PyTorch",
+        "torchvision / timm",
+        "CNNs",
+        "Transfer learning",
+        "scikit-learn",
+        "Model evaluation"
+      ],
+      "requirements": [
+        "Use a public image dataset with at least 3 classes and a seeded, stratified train/validation/test split saved to disk; report the image count per class and per split.",
+        "Train a baseline (scikit-learn logistic regression on frozen pretrained features, or a small CNN trained from scratch) and record its test accuracy and macro F1.",
+        "Fine-tune a pretrained CNN (e.g. ResNet-18 or EfficientNet-B0) with a PyTorch Dataset/DataLoader training loop, data augmentation, AdamW plus a learning-rate scheduler, correct model.train()/model.eval() usage, early stopping on validation loss and a saved best checkpoint.",
+        "Report on the held-out test set: accuracy, per-class precision/recall/F1, a confusion matrix, training/validation loss curves, and a table comparing the baseline with the fine-tuned model.",
+        "Error analysis: show at least 10 misclassified test images with true vs predicted labels and describe at least 2 failure patterns.",
+        "A predict.py CLI takes an image path and prints the top-3 classes with probabilities; the README lists results and the exact commands (with seed and requirements.txt) to reproduce them."
+      ],
+      "reference_repo": {
+        "full_name": "huggingface/pytorch-image-models",
+        "url": "https://github.com/huggingface/pytorch-image-models",
+        "description": "The largest collection of PyTorch image encoders / backbones (timm), including train, eval, inference and export scripts and pretrained weights.",
+        "stars": 37200,
+        "last_commit": "2026-10-06",
+        "why_reference": "Read the top-level train.py, validate.py and inference.py to see how a production training loop is organised: augmentation transforms (RandAugment, Mixup/CutMix), optimizer and learning-rate scheduler factories (cosine, step, plateau), checkpoint saving and validation metrics - and how timm.create_model loads a pretrained backbone with a new classifier head for fine-tuning. Reference only: build and explain your own much smaller training script."
+      }
+    },
+    {
+      "id": "ml-advanced",
+      "level": "Advanced",
+      "unlock_after_step": 5,
+      "title": "Deployed RAG Document Q&A API with Evaluation & Monitoring",
+      "summary": "Build a retrieval-augmented generation (RAG) service that answers questions over a document collection (for example college placement policies or course notes) with cited sources. Serve it with FastAPI in Docker, track retrieval experiments in MLflow and log production signals so quality drift can be spotted.",
+      "skills": [
+        "Embeddings (sentence-transformers)",
+        "Vector search",
+        "RAG",
+        "Hugging Face / LLM APIs",
+        "FastAPI",
+        "Docker",
+        "MLflow",
+        "Monitoring"
+      ],
+      "requirements": [
+        "An ingestion script parses at least 20 PDF/Markdown documents, splits them into chunks with configurable size and overlap, embeds them with a sentence-transformers model and stores them in a vector store (FAISS, Chroma or Qdrant) with filename and page metadata.",
+        "A FastAPI POST /ask endpoint with Pydantic request/response models returns an answer plus the top-k cited source chunks, and replies that it does not know when the best retrieval score is below a configurable threshold; GET /health also exists.",
+        "A hand-labelled evaluation set of at least 30 question-to-source pairs measures hit@k and MRR for at least 2 retrieval configurations (chunk size or embedding model), with every run's parameters and metrics logged to MLflow.",
+        "A Dockerfile and docker-compose.yml start the API (and the vector store if it runs as a separate service) with one command on a clean machine; the README shows a curl example and its response.",
+        "Every request logs latency, the top retrieval score and the question length to SQLite or a log file, and a monitoring script flags drift when the weekly mean top score falls more than 10% below the evaluation baseline.",
+        "pytest tests cover the chunker and the /ask endpoint (FastAPI TestClient with the LLM mocked) and run in GitHub Actions CI on every push."
+      ],
+      "reference_repo": {
+        "full_name": "zylon-ai/private-gpt",
+        "url": "https://github.com/zylon-ai/private-gpt",
+        "description": "Complete API layer for private AI applications on local models: RAG, skills, tools, MCP, text-to-sql and more; works with any OpenAI-compatible inference server.",
+        "stars": 57600,
+        "last_commit": "2026-10-05",
+        "why_reference": "Study how a production RAG backend is layered: FastAPI routes in private_gpt/server, swappable embedding, vector-store (Qdrant) and LLM components in private_gpt/components, environment-specific settings.yaml / settings-test.yaml with private_gpt/settings, document ingestion handled separately from querying, answers returned with citations, plus a Dockerfile and a tests/ suite that runs with a mock LLM. Reference only: your service should be a small, focused version you design and write yourself."
+      }
+    }
+  ]
+}

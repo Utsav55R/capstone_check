@@ -1,0 +1,1079 @@
+{
+  "track": "Data Analyst",
+  "title": "Data Analyst",
+  "source_document": "data_analyst.docx",
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": 1,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Descriptive Statistics",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Which measure of central tendency is generally less affected by extreme outliers?",
+      "options": [
+        "Mean",
+        "Mid-range (average of the minimum and maximum)",
+        "Median",
+        "Weighted mean"
+      ],
+      "correct": 2,
+      "explanation": "The median depends only on the middle value(s) of the sorted data, so one extreme value barely moves it; the mean, weighted mean and mid-range all use the actual size of the values, so a single outlier pulls them strongly."
+    },
+    {
+      "id": 2,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "LIKE Pattern Matching",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which WHERE condition returns the customers whose email address ends with '@gmail.com'?",
+      "options": [
+        "email LIKE '@gmail.com%'",
+        "email = '%@gmail.com'",
+        "email LIKE '%@gmail.com'",
+        "email LIKE '_@gmail.com'"
+      ],
+      "correct": 2,
+      "explanation": "In LIKE, % matches any run of characters (including none), so '%@gmail.com' matches every value ending in @gmail.com. '@gmail.com%' matches values that start with it, = compares with the literal text '%@gmail.com', and _ matches exactly one character."
+    },
+    {
+      "id": 3,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Excel Tables",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What is a main benefit of formatting a data range as an Excel Table (Insert → Table, or Ctrl+T)?",
+      "options": [
+        "It locks every cell so that the data cannot be edited by mistake",
+        "It expands as new rows are added, and formulas that use it include them",
+        "It removes duplicate rows and blank cells from the range automatically",
+        "It converts every formula in the range into its current fixed value"
+      ],
+      "correct": 1,
+      "explanation": "An Excel Table grows automatically when you add rows next to it, so structured references such as =SUM(Sales[Amount]), and charts or PivotTables built on it (after a Refresh), pick up the new data. Locking cells, removing duplicates and freezing formulas need Protect Sheet, Remove Duplicates and Paste Values instead."
+    },
+    {
+      "id": 4,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "NULL Handling",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In SQL, what does COUNT(column_name) do with NULL values in that column?",
+      "options": [
+        "It skips them and counts only non-NULL values",
+        "It counts them, giving the same result as COUNT(*)",
+        "It returns NULL if the column contains any NULL",
+        "It raises an error unless the NULLs are removed first"
+      ],
+      "correct": 0,
+      "explanation": "COUNT(column) counts only non-NULL values, while COUNT(*) counts every row, so COUNT(*) - COUNT(email) gives the number of rows with a missing email."
+    },
+    {
+      "id": 5,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Chart Selection",
+      "difficulty": "Easy",
+      "dimension": "Technical Communication",
+      "question": "Which chart is usually the best choice for showing how monthly revenue changed over the last 24 months?",
+      "options": [
+        "Pie chart",
+        "Histogram",
+        "Line chart",
+        "Scatter plot"
+      ],
+      "correct": 2,
+      "explanation": "A line chart joins the values in time order, so the trend, seasonality and turning points across 24 months are easy to follow. A pie chart shows parts of one whole, a histogram shows the distribution of a single numeric variable, and a scatter plot shows the relationship between two numeric variables."
+    },
+    {
+      "id": 6,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "GROUP BY & HAVING",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Which query returns only the departments whose average salary is above 50000?",
+      "options": [
+        "SELECT dept, AVG(salary) FROM emp WHERE AVG(salary) > 50000 GROUP BY dept;",
+        "SELECT dept, AVG(salary) FROM emp WHERE salary > 50000 GROUP BY dept;",
+        "SELECT dept, AVG(salary) FROM emp GROUP BY dept HAVING AVG(salary) > 50000;",
+        "SELECT dept, AVG(salary) FROM emp GROUP BY dept WHERE AVG(salary) > 50000;"
+      ],
+      "correct": 2,
+      "explanation": "HAVING filters groups after GROUP BY has computed each department's average. Aggregates are not allowed in WHERE (and WHERE cannot come after GROUP BY), while WHERE salary > 50000 runs but averages only the high salaries instead of filtering departments."
+    },
+    {
+      "id": 7,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "Running Totals",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "daily_sales has one row per day with columns sale_date and amount. Which expression adds a running (cumulative) total of amount, in date order, to every row?",
+      "options": [
+        "SUM(amount) OVER ()",
+        "SUM(amount) OVER (PARTITION BY sale_date)",
+        "SUM(amount) with GROUP BY sale_date",
+        "SUM(amount) OVER (ORDER BY sale_date)"
+      ],
+      "correct": 3,
+      "explanation": "With ORDER BY inside OVER, the default window frame runs from the first row up to the current row, so each row gets the total of all days so far. An empty OVER () puts the grand total on every row, PARTITION BY sale_date sums each day on its own, and GROUP BY sale_date collapses the rows into one total per day."
+    },
+    {
+      "id": 8,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Correlation vs Causation",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In city-level data, the number of cafés and the average household income have a correlation of r = 0.82. What can you conclude from this alone?",
+      "options": [
+        "Opening more cafés in a city will raise its average income",
+        "They are strongly associated, but this does not prove causation",
+        "No confounding variable, such as city size, can be involved",
+        "The same relationship will hold inside every region of the data"
+      ],
+      "correct": 1,
+      "explanation": "Correlation measures association only: a confounder such as city size could drive both, or the causation could run the other way (richer cities attract more cafés). Showing cause needs an experiment or a careful causal analysis."
+    },
+    {
+      "id": 9,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Hypothesis Testing & p-values",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "A test comparing two groups gives p = 0.01. Which interpretation is correct?",
+      "options": [
+        "Assuming the null hypothesis is true, data at least this extreme occurs ~1% of the time",
+        "There is a 1% probability that the null hypothesis is actually true",
+        "There is a 99% probability that the observed difference is a real effect",
+        "The difference between the two groups is large enough to matter for the business"
+      ],
+      "correct": 0,
+      "explanation": "A p-value is computed assuming the null hypothesis is true: it is the probability of a result at least as extreme as the one observed. It is not the probability that the null (or the alternative) is true, and a small p-value says nothing about whether the effect is big enough to matter."
+    },
+    {
+      "id": 10,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "KPI Design",
+      "difficulty": "Intermediate",
+      "dimension": "Technical Communication",
+      "question": "A sales dashboard has a KPI card that only shows 'Revenue: ₹42.5 L'. The regional head says it is not actionable. Which change helps most?",
+      "options": [
+        "Add the period plus a comparison vs. target and vs. last month",
+        "Show the revenue to the exact rupee instead of rounding to lakhs",
+        "Replace the card with a pie chart of revenue split by product",
+        "Add a table under it listing every order behind the total"
+      ],
+      "correct": 0,
+      "explanation": "A KPI becomes actionable when the reader knows which period it covers and whether the number is good or bad, which needs a target, a previous period or a trend. Extra precision or a list of orders adds detail but still does not answer 'are we on track?'."
+    },
+    {
+      "id": 11,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "A/B Testing",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Why is random assignment important in a well-designed A/B test?",
+      "options": [
+        "It guarantees that both groups will have identical outcomes",
+        "It makes the sample size irrelevant to the result",
+        "It balances confounding factors between the groups on average",
+        "It removes the need to keep a separate control group"
+      ],
+      "correct": 2,
+      "explanation": "Random assignment makes the groups comparable on average in everything, including factors you did not measure (device, intent, location), so a difference in outcomes can be attributed to the change. It does not guarantee identical results, and the sample size still decides how precise the comparison is."
+    },
+    {
+      "id": 12,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Simpson's Paradox",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Support team X has a higher first-contact resolution rate than team Y for simple tickets (95% vs 90%) and for complex tickets (60% vs 50%), yet X's overall rate is lower (67% vs 82%). What is the most likely explanation?",
+      "options": [
+        "The overall rates must be miscalculated, since winning every category means winning overall",
+        "Team Y is better, because the overall rate is based on more tickets than either category",
+        "Team X handles a much larger share of complex tickets, which are resolved less often",
+        "The category rates come from small samples, so only the overall rate is reliable"
+      ],
+      "correct": 2,
+      "explanation": "This is Simpson's paradox: about 80% of X's tickets are complex versus about 20% of Y's, and complex tickets are resolved far less often, so X's pooled rate is dragged down even though X beats Y within each ticket type. Compare the teams within ticket type (or adjust for the mix) instead of using the pooled rate."
+    },
+    {
+      "id": 13,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Multiple Hypothesis Testing",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "An analyst checks 20 independent metrics in one A/B test at α = 0.05, with no correction, and reports the single metric with p = 0.03 as a win. What is the main problem?",
+      "options": [
+        "p = 0.03 is not significant at α = 0.05, so it should not be reported",
+        "Tracking 20 metrics splits the users 20 ways, so each test is underpowered",
+        "The metric should have been tested with a one-tailed test to be valid",
+        "Across 20 tests a false positive is likely (~64%) even with no real effect"
+      ],
+      "correct": 3,
+      "explanation": "Each test has a 5% false-positive rate, so across 20 independent tests the chance of at least one 'significant' result by luck is 1 − 0.95^20 ≈ 64%. Pre-register a primary metric or correct for multiple comparisons (e.g. Bonferroni, α/20)."
+    },
+    {
+      "id": 14,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Logistic Regression",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "You want to predict whether each customer will churn next month (yes/no) from tenure and monthly charges. Why is logistic regression usually chosen over ordinary linear regression?",
+      "options": [
+        "It can be trained without any history of which customers churned",
+        "It predicts how many days are left until each customer churns",
+        "It works only when every input variable is categorical",
+        "It models a probability that always stays between 0 and 1"
+      ],
+      "correct": 3,
+      "explanation": "Logistic regression passes a weighted sum of the inputs through the sigmoid function, so it outputs a churn probability between 0 and 1 that can be thresholded into yes/no, whereas linear regression can predict values below 0 or above 1. It still needs labelled past churn data, accepts numeric inputs such as tenure, and predicts a yes/no probability rather than a time until churn."
+    },
+    {
+      "id": 15,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Churn Analysis",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "A subscription app has 2,000 subscribers on 1 March. During March, 300 of those 2,000 cancel and 500 new users subscribe (none of whom cancel). What is March's churn rate, measured against subscribers at the start of the month?",
+      "options": [
+        "10%",
+        "12%",
+        "15%",
+        "25%"
+      ],
+      "correct": 2,
+      "explanation": "Churn rate = subscribers lost ÷ subscribers at the start = 300 / 2,000 = 15%. New sign-ups do not cancel out churn: 10% is net growth ((500 − 300) / 2,000), and dividing by 2,500 (12%) mixes in new users who were not part of the starting base."
+    },
+    {
+      "id": 16,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Cell References",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In Excel, cell C2 contains =B2*$F$1. What formula does C3 contain after you copy C2 down one row?",
+      "options": [
+        "=B3*$F$1",
+        "=B3*$F$2",
+        "=B2*$F$1",
+        "=B3*F2"
+      ],
+      "correct": 0,
+      "explanation": "The relative reference B2 shifts with the copy to B3, while the $ signs in $F$1 lock both its column and row, so every copied formula keeps multiplying by F1 (for example a fixed tax rate)."
+    },
+    {
+      "id": 17,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "COUNTIF",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which formula counts the cells in A2:A100 whose value is \"Delhi\"?",
+      "options": [
+        "=COUNT(A2:A100, \"Delhi\")",
+        "=COUNTA(A2:A100, \"Delhi\")",
+        "=COUNTIF(A2:A100, \"Delhi\")",
+        "=SUMIF(A2:A100, \"Delhi\")"
+      ],
+      "correct": 2,
+      "explanation": "COUNTIF(range, criteria) counts the cells that meet one condition (COUNTIFS handles several). COUNT counts only numeric values and COUNTA counts every non-empty value, so neither checks for \"Delhi\", and SUMIF adds numbers rather than counting."
+    },
+    {
+      "id": 18,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Data Cleaning",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Customer names in column A contain stray spaces, such as \"  Priya   Sharma \", so lookups fail. Which function removes the leading and trailing spaces and reduces repeated spaces between words to one?",
+      "options": [
+        "CLEAN",
+        "PROPER",
+        "TRIM",
+        "SUBSTITUTE(A2, \" \", \"\")"
+      ],
+      "correct": 2,
+      "explanation": "TRIM strips leading and trailing spaces and collapses runs of spaces between words to one, giving \"Priya Sharma\". CLEAN removes non-printable characters, PROPER only changes capitalisation, and SUBSTITUTE with \"\" deletes every space (\"PriyaSharma\")."
+    },
+    {
+      "id": 19,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "VLOOKUP",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "=VLOOKUP(E2, A2:C500, 3) returns wrong prices for some product IDs, even though every ID exists in column A. Column A is not sorted. What is the most likely cause?",
+      "options": [
+        "VLOOKUP can only return values from the second column of a range",
+        "VLOOKUP returns the last matching row instead of the first one",
+        "The lookup range must first be converted into an Excel Table (Ctrl+T)",
+        "range_lookup was omitted, so VLOOKUP defaults to approximate match"
+      ],
+      "correct": 3,
+      "explanation": "Without the fourth argument VLOOKUP uses approximate match (TRUE), which assumes column A is sorted ascending and can silently return the wrong row. Use =VLOOKUP(E2, A2:C500, 3, FALSE), or XLOOKUP, which matches exactly by default."
+    },
+    {
+      "id": 20,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "XLOOKUP",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "Product IDs are in column D and product names are in column B. Why can =XLOOKUP(H2, D:D, B:B) return the name for an ID, when a VLOOKUP on the same data cannot?",
+      "options": [
+        "It searches every column of the sheet until it finds a matching ID",
+        "It takes separate lookup and return ranges, so it can return columns to the left",
+        "It sorts the ID column automatically before it searches for the value",
+        "It can match text IDs, which VLOOKUP can only do for numeric lookup values"
+      ],
+      "correct": 1,
+      "explanation": "VLOOKUP always searches the first column of its table range and can only return columns to its right, so with IDs in D it cannot reach the names in B. XLOOKUP's separate lookup_array (D:D) and return_array (B:B) remove that limit; it does not sort the data or scan the whole sheet, and VLOOKUP matches text fine."
+    },
+    {
+      "id": 21,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "PivotTables",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "A PivotTable shows Sum of Sales by Region. You want each region shown as a percentage of the overall total. What is the quickest correct way?",
+      "options": [
+        "Change the value summary from Sum to Average",
+        "Add a calculated field with the formula =Sales/SUM(Sales)",
+        "Drag Region into the Filters area and select all regions",
+        "Value Field Settings → Show Values As → % of Grand Total"
+      ],
+      "correct": 3,
+      "explanation": "Show Values As → % of Grand Total re-expresses each region's sum as a share of the total and keeps working after a refresh. A calculated field works on each region's own sums, so SUM(Sales) there is just that region's sales and the result is 100% for every region."
+    },
+    {
+      "id": 22,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Power Query",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "Every Monday you receive a CSV export with the same messy layout: extra header rows, a combined 'Name - City' column and dates stored as text. What is the most maintainable way to clean it in Excel?",
+      "options": [
+        "Repeat Text to Columns and Flash Fill by hand on each week's file",
+        "Paste the new data over last week's cleaned sheet and fix any errors",
+        "Build the steps once in Power Query and click Refresh for each new file",
+        "Write helper formulas that point at fixed cell addresses in the raw sheet"
+      ],
+      "correct": 2,
+      "explanation": "Power Query records each transformation (remove top rows, split column, change type) as a repeatable query, so the next file is cleaned with one Refresh. Manual steps are slow and error-prone, and formulas tied to fixed cell addresses break when the number of rows or header lines changes."
+    },
+    {
+      "id": 23,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Approximate Match Lookups",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A commission table has sales thresholds 0, 50000, 100000, 200000 and 500000 in A2:A6 (sorted ascending) and their rates in B2:B6. Which formula returns the right rate for the sales value in E2, so that 130000 gets the 100000 rate?",
+      "options": [
+        "=VLOOKUP(E2, A2:B6, 2, TRUE)",
+        "=VLOOKUP(E2, A2:B6, 2, FALSE)",
+        "=XLOOKUP(E2, A2:A6, B2:B6)",
+        "=INDEX(B2:B6, MATCH(E2, A2:A6, 0))"
+      ],
+      "correct": 0,
+      "explanation": "Approximate match (TRUE) on an ascending column returns the largest threshold that is less than or equal to E2, which is exactly how slab and tier tables work. The other formulas use exact match, so 130000 returns #N/A (XLOOKUP would need match_mode -1 to fall back to the next smaller value)."
+    },
+    {
+      "id": 24,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "SUMIFS",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "Amounts are in column C, regions in column A and order dates in column B. F1 holds 01-Jan-2026 and F2 holds 01-Feb-2026. Which formula totals North-region sales for January 2026?",
+      "options": [
+        "=SUMIFS(C:C, A:A, \"North\", B:B, \">=\"&F1, B:B, \"<\"&F2)",
+        "=SUMIFS(C:C, A:A, \"North\", B:B, \">=F1\", B:B, \"<F2\")",
+        "=SUMIFS(C:C, A:A, \"North\", MONTH(B:B), 1)",
+        "=SUMIF(A:A, \"North\", C:C) + SUMIF(B:B, \">=\"&F1, C:C)"
+      ],
+      "correct": 0,
+      "explanation": "SUMIFS adds C only where every condition holds, and a criterion that compares with a cell must be built by concatenation, \">=\"&F1. Inside quotes \">=F1\" compares with the literal text F1, a criteria range must be a real range (not MONTH(...)), and adding two SUMIFs double-counts instead of requiring both conditions."
+    },
+    {
+      "id": 25,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Conditional Formatting",
+      "difficulty": "Advanced",
+      "dimension": "Practical Knowledge",
+      "question": "You select A2:F200 and want each entire row highlighted when its Status in column F is \"Overdue\". Which formula should the conditional formatting rule use?",
+      "options": [
+        "=F2=\"Overdue\"",
+        "=$F2=\"Overdue\"",
+        "=$F$2=\"Overdue\"",
+        "=F$2=\"Overdue\""
+      ],
+      "correct": 1,
+      "explanation": "The rule is written for the top-left cell (A2) and adjusted for every other cell. $F locks the column so every cell in a row checks that row's Status, while the relative row lets each row check itself; =F2 would shift to G2, H2 and so on across the row, and $F$2 makes every row depend on F2."
+    },
+    {
+      "id": 26,
+      "field": "Data Analyst",
+      "step": 1,
+      "topic": "Dynamic Arrays",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In Microsoft 365 Excel, =FILTER(A2:C100, C2:C100 > 50000) entered in E2 shows #SPILL!. What is the cause?",
+      "options": [
+        "No rows in C2:C100 meet the condition > 50000",
+        "The condition range and the data range have different row counts",
+        "FILTER can return only one column of data at a time",
+        "Some cells in the range it needs to spill into already contain data"
+      ],
+      "correct": 3,
+      "explanation": "A dynamic-array formula spills its results into neighbouring cells and shows #SPILL! when any of those cells already hold data (or are merged). If no rows matched, FILTER would return #CALC! unless an if_empty argument is given, and FILTER can return several columns."
+    },
+    {
+      "id": 27,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "SQL Joins",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "You join products to order_items on product_id and want only the products that have been ordered at least once; products that were never ordered must not appear. Which join type should you use?",
+      "options": [
+        "LEFT JOIN",
+        "FULL OUTER JOIN",
+        "CROSS JOIN",
+        "INNER JOIN"
+      ],
+      "correct": 3,
+      "explanation": "INNER JOIN keeps only rows whose product_id matches in both tables, so never-ordered products drop out. LEFT JOIN keeps every product (with NULL order columns for unmatched ones), FULL OUTER JOIN also keeps unmatched rows from both sides, and CROSS JOIN pairs every product with every order item."
+    },
+    {
+      "id": 28,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "ORDER BY & LIMIT",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which query returns the 5 highest-paid employees (MySQL / PostgreSQL)?",
+      "options": [
+        "SELECT * FROM employees ORDER BY salary LIMIT 5;",
+        "SELECT * FROM employees ORDER BY salary DESC LIMIT 5;",
+        "SELECT * FROM employees WHERE salary = MAX(salary) LIMIT 5;",
+        "SELECT MAX(salary) FROM employees LIMIT 5;"
+      ],
+      "correct": 1,
+      "explanation": "ORDER BY salary DESC sorts from highest to lowest and LIMIT 5 keeps the first five rows. Without DESC the sort is ascending (lowest paid), aggregates such as MAX are not allowed in WHERE, and SELECT MAX(salary) returns a single value."
+    },
+    {
+      "id": 29,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "SQL Joins",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "The orders table has 1,000 rows, one per order. After orders LEFT JOIN payments ON payments.order_id = orders.order_id, the result has 1,180 rows. What is the most likely reason?",
+      "options": [
+        "LEFT JOIN also adds a row for every payment with no matching order",
+        "Orders that have no payment are returned twice",
+        "Some orders have more than one matching row in payments",
+        "The join condition belongs in WHERE rather than in ON"
+      ],
+      "correct": 2,
+      "explanation": "A join returns one row per matching pair, so an order with 3 payment rows (split or retried payments) appears 3 times and inflates SUM(order_amount). A LEFT JOIN from orders drops unmatched payments; aggregate payments per order first, then join."
+    },
+    {
+      "id": 30,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "NULL Handling",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "In an employees table, bonus is NULL for staff who got no bonus. What does SELECT salary + bonus AS total_pay return for those rows?",
+      "options": [
+        "NULL; use salary + COALESCE(bonus, 0) instead",
+        "Their salary, because NULL is treated as 0 in arithmetic",
+        "An error, because NULL cannot be added to a number",
+        "NULL; add WHERE bonus != NULL to fix the result"
+      ],
+      "correct": 0,
+      "explanation": "Any arithmetic with NULL yields NULL, so total_pay is NULL for those rows; COALESCE(bonus, 0) substitutes 0 for a missing bonus. A comparison such as bonus != NULL is never true, so NULL checks must use IS NULL or IS NOT NULL."
+    },
+    {
+      "id": 31,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "Date Functions",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "The orders table (PostgreSQL) has an order_date timestamp covering 2024 to 2026. Which expression should you GROUP BY to get one row per month for a monthly trend chart?",
+      "options": [
+        "EXTRACT(MONTH FROM order_date)",
+        "DATE_TRUNC('month', order_date)",
+        "order_date",
+        "TO_CHAR(order_date, 'Month')"
+      ],
+      "correct": 1,
+      "explanation": "DATE_TRUNC('month', order_date) rounds every timestamp down to the first day of its month, so each year-month gets its own row and sorts chronologically. EXTRACT(MONTH ...) and TO_CHAR(..., 'Month') keep only the month, merging January 2024, 2025 and 2026 into one group."
+    },
+    {
+      "id": 32,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "Ranking Window Functions",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "In one department the salaries are 90000, 90000, 80000 and 70000. A CTE ranks salaries within each department and the outer query keeps rows where rnk = 2. Which ranking returns the second-highest distinct salary (80000)?",
+      "options": [
+        "DENSE_RANK() OVER (PARTITION BY dept ORDER BY salary DESC)",
+        "ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary DESC)",
+        "RANK() OVER (PARTITION BY dept ORDER BY salary DESC)",
+        "NTILE(2) OVER (PARTITION BY dept ORDER BY salary DESC)"
+      ],
+      "correct": 0,
+      "explanation": "DENSE_RANK gives 1, 1, 2, 3 (no gaps after ties), so rnk = 2 is 80000. ROW_NUMBER gives 1, 2, 3, 4 and returns one of the 90000 rows, RANK gives 1, 1, 3, 4 so rnk = 2 matches nothing, and NTILE(2) just splits the rows into two halves."
+    },
+    {
+      "id": 33,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "Outer Join Filtering",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "SELECT c.name, o.order_id\nFROM customers c\nLEFT JOIN orders o ON o.customer_id = c.id\nWHERE o.order_date >= '2026-01-01';\n\nCustomers with no 2026 orders are missing from the result. Why, and what is the fix?",
+      "options": [
+        "WHERE removes the NULL-order rows; put the date filter in the ON clause",
+        "LEFT JOIN drops unmatched rows when orders is the larger table; use a RIGHT JOIN",
+        "Dates must be compared with BETWEEN; rewrite the filter using BETWEEN",
+        "The join removes duplicate customers; add SELECT DISTINCT to keep them"
+      ],
+      "correct": 0,
+      "explanation": "For customers without a matching 2026 order the LEFT JOIN yields NULL in o.order_date, and NULL >= '2026-01-01' is not true, so WHERE removes them and the query behaves like an INNER JOIN. Writing ON o.customer_id = c.id AND o.order_date >= '2026-01-01' filters the orders but keeps every customer."
+    },
+    {
+      "id": 34,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "LAG Window Function",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "monthly_revenue has the rows ('2026-01', 100), ('2026-02', 120) and ('2026-03', 90) in columns month and revenue. What does this query return in diff for Jan, Feb and Mar?\n\nSELECT month,\n       revenue - LAG(revenue) OVER (ORDER BY month) AS diff\nFROM monthly_revenue;",
+      "options": [
+        "0, 20, -30",
+        "NULL, 20, -30",
+        "20, -30, NULL",
+        "100, 20, -30"
+      ],
+      "correct": 1,
+      "explanation": "LAG(revenue) returns the previous row's revenue in month order, which is NULL for January because there is no earlier row, and anything minus NULL is NULL. Feb is 120 − 100 = 20 and Mar is 90 − 120 = −30; the 20, −30, NULL pattern would come from LEAD."
+    },
+    {
+      "id": 35,
+      "field": "Data Analyst",
+      "step": 2,
+      "topic": "CTEs & Subqueries",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "WITH t AS (\n  SELECT customer_id, SUM(amount) AS spend\n  FROM orders\n  GROUP BY customer_id\n)\n\nWhich final SELECT lists the customers whose total spend is above the average total spend per customer?",
+      "options": [
+        "SELECT customer_id FROM t WHERE spend > AVG(spend);",
+        "SELECT customer_id FROM t WHERE spend > (SELECT AVG(amount) FROM orders);",
+        "SELECT customer_id FROM t WHERE spend > (SELECT AVG(spend) FROM t);",
+        "SELECT customer_id FROM t GROUP BY customer_id HAVING spend > AVG(spend);"
+      ],
+      "correct": 2,
+      "explanation": "The scalar subquery (SELECT AVG(spend) FROM t) computes one number, the average of the per-customer totals, that every row can be compared with. An aggregate cannot appear directly in WHERE, AVG(amount) is the average order value rather than the average customer's spend, and grouping t by customer_id again compares each customer's spend only with itself."
+    },
+    {
+      "id": 36,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Standard Deviation",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Two sections both have an average test score of 70. Section A has a standard deviation of 5 and Section B has 15. What does this tell you?",
+      "options": [
+        "Section B's scores vary more around the average",
+        "Section B has more students than Section A",
+        "Section B has a higher median score than Section A",
+        "Section A's scores are skewed to the right"
+      ],
+      "correct": 0,
+      "explanation": "Standard deviation measures the typical distance from the mean, so Section B's scores vary much more (more very high and very low marks) even though both averages are 70. It says nothing about class size, the median or the direction of skew."
+    },
+    {
+      "id": 37,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Skewness",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "Monthly salaries in a company are right-skewed: most employees earn modest amounts and a few earn very high salaries. How do the mean and median typically compare?",
+      "options": [
+        "The median is greater than the mean",
+        "The mean and median are exactly equal",
+        "The mode is greater than the mean",
+        "The mean is greater than the median"
+      ],
+      "correct": 3,
+      "explanation": "The few very high salaries pull the mean up but barely move the median, so in a right-skewed distribution the mean is usually above the median (and the mode is lowest). That is why median salary is often reported instead of average salary."
+    },
+    {
+      "id": 38,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Normal Distribution",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "For data that is approximately normally distributed, roughly what percentage of values lie within one standard deviation of the mean?",
+      "options": [
+        "50%",
+        "68%",
+        "95%",
+        "99.7%"
+      ],
+      "correct": 1,
+      "explanation": "The empirical (68-95-99.7) rule says about 68% of values fall within ±1 standard deviation of the mean, about 95% within ±2 and about 99.7% within ±3."
+    },
+    {
+      "id": 39,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Sampling Bias",
+      "difficulty": "Easy",
+      "dimension": "Problem Solving",
+      "question": "To measure satisfaction among all registered users, a food-delivery app surveys only users who opened the app in the last 7 days. What is the main problem?",
+      "options": [
+        "Selection bias: inactive and possibly unhappy users are excluded",
+        "The sample is so large that tiny differences will look significant",
+        "Satisfaction scores are never normally distributed, so no test is valid",
+        "Recent users answer from memory, so their responses have recall bias"
+      ],
+      "correct": 0,
+      "explanation": "The sample only includes active users, who are likely to be happier than users who stopped ordering, so the estimate will not represent all registered users. A random sample of all registered users (or one stratified by activity) avoids this selection bias."
+    },
+    {
+      "id": 40,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "Confidence Intervals",
+      "difficulty": "Advanced",
+      "dimension": "Concept Understanding",
+      "question": "A 95% confidence interval for the average order value is ₹480 to ₹520. Which statement is correct?",
+      "options": [
+        "95% of individual orders have a value between ₹480 and ₹520",
+        "About 95% of intervals built this way would contain the true mean",
+        "There is a 95% probability that the true mean lies between ₹480 and ₹520",
+        "A new sample has a 95% chance of having a mean of exactly ₹500"
+      ],
+      "correct": 1,
+      "explanation": "The 95% describes the procedure: across many repeated samples, about 95% of the intervals computed this way would capture the true population mean. A single computed interval either contains it or not, and the interval is about the mean, not individual orders."
+    },
+    {
+      "id": 41,
+      "field": "Data Analyst",
+      "step": 3,
+      "topic": "A/B Testing",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A product manager checks a running A/B test every day and stops it on the first day p < 0.05. Why is this a problem?",
+      "options": [
+        "Daily checks change which users are assigned to each variant",
+        "Stopping early always underestimates the true effect size",
+        "p-values are only valid after exactly 14 days of data",
+        "Repeated peeking inflates the false-positive rate well above 5%"
+      ],
+      "correct": 3,
+      "explanation": "Every look is another chance for random noise to cross p < 0.05, so stopping at the first significant peek makes false positives far more likely than the nominal 5%. Fix the sample size and duration in advance from a power calculation, or use a sequential method designed for peeking; early stops also tend to overestimate, not underestimate, the effect."
+    },
+    {
+      "id": 42,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Pandas Selection",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "What is the difference between df.loc and df.iloc in Pandas?",
+      "options": [
+        "loc selects by integer positions; iloc selects by labels",
+        "loc selects only rows; iloc selects only columns",
+        "loc returns a copy of the data; iloc returns a view",
+        "loc selects by labels; iloc selects by integer positions"
+      ],
+      "correct": 3,
+      "explanation": "df.loc uses index and column labels (df.loc[101, 'city']) and includes the end of a label slice, while df.iloc uses 0-based positions (df.iloc[0, 2]) and excludes the end like Python slicing. Both can select rows and columns."
+    },
+    {
+      "id": 43,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Missing Values",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which expression returns the number of missing values in each column of a DataFrame df?",
+      "options": [
+        "df.isna().sum()",
+        "df.count()",
+        "df.dropna().sum()",
+        "df.isna().count()"
+      ],
+      "correct": 0,
+      "explanation": "df.isna() marks each missing cell as True and .sum() counts the Trues per column. df.count() counts the non-missing values, and .count() on the boolean frame counts every row, True or False."
+    },
+    {
+      "id": 44,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "GroupBy",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "What does df.groupby('region')['sales'].sum() return?",
+      "options": [
+        "One number: the total of all sales",
+        "The original DataFrame sorted by region",
+        "A list of the unique region names",
+        "A Series of total sales indexed by region"
+      ],
+      "correct": 3,
+      "explanation": "groupby splits the rows by region, ['sales'] picks the column and sum() aggregates each group, giving a Series with one total per region and the regions as its index. Add .reset_index() to turn it back into a DataFrame."
+    },
+    {
+      "id": 45,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Seaborn Charts",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "Which Seaborn function is best for showing the distribution of a single numeric column, such as order_value?",
+      "options": [
+        "sns.barplot()",
+        "sns.histplot()",
+        "sns.lineplot()",
+        "sns.heatmap()"
+      ],
+      "correct": 1,
+      "explanation": "sns.histplot() bins the values and shows how often each range occurs, revealing skew and outliers. sns.barplot() shows an aggregate (the mean by default) per category, lineplot shows trends and heatmap colours a matrix of values."
+    },
+    {
+      "id": 46,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Boolean Filtering",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "Which line selects the rows of df where city is 'Pune' and sales is greater than 1000?",
+      "options": [
+        "df[df['city'] == 'Pune' and df['sales'] > 1000]",
+        "df[(df['city'] == 'Pune') & (df['sales'] > 1000)]",
+        "df[df['city'] == 'Pune' & df['sales'] > 1000]",
+        "df[(df['city'] == 'Pune') && (df['sales'] > 1000)]"
+      ],
+      "correct": 1,
+      "explanation": "Pandas combines boolean Series with & (and), | (or) and ~ (not), and each condition needs parentheses because & binds more tightly than == and >. Python's and raises 'The truth value of a Series is ambiguous', and && is not valid Python."
+    },
+    {
+      "id": 47,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Missing Values",
+      "difficulty": "Intermediate",
+      "dimension": "Problem Solving",
+      "question": "What does this code print?\n\nimport pandas as pd\ns = pd.Series([10, None, 20])\nprint(s.mean())",
+      "options": [
+        "15.0",
+        "10.0",
+        "nan",
+        "It raises a TypeError"
+      ],
+      "correct": 0,
+      "explanation": "None becomes NaN in a numeric Series, and Pandas aggregations skip NaN by default (skipna=True), so the mean is (10 + 20) / 2 = 15.0. Treating the missing value as 0 would give 10.0, and NumPy's np.mean on a raw array containing NaN would return nan."
+    },
+    {
+      "id": 48,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Vectorization",
+      "difficulty": "Intermediate",
+      "dimension": "Practical Knowledge",
+      "question": "df has 5 million rows. Which is the fastest way to create a total column equal to price × quantity?",
+      "options": [
+        "df['total'] = df.apply(lambda r: r['price'] * r['quantity'], axis=1)",
+        "Loop with for i, row in df.iterrows() and set each row's total",
+        "df['total'] = df['price'] * df['quantity']",
+        "df['total'] = [p * q for p, q in zip(df['price'], df['quantity'])]"
+      ],
+      "correct": 2,
+      "explanation": "Column arithmetic is vectorized: Pandas hands whole columns to NumPy, which multiplies them in optimized C code. apply with axis=1 and iterrows run Python code once per row, and a list comprehension is faster than those but still loops in Python."
+    },
+    {
+      "id": 49,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Matplotlib & Seaborn",
+      "difficulty": "Intermediate",
+      "dimension": "Technical Communication",
+      "question": "You want to compare the spread of delivery times, including medians and outliers, across 5 cities in one chart. Which plot fits best?",
+      "options": [
+        "A pie chart of average delivery time by city",
+        "A line chart of delivery time by city",
+        "A bar chart of mean delivery time per city",
+        "A box plot of delivery time grouped by city"
+      ],
+      "correct": 3,
+      "explanation": "A box plot (sns.boxplot(data=df, x='city', y='delivery_time')) shows each city's median, interquartile range and outliers side by side. A bar chart of means hides the spread and outliers, and a line chart implies an order between cities that does not exist."
+    },
+    {
+      "id": 50,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Reshaping Data",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "df has one row per order with columns region, month and sales, so each region-month pair appears many times. Which call builds a table with regions as rows, months as columns and total sales in each cell?",
+      "options": [
+        "df.pivot(index='region', columns='month', values='sales')",
+        "df.pivot_table(index='region', columns='month', values='sales', aggfunc='sum')",
+        "df.melt(id_vars='region', value_name='sales')",
+        "df.groupby(['region', 'month'])['sales'].sum().reset_index()"
+      ],
+      "correct": 1,
+      "explanation": "pivot_table aggregates duplicate region-month pairs with aggfunc (sum here; the default is mean) and spreads month across the columns. pivot does no aggregation and raises a ValueError on duplicate entries, the groupby result stays in long format (one row per region-month) unless you unstack it, and melt goes the other way, from wide to long."
+    },
+    {
+      "id": 51,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Data Types & Cleaning",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A price column read from a CSV holds text values such as '₹1,200', '₹850' and 'TBD'. Which line converts it to numbers, turning entries like 'TBD' into NaN instead of raising an error?",
+      "options": [
+        "df['price'].str.strip('₹').astype(float)",
+        "pd.to_numeric(df['price'], errors='coerce')",
+        "pd.to_numeric(df['price'].str.replace('[₹,]', '', regex=True), errors='coerce')",
+        "df['price'].str.replace('[₹,]', '', regex=True).astype(float)"
+      ],
+      "correct": 2,
+      "explanation": "Removing '₹' and the thousands comma first leaves parseable numbers, and errors='coerce' turns anything still unparseable, such as 'TBD', into NaN. pd.to_numeric on the raw text coerces every price to NaN because of the '₹', strip('₹') leaves the comma in '1,200', and astype(float) raises a ValueError on 'TBD'."
+    },
+    {
+      "id": 52,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "GroupBy Transform",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "You want a new column with each order's share of its region's total sales. Which code does this?",
+      "options": [
+        "df['share'] = df['sales'] / df.groupby('region')['sales'].sum()",
+        "df['share'] = df['sales'] / df['sales'].sum()",
+        "df['share'] = df['sales'] / df.groupby('region')['sales'].transform('sum')",
+        "df['share'] = df.groupby('region')['sales'].agg('sum') / df['sales']"
+      ],
+      "correct": 2,
+      "explanation": "transform('sum') returns the group total aligned to every original row, so the division happens row by row. groupby(...).sum() returns one value per region indexed by region, which does not line up with the row index (giving NaN), and df['sales'].sum() is the grand total, not the region total."
+    },
+    {
+      "id": 53,
+      "field": "Data Analyst",
+      "step": 4,
+      "topic": "Merging DataFrames",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "You have customers and orders DataFrames that share customer_id. Which code returns the customers who have never placed an order?",
+      "options": [
+        "customers[~customers['customer_id'].isin(orders['customer_id'])]",
+        "customers.merge(orders, on='customer_id', how='left').dropna()",
+        "customers.merge(orders, on='customer_id', how='left', indicator=True).query(\"_merge == 'both'\")",
+        "customers.merge(orders, on='customer_id', how='inner').drop_duplicates('customer_id')"
+      ],
+      "correct": 0,
+      "explanation": "isin() flags customers whose id appears in orders and ~ negates it, leaving only customers with no orders (an anti-join; a left merge with indicator=True filtered on _merge == 'left_only' does the same). Filtering on 'both', an inner merge, or a left merge followed by dropna() all keep the customers who did order."
+    },
+    {
+      "id": 54,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Data Modelling",
+      "difficulty": "Easy",
+      "dimension": "Concept Understanding",
+      "question": "In a star schema for a sales dashboard, what does the fact table typically contain?",
+      "options": [
+        "Descriptive attributes such as product name, category and brand",
+        "Measurable events such as sales amounts, with keys to the dimensions",
+        "Pre-aggregated monthly totals only, with no links to other tables",
+        "The list of users who are allowed to view each report"
+      ],
+      "correct": 1,
+      "explanation": "A fact table holds measurable business events (for example one row per sale with amount and quantity) plus foreign keys to dimension tables such as Product and Date, which hold the attributes you slice and filter by. Keeping one row per event, rather than only monthly totals, lets the same facts be sliced by any dimension."
+    },
+    {
+      "id": 55,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Power BI Basics",
+      "difficulty": "Easy",
+      "dimension": "Practical Knowledge",
+      "question": "In a Power BI report, what does a slicer let users do?",
+      "options": [
+        "Split one table into two smaller tables in the data model",
+        "Filter the page's visuals interactively, e.g. by year",
+        "Write a new calculated column with a DAX formula",
+        "Schedule an automatic refresh of the dataset"
+      ],
+      "correct": 1,
+      "explanation": "A slicer is an on-canvas filter: picking a value such as 2026 or North filters the other visuals on the page (and on synced pages). Refresh schedules are set in the Power BI service, and calculated columns are written in DAX in the data model."
+    },
+    {
+      "id": 56,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Funnel Analysis",
+      "difficulty": "Easy",
+      "dimension": "Problem Solving",
+      "question": "A checkout funnel has 10,000 visitors, 2,000 add-to-carts and 500 purchases. What is the overall visitor-to-purchase conversion rate?",
+      "options": [
+        "2.5%",
+        "5%",
+        "20%",
+        "25%"
+      ],
+      "correct": 1,
+      "explanation": "Overall conversion is purchases ÷ visitors = 500 / 10,000 = 5%. 20% is the visit-to-cart step (2,000 / 10,000) and 25% is the cart-to-purchase step (500 / 2,000)."
+    },
+    {
+      "id": 57,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Communicating Insights",
+      "difficulty": "Easy",
+      "dimension": "Technical Communication",
+      "question": "You have 5 minutes with a business head to present your churn analysis. How should you structure it?",
+      "options": [
+        "Walk through your SQL and Python code first so they trust the numbers",
+        "Show every chart you made so that nothing important is missed",
+        "Share the raw tables and let them reach their own conclusions",
+        "Lead with the key finding and recommended action, then the evidence"
+      ],
+      "correct": 3,
+      "explanation": "Busy stakeholders need the 'so what' first: the main insight, its business impact and what to do, followed by just enough evidence to support it. Methodology and extra charts belong in an appendix for anyone who asks."
+    },
+    {
+      "id": 58,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "DAX Measures",
+      "difficulty": "Intermediate",
+      "dimension": "Concept Understanding",
+      "question": "In Power BI you need a Total Sales value that recalculates for whatever region, product or date the user filters on. What should you create?",
+      "options": [
+        "A measure: Total Sales = SUM(Sales[Amount])",
+        "A calculated column: Total Sales = SUM(Sales[Amount])",
+        "A Power Query custom column that adds up the Amount column",
+        "A copy of the Sales table that keeps only the Amount column"
+      ],
+      "correct": 0,
+      "explanation": "A measure is evaluated at query time in the current filter context, so the same formula gives the right total for every visual, slicer selection or cell. A calculated column is computed once per row at refresh and stored, so SUM there returns the same grand total on every row."
+    },
+    {
+      "id": 59,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Dashboard Best Practices",
+      "difficulty": "Intermediate",
+      "dimension": "Technical Communication",
+      "question": "A bar chart compares two products with sales of 980 and 1,020 units, but its y-axis starts at 950, so one bar looks more than twice as tall as the other. What is the best fix?",
+      "options": [
+        "Keep the axis but add data labels so readers see the real values",
+        "Switch to a 3D bar chart so the difference is easier to see",
+        "Use a logarithmic y-axis so both bars fit comfortably",
+        "Start the y-axis at zero, because bar length encodes the value"
+      ],
+      "correct": 3,
+      "explanation": "Readers judge bars by their length, so a truncated axis turns a 4% difference into a 2× visual gap. Bar charts should start at zero (a line chart may use a tighter axis); labels alone do not undo the visual distortion."
+    },
+    {
+      "id": 60,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "DAX CALCULATE",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "On a Power BI report page, a page-level filter on Store[Region] in the Filters pane lets users pick a region, and Sales is related to Store. Which DAX expression, shown in a card, always returns North-region sales whatever region the filter is set to?",
+      "options": [
+        "IF(SELECTEDVALUE(Store[Region]) = \"North\", SUM(Sales[Amount]))",
+        "CALCULATE(SUM(Sales[Amount]), Store[Region] = \"North\")",
+        "SUMX(FILTER(Sales, RELATED(Store[Region]) = \"North\"), Sales[Amount])",
+        "CALCULATE(SUM(Sales[Amount]), KEEPFILTERS(Store[Region] = \"North\"))"
+      ],
+      "correct": 1,
+      "explanation": "A boolean filter inside CALCULATE replaces any existing filter on Store[Region], so the page filter is overridden and North sales are returned. KEEPFILTERS intersects with the page filter instead, and the IF and SUMX versions also run inside it, so all three return blank when another region is selected."
+    },
+    {
+      "id": 61,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Cohort Analysis",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A monthly cohort table shows Month-3 retention of 40% for the January cohort and 25% for the April cohort, yet total monthly active users keep growing. What is the best interpretation?",
+      "options": [
+        "Newer cohorts retain worse; rising sign-ups are hiding the drop",
+        "Retention is improving, because total active users are growing",
+        "The April cohort is smaller, so the two rates cannot be compared",
+        "Cohorts should not be compared; only overall retention matters"
+      ],
+      "correct": 0,
+      "explanation": "Comparing cohorts at the same age (Month 3) shows later users churning faster, while total active users can still rise because a growing stream of new sign-ups masks the leak, which is exactly what cohort analysis exposes. Retention rates are percentages, so cohorts of different sizes can be compared."
+    },
+    {
+      "id": 62,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "KPI Calculation",
+      "difficulty": "Advanced",
+      "dimension": "Problem Solving",
+      "question": "A card labelled 'Avg conversion rate' averages the daily conversion rates. Day 1: 10 of 20 visitors converted (50%). Day 2: 100 of 10,000 converted (1%). The card shows 25.5%. What should it show?",
+      "options": [
+        "25.5%, because each day should count equally",
+        "50%, the best day, since it shows what is possible",
+        "1%, using only the day with the larger sample",
+        "About 1.1%, the ratio of totals: 110 / 10,020"
+      ],
+      "correct": 3,
+      "explanation": "An overall rate should be total conversions ÷ total visitors (110 / 10,020 ≈ 1.1%), which in Power BI means a measure such as DIVIDE(SUM(conversions), SUM(visitors)). Averaging the daily percentages gives a 20-visitor day the same weight as a 10,000-visitor day."
+    },
+    {
+      "id": 63,
+      "field": "Data Analyst",
+      "step": 5,
+      "topic": "Date Tables & Time Intelligence",
+      "difficulty": "Advanced",
+      "dimension": "System Design",
+      "question": "A Power BI year-over-year calculation built with SAMEPERIODLASTYEAR returns blank or wrong values. The model has no date table; the calculation uses Sales[OrderDate], which has gaps on days with no sales. What is the recommended fix?",
+      "options": [
+        "Store last year's sales in a calculated column and sum that instead",
+        "Sort the Sales table by OrderDate in Power Query before it is loaded into the model",
+        "Add a continuous Date table, mark it as a date table and relate it to Sales",
+        "Convert OrderDate to text in YYYY-MM-DD format so the dates line up"
+      ],
+      "correct": 2,
+      "explanation": "DAX time-intelligence functions expect a date column with one row for every day of each year; a dedicated Date table, marked as a date table and related to Sales[OrderDate], provides that and also gives shared Year and Month columns for slicing. Sorting the fact table or turning dates into text does not fill the missing days."
+    }
+  ]
+}

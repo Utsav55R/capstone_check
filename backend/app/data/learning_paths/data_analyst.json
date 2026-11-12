@@ -1,0 +1,381 @@
+{
+  "field": "Data Analyst",
+  "core_skills": [
+    {
+      "id": "excel",
+      "name": "Excel & Spreadsheets",
+      "step": 1,
+      "keywords": [
+        "Excel",
+        "EXCEL",
+        "ms excel",
+        "ms-excel",
+        "microsoft excel",
+        "advanced excel",
+        "excel vba",
+        "vba",
+        "pivot table",
+        "pivot tables",
+        "pivottable",
+        "pivottables",
+        "vlookup",
+        "xlookup",
+        "hlookup",
+        "index match",
+        "index-match",
+        "power query",
+        "power pivot",
+        "google sheets",
+        "spreadsheet",
+        "spreadsheets",
+        "conditional formatting"
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "step": 2,
+      "keywords": [
+        "sql",
+        "mysql",
+        "postgresql",
+        "postgres",
+        "sqlite",
+        "sql server",
+        "ms sql",
+        "mssql",
+        "t-sql",
+        "pl/sql",
+        "oracle sql",
+        "oracle database",
+        "mariadb",
+        "bigquery",
+        "google bigquery",
+        "snowflake",
+        "amazon redshift",
+        "aws redshift"
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "Statistics & A/B Testing",
+      "step": 3,
+      "keywords": [
+        "statistics",
+        "statistical analysis",
+        "statistical modeling",
+        "statistical modelling",
+        "hypothesis testing",
+        "a/b testing",
+        "a/b test",
+        "a/b tests",
+        "ab testing",
+        "split testing",
+        "t-test",
+        "z-test",
+        "chi-square",
+        "chi-squared",
+        "anova",
+        "regression analysis",
+        "linear regression",
+        "logistic regression",
+        "confidence intervals",
+        "time series analysis",
+        "spss",
+        "sas programming",
+        "base sas",
+        "statsmodels",
+        "minitab",
+        "r programming",
+        "rstudio",
+        "tidyverse",
+        "dplyr"
+      ]
+    },
+    {
+      "id": "python_pandas",
+      "name": "Python (Pandas & NumPy)",
+      "step": 4,
+      "keywords": [
+        "python",
+        "python3",
+        "python 3",
+        "pandas",
+        "numpy",
+        "scipy",
+        "polars",
+        "jupyter",
+        "jupyter notebook",
+        "jupyter notebooks",
+        "jupyterlab",
+        "google colab",
+        "colab"
+      ]
+    },
+    {
+      "id": "data_visualization",
+      "name": "Data Visualization (Matplotlib / Seaborn)",
+      "step": 4,
+      "keywords": [
+        "data visualization",
+        "data visualisation",
+        "matplotlib",
+        "seaborn",
+        "plotly",
+        "ggplot2",
+        "d3.js"
+      ]
+    },
+    {
+      "id": "power_bi_tableau",
+      "name": "Power BI / Tableau",
+      "step": 5,
+      "keywords": [
+        "power bi",
+        "powerbi",
+        "microsoft power bi",
+        "power bi desktop",
+        "tableau",
+        "tableau desktop",
+        "tableau public",
+        "looker",
+        "looker studio",
+        "google data studio",
+        "qlik",
+        "qlik sense",
+        "qlikview",
+        "metabase",
+        "apache superset",
+        "dax",
+        "ssrs",
+        "business intelligence",
+        "bi dashboard",
+        "bi dashboards",
+        "bi tools"
+      ]
+    },
+    {
+      "id": "business_analytics",
+      "name": "Business Analytics & Data Storytelling",
+      "step": 5,
+      "keywords": [
+        "business analytics",
+        "business analyst",
+        "data storytelling",
+        "storytelling with data",
+        "cohort analysis",
+        "funnel analysis",
+        "retention analysis",
+        "churn analysis",
+        "customer segmentation",
+        "rfm analysis",
+        "product analytics",
+        "marketing analytics",
+        "web analytics",
+        "google analytics",
+        "ga4",
+        "mixpanel",
+        "market basket analysis",
+        "kpi dashboard",
+        "kpi dashboards",
+        "sales analytics",
+        "customer analytics"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Excel & Spreadsheet Analysis",
+      "subtitle": "Clean, summarise and chart data in spreadsheets",
+      "description": "Excel is still the first tool most analyst interviews and jobs test. Learn the formulas, lookups and PivotTables that turn raw exports into clean summaries, and build cleaning steps you can repeat and trust.",
+      "topics": [
+        {
+          "id": "da1-formulas-references",
+          "name": "Core formulas and cell references: relative, absolute ($A$1) and mixed; SUM, AVERAGE, ROUND"
+        },
+        {
+          "id": "da1-conditional-functions",
+          "name": "Logical and conditional functions: IF/IFS, AND/OR, IFERROR, COUNTIFS, SUMIFS and AVERAGEIFS"
+        },
+        {
+          "id": "da1-lookups",
+          "name": "Lookups and dynamic arrays: VLOOKUP (exact vs approximate match), INDEX/MATCH, XLOOKUP, FILTER and UNIQUE"
+        },
+        {
+          "id": "da1-pivot-tables",
+          "name": "PivotTables and PivotCharts: grouping, Show Values As (% of total), slicers and refresh"
+        },
+        {
+          "id": "da1-data-cleaning",
+          "name": "Data cleaning: TRIM and text functions, Remove Duplicates, Text to Columns, data validation and Power Query"
+        },
+        {
+          "id": "da1-tables-formatting",
+          "name": "Excel Tables, sorting and filtering, and formula-based conditional formatting"
+        },
+        {
+          "id": "da1-charts",
+          "name": "Charts in Excel: choosing column, line, bar, scatter and combo charts with clear titles and labels"
+        }
+      ],
+      "coding_topics": []
+    },
+    {
+      "step": 2,
+      "title": "SQL for Analysis",
+      "subtitle": "Query, join and aggregate data at the source",
+      "description": "Most company data lives in relational databases, and SQL rounds are standard in analyst interviews. Learn to filter, aggregate and join tables correctly, handle NULLs and dates, and use CTEs and window functions for rankings, running totals and month-over-month comparisons.",
+      "topics": [
+        {
+          "id": "da2-select-filter",
+          "name": "SELECT, WHERE, ORDER BY, LIMIT and DISTINCT with IN, BETWEEN and LIKE filters"
+        },
+        {
+          "id": "da2-aggregation",
+          "name": "Aggregation with COUNT/SUM/AVG, GROUP BY and HAVING, and the logical order of query execution"
+        },
+        {
+          "id": "da2-joins",
+          "name": "Joins: INNER, LEFT and self joins, and avoiding duplicated rows (fan-out) from one-to-many keys"
+        },
+        {
+          "id": "da2-subqueries-ctes",
+          "name": "Subqueries and CTEs (WITH) for multi-step analysis"
+        },
+        {
+          "id": "da2-window-functions",
+          "name": "Window functions: ROW_NUMBER, RANK/DENSE_RANK, LAG/LEAD and running totals with SUM() OVER"
+        },
+        {
+          "id": "da2-nulls-case",
+          "name": "NULL handling (IS NULL, COALESCE, NULLIF) and CASE WHEN for conditional logic"
+        },
+        {
+          "id": "da2-dates",
+          "name": "Date functions: DATE_TRUNC, EXTRACT, date arithmetic and month-over-month comparisons"
+        }
+      ],
+      "coding_topics": [
+        "Hashing",
+        "Arrays"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Statistics for Data Analysis",
+      "subtitle": "Draw conclusions you can defend",
+      "description": "Statistics tells you whether a pattern is real or just noise. Learn to summarise distributions, spot sampling bias and confounders, run and interpret hypothesis tests and confidence intervals, and design A/B tests that product teams can rely on.",
+      "topics": [
+        {
+          "id": "da3-descriptive",
+          "name": "Descriptive statistics: mean, median, mode, standard deviation, percentiles and IQR"
+        },
+        {
+          "id": "da3-distributions",
+          "name": "Distributions: normal (68-95-99.7 rule), binomial, skewness, outliers and the central limit theorem"
+        },
+        {
+          "id": "da3-sampling-bias",
+          "name": "Sampling methods and bias: random vs stratified samples, selection and survivorship bias"
+        },
+        {
+          "id": "da3-correlation-causation",
+          "name": "Correlation vs causation: Pearson/Spearman correlation, confounders and Simpson's paradox"
+        },
+        {
+          "id": "da3-hypothesis-testing",
+          "name": "Hypothesis testing: p-values, Type I/II errors, confidence intervals, t-tests and chi-square tests"
+        },
+        {
+          "id": "da3-regression",
+          "name": "Regression basics: linear regression, R² and logistic regression for yes/no outcomes"
+        },
+        {
+          "id": "da3-ab-testing",
+          "name": "A/B testing: randomisation, sample size and power, peeking and multiple comparisons"
+        }
+      ],
+      "coding_topics": [
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Python for Data Analysis",
+      "subtitle": "Wrangle and explore data with Pandas",
+      "description": "Python with Pandas handles datasets that are too large or messy for spreadsheets and makes your analysis reproducible. Learn to load, clean, reshape and merge data in Jupyter, write fast vectorised code, and explore it visually with Matplotlib and Seaborn.",
+      "topics": [
+        {
+          "id": "da4-python-jupyter",
+          "name": "Python essentials for analysis (lists, dicts, functions) in Jupyter Notebook or Google Colab"
+        },
+        {
+          "id": "da4-pandas-basics",
+          "name": "Pandas DataFrames: read_csv, loc/iloc selection, boolean filtering and sorting"
+        },
+        {
+          "id": "da4-cleaning",
+          "name": "Cleaning data: dtypes, .str methods, pd.to_datetime, pd.to_numeric and duplicates"
+        },
+        {
+          "id": "da4-missing-values",
+          "name": "Missing values: isna, dropna, fillna and when to impute versus drop"
+        },
+        {
+          "id": "da4-groupby-merge",
+          "name": "Aggregating and combining: groupby/agg/transform, pivot_table, melt, merge and concat"
+        },
+        {
+          "id": "da4-vectorization",
+          "name": "Vectorised operations with NumPy/Pandas instead of row-by-row loops (apply, iterrows)"
+        },
+        {
+          "id": "da4-visualization",
+          "name": "Visualisation with Matplotlib and Seaborn: histograms, box plots, scatter plots and heatmaps"
+        }
+      ],
+      "coding_topics": [
+        "Arrays",
+        "Strings"
+      ]
+    },
+    {
+      "step": 5,
+      "title": "BI Dashboards & Data Storytelling",
+      "subtitle": "Turn analysis into decisions",
+      "description": "Insights only matter when decision-makers understand and act on them. Learn to model data and write DAX measures in Power BI (or build the same in Tableau), design clear KPI dashboards, run cohort and funnel analyses, and present findings as a short story that ends in a recommendation.",
+      "topics": [
+        {
+          "id": "da5-bi-tools",
+          "name": "Power BI or Tableau basics: connecting data, Power Query, visuals, filters and slicers"
+        },
+        {
+          "id": "da5-data-modeling",
+          "name": "Data modelling: star schema, fact vs dimension tables, relationships and a dedicated date table"
+        },
+        {
+          "id": "da5-dax",
+          "name": "DAX basics: measures vs calculated columns, CALCULATE, filter context and time intelligence"
+        },
+        {
+          "id": "da5-kpi-design",
+          "name": "KPI design: clear definitions, targets and comparisons, ratio of totals vs average of ratios"
+        },
+        {
+          "id": "da5-dashboard-design",
+          "name": "Dashboard best practices: chart choice, layout, colour and honest axes"
+        },
+        {
+          "id": "da5-cohort-funnel",
+          "name": "Product analytics: cohort retention, funnel conversion and churn analysis"
+        },
+        {
+          "id": "da5-storytelling",
+          "name": "Communicating insights: lead with the so-what, executive summaries and recommendations"
+        }
+      ],
+      "coding_topics": []
+    }
+  ]
+}

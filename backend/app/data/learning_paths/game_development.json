@@ -1,0 +1,402 @@
+{
+  "field": "Game Developer",
+  "core_skills": [
+    {
+      "id": "csharp_cpp",
+      "name": "C# / C++ Programming",
+      "step": 1,
+      "keywords": [
+        "c#",
+        "c++",
+        "csharp",
+        "c sharp",
+        "cpp",
+        "modern c++",
+        "c++11",
+        "c++14",
+        "c++17",
+        "c++20",
+        "monogame",
+        "sfml",
+        "sdl2",
+        "sdl3",
+        "raylib"
+      ]
+    },
+    {
+      "id": "game_math",
+      "name": "Game Math (Vectors, Matrices, Quaternions)",
+      "step": 2,
+      "keywords": [
+        "game math",
+        "game mathematics",
+        "3d math",
+        "3d maths",
+        "3d mathematics",
+        "vector math",
+        "vector maths",
+        "vector mathematics",
+        "quaternion",
+        "quaternions",
+        "transformation matrices",
+        "matrix transformations",
+        "computational geometry"
+      ]
+    },
+    {
+      "id": "game_physics",
+      "name": "Game Physics & Collision",
+      "step": 2,
+      "keywords": [
+        "game physics",
+        "physics engine",
+        "physics engines",
+        "rigidbody",
+        "rigidbody2d",
+        "rigid body physics",
+        "rigidbodies",
+        "collision detection",
+        "collision handling",
+        "raycast",
+        "raycasts",
+        "raycasting",
+        "ray casting",
+        "box2d",
+        "physx",
+        "nvidia physx",
+        "havok",
+        "bullet physics",
+        "jolt physics",
+        "chaos physics"
+      ]
+    },
+    {
+      "id": "game_engines",
+      "name": "Game Engines (Unity / Unreal / Godot)",
+      "step": 3,
+      "keywords": [
+        "unity",
+        "unity3d",
+        "unity 3d",
+        "unity2d",
+        "unity 2d",
+        "unity engine",
+        "unity game engine",
+        "unity 6",
+        "unity6",
+        "unity dots",
+        "unreal",
+        "unreal engine",
+        "unreal engine 4",
+        "unreal engine 5",
+        "ue4",
+        "ue5",
+        "unreal blueprints",
+        "blueprint visual scripting",
+        "blueprint scripting",
+        "unreal c++",
+        "godot",
+        "godot engine",
+        "godot 4",
+        "gdscript"
+      ]
+    },
+    {
+      "id": "graphics_animation",
+      "name": "Graphics, Animation & Audio",
+      "step": 4,
+      "keywords": [
+        "opengl",
+        "webgl",
+        "directx",
+        "direct3d",
+        "vulkan",
+        "hlsl",
+        "glsl",
+        "shader",
+        "shaders",
+        "shader graph",
+        "shadergraph",
+        "shader programming",
+        "computer graphics",
+        "rendering pipeline",
+        "hdrp",
+        "universal render pipeline",
+        "high definition render pipeline",
+        "vfx graph",
+        "niagara vfx",
+        "particle system",
+        "particle systems",
+        "blender",
+        "autodesk maya",
+        "skeletal animation",
+        "animator controller",
+        "mecanim",
+        "blend tree",
+        "blend trees",
+        "blend space",
+        "blend spaces",
+        "aseprite",
+        "fmod",
+        "wwise"
+      ]
+    },
+    {
+      "id": "game_ai",
+      "name": "Gameplay AI & Pathfinding",
+      "step": 5,
+      "keywords": [
+        "a* pathfinding",
+        "a* algorithm",
+        "a* search",
+        "a-star",
+        "a star pathfinding",
+        "pathfinding",
+        "navmesh",
+        "nav mesh",
+        "navigation mesh",
+        "behaviour tree",
+        "behavior tree",
+        "behaviour trees",
+        "behavior trees",
+        "game ai",
+        "enemy ai",
+        "npc ai",
+        "steering behaviours",
+        "steering behaviors",
+        "goap",
+        "utility ai"
+      ]
+    },
+    {
+      "id": "optimization_multiplayer",
+      "name": "Optimization & Multiplayer Networking",
+      "step": 5,
+      "keywords": [
+        "photon pun",
+        "photon pun 2",
+        "photon fusion",
+        "photon engine",
+        "mirror networking",
+        "netcode",
+        "netcode for gameobjects",
+        "unity netcode",
+        "fish-networking",
+        "multiplayer",
+        "multiplayer networking",
+        "playfab",
+        "nakama",
+        "steamworks",
+        "epic online services",
+        "colyseus",
+        "client-side prediction",
+        "client side prediction",
+        "lag compensation",
+        "unity profiler",
+        "unreal insights",
+        "object pooling",
+        "draw calls",
+        "draw call batching",
+        "occlusion culling"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "title": "Programming Foundations for Games",
+      "subtitle": "C# or C++, OOP and data structures for gameplay code",
+      "description": "Get fluent in the language your engine uses: C# for Unity (and Godot), C++ for Unreal. You learn OOP and composition, the data structures behind inventories and spawners, how memory and garbage collection affect frame rate, and how to version a game project with Git.",
+      "topics": [
+        {
+          "id": "gd1-language-basics",
+          "name": "C# or C++ fundamentals: types, control flow, functions, and value vs reference types"
+        },
+        {
+          "id": "gd1-oop-composition",
+          "name": "OOP for gameplay: classes, interfaces, inheritance vs composition and polymorphism"
+        },
+        {
+          "id": "gd1-data-structures",
+          "name": "Data structures for games: arrays/lists, dictionaries and hash sets, queues, stacks and Big-O"
+        },
+        {
+          "id": "gd1-memory",
+          "name": "Memory basics: stack vs heap, pointers/references, smart pointers (C++) and garbage collection (C#)"
+        },
+        {
+          "id": "gd1-events-delegates",
+          "name": "Events and callbacks: C# delegates/events, UnityEvent or Unreal delegates"
+        },
+        {
+          "id": "gd1-design-patterns",
+          "name": "Game programming patterns: observer, singleton, command and state"
+        },
+        {
+          "id": "gd1-git-lfs",
+          "name": "Version control for game projects: Git, an engine .gitignore and Git LFS for large assets"
+        }
+      ],
+      "coding_topics": [
+        "Arrays",
+        "Hashing"
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Game Math & Physics",
+      "subtitle": "Vectors, transforms and collisions",
+      "description": "Games are applied math: vectors move and aim things, matrices and quaternions place and rotate them, and collision tests decide what touches what. You learn the math behind movement, cameras and physics, and how to keep it frame-rate independent with delta time and a fixed timestep.",
+      "topics": [
+        {
+          "id": "gd2-vectors",
+          "name": "Vectors: addition, length, normalization, dot product and cross product"
+        },
+        {
+          "id": "gd2-trig-interpolation",
+          "name": "Angles and interpolation: radians, sin/cos/atan2, lerp and smoothing"
+        },
+        {
+          "id": "gd2-transforms",
+          "name": "Matrices and transforms: translation, rotation, scale, local vs world space"
+        },
+        {
+          "id": "gd2-quaternions",
+          "name": "Rotations: Euler angles, gimbal lock and quaternion basics (slerp)"
+        },
+        {
+          "id": "gd2-collision",
+          "name": "Collision detection: AABB and circle tests, raycasts, broad vs narrow phase, tunneling"
+        },
+        {
+          "id": "gd2-rigidbody-physics",
+          "name": "Rigidbody physics: velocity, acceleration, forces, gravity, bounce, colliders vs triggers"
+        },
+        {
+          "id": "gd2-timestep",
+          "name": "Delta time and fixed timestep: frame-rate independent movement and integration"
+        }
+      ],
+      "coding_topics": [
+        "Two Pointers",
+        "Binary Search"
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Game Engines: Unity & Unreal",
+      "subtitle": "Build playable scenes in a real engine",
+      "description": "Learn how a professional engine is organised: scenes and levels, GameObjects/Actors built from components, prefabs and Blueprints, the script lifecycle, input and UI. A small, polished playable game in Unity or Unreal is what studios look for in a fresher's portfolio.",
+      "topics": [
+        {
+          "id": "gd3-scenes-components",
+          "name": "Scenes/levels, GameObjects/Actors, the component model and Unreal's UCLASS/UPROPERTY macros"
+        },
+        {
+          "id": "gd3-lifecycle",
+          "name": "Game loop and script lifecycle: Awake, Start, Update, FixedUpdate, LateUpdate / BeginPlay, Tick"
+        },
+        {
+          "id": "gd3-prefabs-blueprints",
+          "name": "Reusable objects: Unity prefabs, Unreal Blueprints, Instantiate/SpawnActor and Destroy"
+        },
+        {
+          "id": "gd3-input",
+          "name": "Player input: Unity Input System or Unreal Enhanced Input, action maps and character controllers"
+        },
+        {
+          "id": "gd3-ui",
+          "name": "Game UI: Unity Canvas/UI Toolkit or Unreal UMG, HUDs, menus and resolution scaling"
+        },
+        {
+          "id": "gd3-coroutines-timing",
+          "name": "Timing and flow: coroutines, timers, Time.timeScale and pausing"
+        },
+        {
+          "id": "gd3-scenes-saving",
+          "name": "Scene loading, ScriptableObjects/Data Assets and saving game data (JSON, PlayerPrefs, SaveGame)"
+        }
+      ],
+      "coding_topics": [
+        "Stack"
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Graphics, Animation & Audio",
+      "subtitle": "Make the game look, move and sound right",
+      "description": "Understand how the GPU turns meshes and sprites into pixels, write basic shaders, set up materials and lighting, and bring characters to life with animation state machines, particles and spatial audio. This is what separates a prototype from a game that feels polished.",
+      "topics": [
+        {
+          "id": "gd4-rendering-pipeline",
+          "name": "Rendering pipeline basics: vertices, rasterization, fragments, depth buffer, URP/HDRP"
+        },
+        {
+          "id": "gd4-sprites-tilemaps",
+          "name": "2D graphics: sprites, sprite atlases, tilemaps, sorting layers, parallax and texture filtering"
+        },
+        {
+          "id": "gd4-shaders",
+          "name": "Shader basics: vertex vs fragment shaders, Shader Graph or Material Editor, HLSL/GLSL"
+        },
+        {
+          "id": "gd4-materials-lighting",
+          "name": "Materials and lighting: textures, normal maps, PBR, real-time vs baked lighting"
+        },
+        {
+          "id": "gd4-animation",
+          "name": "Animation: skeletal rigs, Animator state machines, transitions, blend trees and root motion"
+        },
+        {
+          "id": "gd4-particles-vfx",
+          "name": "Particles and VFX: Unity Particle System/VFX Graph or Unreal Niagara, overdraw"
+        },
+        {
+          "id": "gd4-audio",
+          "name": "Game audio: sources and listeners, 3D spatial sound, mixers and clip load types"
+        }
+      ],
+      "coding_topics": []
+    },
+    {
+      "step": 5,
+      "title": "Gameplay AI, Optimization & Multiplayer",
+      "subtitle": "Smart enemies, smooth frame rates, connected players",
+      "description": "Give enemies believable behaviour with pathfinding, state machines and behaviour trees; profile and optimize to hit your frame budget with pooling, batching and spatial partitioning; and learn how multiplayer games keep players in sync over the network. Finish by building and publishing your game for PC or mobile.",
+      "topics": [
+        {
+          "id": "gd5-pathfinding",
+          "name": "Pathfinding: grids and graphs, BFS vs Dijkstra vs A*, heuristics and NavMesh"
+        },
+        {
+          "id": "gd5-decision-making",
+          "name": "Gameplay AI: finite state machines, behaviour trees and steering behaviours"
+        },
+        {
+          "id": "gd5-profiling",
+          "name": "Profiling and frame budgets: CPU vs GPU bound, Unity Profiler or Unreal Insights"
+        },
+        {
+          "id": "gd5-optimization",
+          "name": "Optimization: object pooling, draw calls and batching, LOD and culling"
+        },
+        {
+          "id": "gd5-spatial-ecs",
+          "name": "Scaling to many entities: spatial partitioning (grids, quadtrees) and data-oriented ECS"
+        },
+        {
+          "id": "gd5-networking",
+          "name": "Multiplayer: authoritative servers, interpolation, client-side prediction and lag compensation"
+        },
+        {
+          "id": "gd5-builds-publishing",
+          "name": "Builds and publishing: platform settings, Android App Bundles, Google Play, Steam or itch.io"
+        }
+      ],
+      "coding_topics": [
+        "Graphs",
+        "Sliding Window"
+      ]
+    }
+  ]
+}
